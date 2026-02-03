@@ -8138,7 +8138,6 @@ resistance during lab work.`}],yM=[...zv,...Vv,...Wv,...gM],bM=[...yM],Yv=String
 
 ---
 `,Qv=String.raw`
-![User Provided Image](/assets/mechanical/user_provided_image.png)
 
 ### **Before We Start: How to Think About “Properties”**
 
