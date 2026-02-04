@@ -4,6 +4,13 @@ export async function onRequestPost(context) {
     try {
         const body = await request.json();
 
+        if (!env.OPENAI_API_KEY) {
+            return new Response(JSON.stringify({ error: "API Key not configured in Cloudflare" }), {
+                status: 500,
+                headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" }
+            });
+        }
+
         // Forward to OpenAI
         const response = await fetch("https://api.openai.com/v1/chat/completions", {
             method: "POST",
