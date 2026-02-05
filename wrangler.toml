@@ -1,3 +1,6 @@
 name = "dentedge"
 pages_build_output_dir = "dist"
 compatibility_date = "2026-02-04"
+[vars]
+VITE_SUPABASE_URL = "https://acuehlltnkbpatsbkhqc.supabase.co"
+VITE_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFjdWVobGx0bmticGF0c2JraHFjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzAwNzg4NDUsImV4cCI6MjA4NTY1NDg0NX0.I8e97aF4qkXM0tHoO726VZP96mXXvXjpUrGkKsYsG54"
