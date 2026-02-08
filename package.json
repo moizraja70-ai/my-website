@@ -3,7 +3,8 @@
     "version": "1.0.0",
     "description": "Deployment repo for DentEdge",
     "scripts": {
-        "deploy": "wrangler pages deploy dist"
+        "deploy": "wrangler pages deploy dist",
+        "seed": "node scripts/seedNotes.cjs"
     },
     "dependencies": {
         "openai": "^4.0.0"

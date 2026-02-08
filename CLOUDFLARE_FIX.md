@@ -64,3 +64,7 @@ After deploying, visit `https://your-site.pages.dev/api/openai` in your browser.
 - [x] Asset paths set to standard root `/`.
 - [x] `functions/api/openai.ts` deployed (NOT using Direct Upload).
 - [x] `OPENAI_API_KEY` set as server-side secret in Cloudflare environment variables.
+
+## 7. Database Setup (Supabase)
+If you are seeing "Content unavailable", you likely need to set up the database.
+Please refer to `SETUP.md` for instructions on creating the table and seeding the notes data.

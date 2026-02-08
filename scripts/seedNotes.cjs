@@ -1,3 +1,4 @@
+// Seed script for populating the database with notes
 const fs = require('fs');
 const path = require('path');
 const vm = require('vm');

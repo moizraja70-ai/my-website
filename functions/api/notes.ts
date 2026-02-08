@@ -149,6 +149,7 @@ const fetchNoteFromSupabase = async (
   const supabaseAnonKey = env.SUPABASE_ANON_KEY || env.VITE_SUPABASE_ANON_KEY;
 
   if (!supabaseUrl || !supabaseAnonKey) {
+    console.error("Missing SUPABASE_URL or SUPABASE_ANON_KEY env vars");
     return { error: "Supabase environment variables are not configured." } as const;
   }
 
@@ -162,6 +163,8 @@ const fetchNoteFromSupabase = async (
     authHeader && authHeader.toLowerCase().startsWith("bearer ")
       ? authHeader
       : `Bearer ${supabaseAnonKey}`;
+
+  console.log(`Fetching note from Supabase: ${url.toString()}`);
 
   const res = await fetch(url.toString(), {
     headers: {
@@ -183,6 +186,7 @@ const fetchNoteFromSupabase = async (
 
   if (!res.ok) {
     const error = data && (data as any)?.error ? (data as any).error : raw || "Supabase request failed.";
+    console.error("Supabase fetch failed:", res.status, res.statusText, error);
     return { error } as const;
   }
 
