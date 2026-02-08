@@ -1,6 +1,3 @@
-import { NOTES } from "../../data/notesData";
-import { ANATOMY_NOTES } from "../../data/anatomyNotes";
-
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
@@ -32,10 +29,29 @@ const parseRequest = async (request: Request) => {
 };
 
 type SubjectKey = "dental_materials" | "general_embryology" | "anatomy";
-type DentalTopicKey = keyof typeof NOTES.dental_materials;
-type AnatomyTopicKey = keyof typeof ANATOMY_NOTES;
+type NoteRecord = { subject: string; topic: string; content: string; key_points?: string[] | null };
+
+const stripImagesFromHtml = (content: string) => {
+  if (!content) return content;
+  return content
+    .replace(/<picture[\s\S]*?<\/picture>/gi, "")
+    .replace(/<img[^>]*>/gi, "")
+    .replace(/<iframe[\s\S]*?<\/iframe>/gi, "")
+    .replace(/<video[\s\S]*?<\/video>/gi, "")
+    .replace(/<audio[\s\S]*?<\/audio>/gi, "")
+    .replace(/<source[^>]*>/gi, "")
+    .replace(/!\[[^\]]*\]\([^)\n]*\)/g, "")
+    .replace(/!\[[^\]]*\]\[[^\]]*\]/g, "")
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+    .replace(/\[([^\]]+)\]\[[^\]]+\]/g, "$1")
+    .replace(/^\s*\[[^\]]+\]:\s*\S+\s*$/gm, "")
+    .replace(/<https?:\/\/[^>]+>/g, "")
+    .replace(/\n{3,}/g, "\n\n");
+};
 
 const normalize = (value: string) => value.trim().toLowerCase();
+const normalizeKey = (value: string) =>
+  value.trim().toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "");
 
 const resolveSubjectKey = (subject: string): SubjectKey | null => {
   const normalized = normalize(subject);
@@ -51,7 +67,7 @@ const resolveSubjectKey = (subject: string): SubjectKey | null => {
   return null;
 };
 
-const resolveDentalTopicKey = (topic: string): DentalTopicKey | null => {
+const resolveDentalTopicKey = (topic: string): string | null => {
   const t = normalize(topic);
 
   if (t.includes("properties")) {
@@ -105,15 +121,10 @@ const resolveDentalTopicKey = (topic: string): DentalTopicKey | null => {
     return t.includes("summary") ? "amalgam_summary" : "amalgam";
   }
 
-  const normalizedKey = t.replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "");
-  if (normalizedKey in NOTES.dental_materials) {
-    return normalizedKey as DentalTopicKey;
-  }
-
-  return null;
+  return normalizeKey(t);
 };
 
-const resolveAnatomyTopicKey = (topic: string): AnatomyTopicKey | null => {
+const resolveAnatomyTopicKey = (topic: string): string | null => {
   const t = normalize(topic);
 
   if (t.includes("skull bone") || t.includes("sutures")) return "skull_bones";
@@ -125,16 +136,65 @@ const resolveAnatomyTopicKey = (topic: string): AnatomyTopicKey | null => {
   if (t.includes("foramina") || t.includes("fossae")) return "foramina_fossae";
   if (t.includes("osteology") || t.includes("fracture")) return "osteology";
 
-  const normalizedKey = t.replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "");
-  if (normalizedKey in ANATOMY_NOTES) {
-    return normalizedKey as AnatomyTopicKey;
-  }
-
-  return null;
+  return normalizeKey(t);
 };
 
-const handleNotes = async (request: Request) => {
-  const { subject, topic } = await parseRequest(request);
+const fetchNoteFromSupabase = async (
+  env: Record<string, string | undefined>,
+  subjectKey: string,
+  topicKey: string,
+  authHeader?: string | null
+) => {
+  const supabaseUrl = env.SUPABASE_URL || env.VITE_SUPABASE_URL;
+  const supabaseAnonKey = env.SUPABASE_ANON_KEY || env.VITE_SUPABASE_ANON_KEY;
+
+  if (!supabaseUrl || !supabaseAnonKey) {
+    return { error: "Supabase environment variables are not configured." } as const;
+  }
+
+  const url = new URL(`${supabaseUrl}/rest/v1/notes`);
+  url.searchParams.set("select", "subject,topic,content,key_points");
+  url.searchParams.set("subject_key", `eq.${subjectKey}`);
+  url.searchParams.set("topic_key", `eq.${topicKey}`);
+  url.searchParams.set("limit", "1");
+
+  const authorization =
+    authHeader && authHeader.toLowerCase().startsWith("bearer ")
+      ? authHeader
+      : `Bearer ${supabaseAnonKey}`;
+
+  const res = await fetch(url.toString(), {
+    headers: {
+      apikey: supabaseAnonKey,
+      Authorization: authorization,
+      "Content-Type": "application/json"
+    }
+  });
+
+  const raw = await res.text();
+  let data: NoteRecord[] | null = null;
+  if (raw) {
+    try {
+      data = JSON.parse(raw) as NoteRecord[];
+    } catch {
+      data = null;
+    }
+  }
+
+  if (!res.ok) {
+    const error = data && (data as any)?.error ? (data as any).error : raw || "Supabase request failed.";
+    return { error } as const;
+  }
+
+  if (!data || !Array.isArray(data) || data.length === 0) {
+    return { note: null } as const;
+  }
+
+  return { note: data[0] } as const;
+};
+
+const handleNotes = async (request: Request, env: Record<string, string | undefined>) => {
+  let { subject, topic } = await parseRequest(request);
   if (!subject) {
     return jsonResponse(400, { error: "Missing subject." });
   }
@@ -144,50 +204,44 @@ const handleNotes = async (request: Request) => {
     return jsonResponse(400, { error: "Unsupported subject." });
   }
 
-  if (subjectKey === "general_embryology") {
-    const note = NOTES.general_embryology.summary;
-    return jsonResponse(200, {
-      subject: "General Embryology",
-      topic: topic || "Summary",
-      content: note.content,
-      keyPoints: note.keyPoints
-    });
-  }
-
-  if (subjectKey === "anatomy") {
-    if (!topic) {
+  if (!topic) {
+    if (subjectKey === "general_embryology") {
+      topic = "Summary";
+    } else {
       return jsonResponse(400, { error: "Missing topic." });
     }
-
-    const topicKey = resolveAnatomyTopicKey(topic);
-    if (!topicKey) {
-      return jsonResponse(404, { error: "Notes not found." });
-    }
-
-    const note = ANATOMY_NOTES[topicKey];
-    return jsonResponse(200, {
-      subject: "Anatomy",
-      topic,
-      content: note.content,
-      keyPoints: note.keyPoints
-    });
   }
 
-  if (!topic) {
-    return jsonResponse(400, { error: "Missing topic." });
+  let topicKey: string | null = null;
+  if (subjectKey === "dental_materials") {
+    topicKey = resolveDentalTopicKey(topic);
+  } else if (subjectKey === "anatomy") {
+    topicKey = resolveAnatomyTopicKey(topic);
+  } else {
+    topicKey = normalizeKey(topic);
   }
 
-  const topicKey = resolveDentalTopicKey(topic);
   if (!topicKey) {
     return jsonResponse(404, { error: "Notes not found." });
   }
 
-  const note = NOTES.dental_materials[topicKey];
+  const authHeader = request.headers.get("Authorization");
+  const result = await fetchNoteFromSupabase(env, subjectKey, topicKey, authHeader);
+  if ("error" in result) {
+    return jsonResponse(500, { error: result.error });
+  }
+
+  if (!result.note) {
+    return jsonResponse(404, { error: "Notes not found." });
+  }
+
+  const safeContent = stripImagesFromHtml(result.note.content || "");
+
   return jsonResponse(200, {
-    subject: "Dental Materials",
-    topic,
-    content: note.content,
-    keyPoints: note.keyPoints
+    subject: result.note.subject || subject,
+    topic: result.note.topic || topic,
+    content: safeContent,
+    keyPoints: Array.isArray(result.note.key_points) ? result.note.key_points : []
   });
 };
 
@@ -195,10 +249,10 @@ export const onRequestOptions: PagesFunction = () => {
   return new Response(null, { status: 204, headers: corsHeaders });
 };
 
-export const onRequestGet: PagesFunction = async ({ request }) => {
-  return handleNotes(request);
+export const onRequestGet: PagesFunction = async ({ request, env }) => {
+  return handleNotes(request, env as Record<string, string | undefined>);
 };
 
-export const onRequestPost: PagesFunction = async ({ request }) => {
-  return handleNotes(request);
+export const onRequestPost: PagesFunction = async ({ request, env }) => {
+  return handleNotes(request, env as Record<string, string | undefined>);
 };
