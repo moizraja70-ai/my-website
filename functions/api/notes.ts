@@ -1,4 +1,5 @@
 import { NOTES } from "../../data/notesData";
+import { ANATOMY_NOTES } from "../../data/anatomyNotes";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -30,8 +31,9 @@ const parseRequest = async (request: Request) => {
   return { subject, topic };
 };
 
-type SubjectKey = keyof typeof NOTES;
+type SubjectKey = "dental_materials" | "general_embryology" | "anatomy";
 type DentalTopicKey = keyof typeof NOTES.dental_materials;
+type AnatomyTopicKey = keyof typeof ANATOMY_NOTES;
 
 const normalize = (value: string) => value.trim().toLowerCase();
 
@@ -42,6 +44,9 @@ const resolveSubjectKey = (subject: string): SubjectKey | null => {
   }
   if (normalized.includes("general embryology") || normalized.includes("embryology")) {
     return "general_embryology";
+  }
+  if (normalized.includes("anatomy")) {
+    return "anatomy";
   }
   return null;
 };
@@ -108,6 +113,26 @@ const resolveDentalTopicKey = (topic: string): DentalTopicKey | null => {
   return null;
 };
 
+const resolveAnatomyTopicKey = (topic: string): AnatomyTopicKey | null => {
+  const t = normalize(topic);
+
+  if (t.includes("skull bone") || t.includes("sutures")) return "skull_bones";
+  if (t.includes("mandible")) return "mandible";
+  if (t.includes("maxilla")) return "maxilla";
+  if (t.includes("zygomatic") || t.includes("cheekbone")) return "zygomatic";
+  if (t.includes("sphenoid")) return "sphenoid";
+  if (t.includes("ethmoid")) return "ethmoid";
+  if (t.includes("foramina") || t.includes("fossae")) return "foramina_fossae";
+  if (t.includes("osteology") || t.includes("fracture")) return "osteology";
+
+  const normalizedKey = t.replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "");
+  if (normalizedKey in ANATOMY_NOTES) {
+    return normalizedKey as AnatomyTopicKey;
+  }
+
+  return null;
+};
+
 const handleNotes = async (request: Request) => {
   const { subject, topic } = await parseRequest(request);
   if (!subject) {
@@ -124,6 +149,25 @@ const handleNotes = async (request: Request) => {
     return jsonResponse(200, {
       subject: "General Embryology",
       topic: topic || "Summary",
+      content: note.content,
+      keyPoints: note.keyPoints
+    });
+  }
+
+  if (subjectKey === "anatomy") {
+    if (!topic) {
+      return jsonResponse(400, { error: "Missing topic." });
+    }
+
+    const topicKey = resolveAnatomyTopicKey(topic);
+    if (!topicKey) {
+      return jsonResponse(404, { error: "Notes not found." });
+    }
+
+    const note = ANATOMY_NOTES[topicKey];
+    return jsonResponse(200, {
+      subject: "Anatomy",
+      topic,
       content: note.content,
       keyPoints: note.keyPoints
     });
