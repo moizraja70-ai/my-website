@@ -62,3 +62,21 @@ body {
 .dark .glass-panel:hover {
   border-color: rgba(255, 255, 255, 0.1);
 }
+
+/* Content protection - disable text selection on notes/quiz content */
+.prose,
+.medical-content,
+[class*="summary"],
+[class*="quiz-content"] {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* Re-enable selection for inputs, textareas, and search fields */
+input, textarea, [contenteditable="true"], .ai-chat-input {
+  user-select: text !important;
+  -webkit-user-select: text !important;
+}
