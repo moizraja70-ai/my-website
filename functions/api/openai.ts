@@ -23,7 +23,7 @@ export const onRequestPost: PagesFunction = async ({ request, env }) => {
     });
 
   try {
-    const apiKey = env?.OPENAI_API_KEY;
+    const apiKey = (env as any).OPENAI_API_KEY;
     if (!apiKey) {
       return jsonResponse(500, { error: 'OPENAI_API_KEY is not set' });
     }
