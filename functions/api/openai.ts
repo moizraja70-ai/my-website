@@ -35,13 +35,14 @@ export const onRequestPost: PagesFunction = async ({ request, env }) => {
       return jsonResponse(400, { error: 'Invalid JSON body' });
     }
 
-    const messages = Array.isArray(body?.messages) ? body.messages : null;
-    if (!messages) {
+    const rawMessages = Array.isArray(body?.messages) ? body.messages : null;
+    if (!rawMessages) {
       return jsonResponse(400, { error: 'Expected messages array' });
     }
+    const messages = rawMessages.slice(-50);
 
     const temperature = typeof body?.temperature === 'number' ? body.temperature : 0.4;
-    const model = typeof body?.model === 'string' && body.model ? body.model : 'gpt-4o-mini';
+    const model = 'gpt-4o-mini';
     const responseFormat = body?.response_format;
 
     const openaiRes = await fetch('https://api.openai.com/v1/chat/completions', {
