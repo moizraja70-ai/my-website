@@ -1,4 +1,4 @@
-export const onRequestOptions: PagesFunction = () => {
+export const onRequestOptions = () => {
   return new Response(null, {
     status: 204,
     headers: {
@@ -9,14 +9,14 @@ export const onRequestOptions: PagesFunction = () => {
   });
 };
 
-export const onRequestPost: PagesFunction = async ({ request, env }) => {
+export const onRequestPost = async ({ request, env }) => {
   const corsHeaders = {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type, Authorization'
   };
 
-  const jsonResponse = (status: number, payload: Record<string, unknown>) =>
+  const jsonResponse = (status, payload) =>
     new Response(JSON.stringify(payload), {
       status,
       headers: { 'Content-Type': 'application/json', ...corsHeaders }
@@ -28,7 +28,7 @@ export const onRequestPost: PagesFunction = async ({ request, env }) => {
       return jsonResponse(500, { error: 'OPENAI_API_KEY is not set' });
     }
 
-    let body: any;
+    let body;
     try {
       body = await request.json();
     } catch {
@@ -79,7 +79,7 @@ export const onRequestPost: PagesFunction = async ({ request, env }) => {
 
     const text = data?.choices?.[0]?.message?.content || '';
     return jsonResponse(200, { text });
-  } catch (err: any) {
+  } catch (err) {
     console.error('OpenAI proxy error:', err);
     return jsonResponse(500, { error: err?.message || 'Server error' });
   }
