@@ -59,7 +59,7 @@ export const onRequestPost = async ({ request, env }) => {
     });
 
     const rawText = await openaiRes.text();
-    let data: any = null;
+    let data = null;
     if (rawText) {
       try {
         data = JSON.parse(rawText);
