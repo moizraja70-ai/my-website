@@ -35,13 +35,33 @@ export const onRequestPost: PagesFunction = async ({ request, env }) => {
       return jsonResponse(400, { error: 'Invalid JSON body' });
     }
 
+    // --- SECURITY CHECKS START ---
+
+    // 1. Validate 'messages' array
     const messages = Array.isArray(body?.messages) ? body.messages : null;
     if (!messages) {
       return jsonResponse(400, { error: 'Expected messages array' });
     }
+    // Limit history length to prevent context stuffing / high token usage
+    if (messages.length > 50) {
+      return jsonResponse(400, { error: 'Message history too long (max 50)' });
+    }
 
-    const temperature = typeof body?.temperature === 'number' ? body.temperature : 0.4;
-    const model = typeof body?.model === 'string' && body.model ? body.model : 'gpt-4o-mini';
+    // 2. Validate 'model' - ONLY allow specific models to prevent abuse of expensive models
+    const ALLOWED_MODELS = ['gpt-4o-mini'];
+    let model = typeof body?.model === 'string' && body.model ? body.model : 'gpt-4o-mini';
+
+    if (!ALLOWED_MODELS.includes(model)) {
+      return jsonResponse(400, { error: `Model not allowed. Allowed: ${ALLOWED_MODELS.join(', ')}` });
+    }
+
+    // 3. Clamp 'temperature' to valid range
+    let temperature = typeof body?.temperature === 'number' ? body.temperature : 0.4;
+    if (temperature < 0) temperature = 0;
+    if (temperature > 2) temperature = 2;
+
+    // --- SECURITY CHECKS END ---
+
     const responseFormat = body?.response_format;
 
     const openaiRes = await fetch('https://api.openai.com/v1/chat/completions', {
