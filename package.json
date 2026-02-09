@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "Deployment repo for DentEdge",
     "scripts": {
-        "build": "mkdir -p dist && cp -r index.html index.css assets public/* dist/ 2>/dev/null || :",
+        "build": "mkdir -p dist && cp -r index.html index.css assets public/* images dist/ 2>/dev/null || :",
         "deploy": "npm run build && wrangler pages deploy dist",
         "seed": "node scripts/seedNotes.cjs"
     },
