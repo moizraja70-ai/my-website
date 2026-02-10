@@ -23,7 +23,7 @@ export const onRequestPost: PagesFunction = async ({ request, env }) => {
     });
 
   try {
-    const apiKey = env?.OPENAI_API_KEY;
+    const apiKey = (env as any)?.OPENAI_API_KEY;
     if (!apiKey) {
       return jsonResponse(500, { error: 'OPENAI_API_KEY is not set' });
     }
@@ -35,13 +35,54 @@ export const onRequestPost: PagesFunction = async ({ request, env }) => {
       return jsonResponse(400, { error: 'Invalid JSON body' });
     }
 
-    const messages = Array.isArray(body?.messages) ? body.messages : null;
-    if (!messages) {
+    // Security: Enforce model
+    const ENFORCED_MODEL = 'gpt-4o-mini';
+
+    // Security: Validate messages array
+    const rawMessages = Array.isArray(body?.messages) ? body.messages : null;
+    if (!rawMessages) {
       return jsonResponse(400, { error: 'Expected messages array' });
     }
 
+    // Security: Validate message content and structure
+    const MAX_CONTENT_LENGTH = 20000;
+    const VALID_ROLES = ['system', 'user', 'assistant'];
+
+    for (const msg of rawMessages) {
+      if (!msg || typeof msg !== 'object') {
+        return jsonResponse(400, { error: 'Invalid message object' });
+      }
+      if (!msg.role || !VALID_ROLES.includes(msg.role)) {
+        return jsonResponse(400, { error: `Invalid role: ${msg.role}` });
+      }
+      if (typeof msg.content !== 'string') {
+        return jsonResponse(400, { error: 'Message content must be a string' });
+      }
+      if (msg.content.length > MAX_CONTENT_LENGTH) {
+        return jsonResponse(400, { error: 'Message content exceeds maximum length' });
+      }
+    }
+
+    // Security: Limit history to last 50 messages + system prompt
+    const MAX_HISTORY = 50;
+    let finalMessages = [];
+
+    if (rawMessages.length > 0) {
+      const systemMessage = rawMessages[0].role === 'system' ? rawMessages[0] : null;
+      const otherMessages = systemMessage ? rawMessages.slice(1) : rawMessages;
+
+      const truncatedMessages = otherMessages.length > MAX_HISTORY
+        ? otherMessages.slice(-MAX_HISTORY)
+        : otherMessages;
+
+      if (systemMessage) {
+        finalMessages = [systemMessage, ...truncatedMessages];
+      } else {
+        finalMessages = truncatedMessages;
+      }
+    }
+
     const temperature = typeof body?.temperature === 'number' ? body.temperature : 0.4;
-    const model = typeof body?.model === 'string' && body.model ? body.model : 'gpt-4o-mini';
     const responseFormat = body?.response_format;
 
     const openaiRes = await fetch('https://api.openai.com/v1/chat/completions', {
@@ -51,8 +92,8 @@ export const onRequestPost: PagesFunction = async ({ request, env }) => {
         'Authorization': `Bearer ${apiKey}`
       },
       body: JSON.stringify({
-        model,
-        messages,
+        model: ENFORCED_MODEL,
+        messages: finalMessages,
         temperature,
         ...(responseFormat ? { response_format: responseFormat } : {})
       })
@@ -69,7 +110,9 @@ export const onRequestPost: PagesFunction = async ({ request, env }) => {
     }
 
     if (!openaiRes.ok) {
-      const errorMessage = data?.error?.message || data?.error || rawText || 'OpenAI request failed';
+      // Security: Don't leak raw upstream errors unless necessary, but here we might need some info.
+      // We'll return the message but be careful.
+      const errorMessage = data?.error?.message || 'OpenAI request failed';
       return jsonResponse(openaiRes.status, { error: errorMessage });
     }
 
@@ -81,6 +124,6 @@ export const onRequestPost: PagesFunction = async ({ request, env }) => {
     return jsonResponse(200, { text });
   } catch (err: any) {
     console.error('OpenAI proxy error:', err);
-    return jsonResponse(500, { error: err?.message || 'Server error' });
+    return jsonResponse(500, { error: 'Internal Server Error' }); // Generic error
   }
 };
