@@ -1,4 +1,4 @@
-export async function onRequestOptions() {
+export const onRequestOptions = () => {
   return new Response(null, {
     status: 204,
     headers: {
@@ -7,9 +7,9 @@ export async function onRequestOptions() {
       'Access-Control-Allow-Headers': 'Content-Type, Authorization'
     }
   });
-}
+};
 
-export async function onRequestPost({ request, env }) {
+export const onRequestPost = async ({ request, env }) => {
   const corsHeaders = {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
@@ -23,7 +23,7 @@ export async function onRequestPost({ request, env }) {
     });
 
   try {
-    const apiKey = env.OPENAI_API_KEY;
+    const apiKey = env?.OPENAI_API_KEY;
     if (!apiKey) {
       return jsonResponse(500, { error: 'OPENAI_API_KEY is not set' });
     }
@@ -61,7 +61,11 @@ export async function onRequestPost({ request, env }) {
     const rawText = await openaiRes.text();
     let data = null;
     if (rawText) {
-      try { data = JSON.parse(rawText); } catch { data = null; }
+      try {
+        data = JSON.parse(rawText);
+      } catch {
+        data = null;
+      }
     }
 
     if (!openaiRes.ok) {
@@ -76,6 +80,7 @@ export async function onRequestPost({ request, env }) {
     const text = data?.choices?.[0]?.message?.content || '';
     return jsonResponse(200, { text });
   } catch (err) {
+    console.error('OpenAI proxy error:', err);
     return jsonResponse(500, { error: err?.message || 'Server error' });
   }
-}
+};
