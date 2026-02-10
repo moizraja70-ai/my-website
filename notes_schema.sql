@@ -6,12 +6,22 @@ create table if not exists notes (
   topic text,
   content text not null,
   key_points jsonb,
+  is_public boolean default false,
   updated_at timestamptz default now(),
   unique (subject_key, topic_key)
 );
 
+-- Add is_public column if it doesn't exist (idempotent migration)
+do $$
+begin
+  if not exists (select 1 from information_schema.columns where table_name = 'notes' and column_name = 'is_public') then
+    alter table notes add column is_public boolean default false;
+  end if;
+end $$;
+
 alter table notes enable row level security;
 
+-- Only allow reading. Writing must be done via Service Role key (bypasses RLS).
 create policy "Allow read notes"
 on notes
 for select
