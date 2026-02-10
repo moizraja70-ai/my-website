@@ -39,7 +39,16 @@ export const onRequestPost: PagesFunction = async ({ request, env }) => {
     if (!rawMessages) {
       return jsonResponse(400, { error: 'Expected messages array' });
     }
-    const messages = rawMessages.slice(-50);
+
+    let messages = rawMessages;
+    if (messages.length > 50) {
+      const firstMessage = messages[0];
+      if (firstMessage?.role === 'system') {
+        messages = [firstMessage, ...messages.slice(-49)];
+      } else {
+        messages = messages.slice(-50);
+      }
+    }
 
     const temperature = typeof body?.temperature === 'number' ? body.temperature : 0.4;
     const model = 'gpt-4o-mini';
