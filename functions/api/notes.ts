@@ -28,6 +28,20 @@ const parseRequest = async (request: Request) => {
   return { subject, topic };
 };
 
+const fetchWithTimeout = async (
+  input: RequestInfo | URL,
+  init: RequestInit = {},
+  timeoutMs = 8000
+) => {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    return await fetch(input, { ...init, signal: controller.signal });
+  } finally {
+    clearTimeout(timeoutId);
+  }
+};
+
 type SubjectKey = "dental_materials" | "general_embryology" | "anatomy";
 type NoteRecord = { subject: string; topic: string; content: string; key_points?: string[] | null };
 
@@ -154,12 +168,12 @@ const validateUserToken = async (
 ) => {
   if (!authHeader) return false;
   try {
-    const res = await fetch(`${supabaseUrl}/auth/v1/user`, {
+    const res = await fetchWithTimeout(`${supabaseUrl}/auth/v1/user`, {
       headers: {
         apikey: supabaseAnonKey,
         Authorization: authHeader
       }
-    });
+    }, 5000);
     return res.ok;
   } catch {
     return false;
@@ -203,40 +217,50 @@ const fetchNoteFromSupabase = async (
   url.searchParams.set("topic_key", `eq.${topicKey}`);
   url.searchParams.set("limit", "1");
 
-  const res = await fetch(url.toString(), {
-    headers: {
-      apikey: apiKey,
-      Authorization: authorization,
-      "Content-Type": "application/json"
-    }
-  });
+  try {
+    const res = await fetchWithTimeout(url.toString(), {
+      headers: {
+        apikey: apiKey,
+        Authorization: authorization,
+        "Content-Type": "application/json"
+      }
+    }, 8000);
 
-  const raw = await res.text();
-  let data: NoteRecord[] | null = null;
-  if (raw) {
-    try {
-      data = JSON.parse(raw) as NoteRecord[];
-    } catch {
-      data = null;
+    const raw = await res.text();
+    let data: NoteRecord[] | null = null;
+    if (raw) {
+      try {
+        data = JSON.parse(raw) as NoteRecord[];
+      } catch {
+        data = null;
+      }
     }
-  }
 
-  if (!res.ok) {
-    const error = data && (data as any)?.error ? (data as any).error : raw || "Supabase request failed.";
-    console.error("[notes] Supabase request failed", {
-      status: res.status,
+    if (!res.ok) {
+      const error = data && (data as any)?.error ? (data as any).error : raw || "Supabase request failed.";
+      console.error("[notes] Supabase request failed", {
+        status: res.status,
+        subjectKey,
+        topicKey,
+        message: typeof error === "string" ? error.slice(0, 200) : "unknown"
+      });
+      return { error } as const;
+    }
+
+    if (!data || !Array.isArray(data) || data.length === 0) {
+      return { note: null } as const;
+    }
+
+    return { note: data[0] } as const;
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "Supabase request failed.";
+    console.error("[notes] Supabase request threw", {
       subjectKey,
       topicKey,
-      message: typeof error === "string" ? error.slice(0, 200) : "unknown"
+      message: message.slice(0, 200)
     });
-    return { error } as const;
+    return { error: message } as const;
   }
-
-  if (!data || !Array.isArray(data) || data.length === 0) {
-    return { note: null } as const;
-  }
-
-  return { note: data[0] } as const;
 };
 
 const handleNotes = async (request: Request, env: Record<string, string | undefined>) => {
