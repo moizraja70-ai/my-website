@@ -127,16 +127,43 @@ const resolveDentalTopicKey = (topic: string): string | null => {
 const resolveAnatomyTopicKey = (topic: string): string | null => {
   const t = normalize(topic);
 
-  if (t.includes("skull bone") || t.includes("sutures")) return "skull_bones";
+  if (t.includes("pster") || t.includes("skull bone") || t.includes("suture")) return "skull_bones";
   if (t.includes("mandible")) return "mandible";
   if (t.includes("maxilla")) return "maxilla";
-  if (t.includes("zygomatic") || t.includes("cheekbone")) return "zygomatic";
-  if (t.includes("sphenoid")) return "sphenoid";
-  if (t.includes("ethmoid")) return "ethmoid";
-  if (t.includes("foramina") || t.includes("fossae")) return "foramina_fossae";
+  if (t.includes("zygoma") || t.includes("zygomatic") || t.includes("cheekbone")) return "zygomatic";
+  if (t.includes("sphenoid") || t.includes("ethmoid")) return "sphenoid_ethmoid";
+  if (t.includes("foramina") || t.includes("fossa") || t.includes("fossae")) return "foramina_fossae";
   if (t.includes("osteology") || t.includes("fracture")) return "osteology";
+  if (
+    (t.includes("head") && t.includes("neck") && t.includes("muscle")) ||
+    t.includes("mastication") ||
+    t.includes("masticator") ||
+    t.includes("facial expression") ||
+    t.includes("suprahyoid") ||
+    t.includes("infrahyoid") ||
+    t.includes("tongue")
+  ) return "head_neck_muscles";
 
   return normalizeKey(t);
+};
+
+const validateUserToken = async (
+  supabaseUrl: string,
+  supabaseAnonKey: string,
+  authHeader?: string | null
+) => {
+  if (!authHeader) return false;
+  try {
+    const res = await fetch(`${supabaseUrl}/auth/v1/user`, {
+      headers: {
+        apikey: supabaseAnonKey,
+        Authorization: authHeader
+      }
+    });
+    return res.ok;
+  } catch {
+    return false;
+  }
 };
 
 const fetchNoteFromSupabase = async (
@@ -149,8 +176,26 @@ const fetchNoteFromSupabase = async (
   const supabaseAnonKey = env.SUPABASE_ANON_KEY || env.VITE_SUPABASE_ANON_KEY;
 
   if (!supabaseUrl || !supabaseAnonKey) {
+    console.error("[notes] Missing Supabase env vars", {
+      hasUrl: Boolean(supabaseUrl),
+      hasAnonKey: Boolean(supabaseAnonKey)
+    });
     return { error: "Supabase environment variables are not configured." } as const;
   }
+
+  const isPublicPreview = subjectKey === 'dental_materials' && topicKey === 'impression';
+  const userValid = await validateUserToken(supabaseUrl, supabaseAnonKey, authHeader);
+  if (!userValid && !isPublicPreview) {
+    return { error: "AUTH_REQUIRED" } as const;
+  }
+
+  // NOTE: Always query Supabase as the end-user (anon key + user's access token).
+  // Using the service role key here would bypass RLS and defeat subscription gating.
+  const apiKey = supabaseAnonKey;
+  const authorization =
+    authHeader && authHeader.toLowerCase().startsWith("bearer ")
+      ? authHeader
+      : `Bearer ${supabaseAnonKey}`;
 
   const url = new URL(`${supabaseUrl}/rest/v1/notes`);
   url.searchParams.set("select", "subject,topic,content,key_points");
@@ -158,14 +203,9 @@ const fetchNoteFromSupabase = async (
   url.searchParams.set("topic_key", `eq.${topicKey}`);
   url.searchParams.set("limit", "1");
 
-  const authorization =
-    authHeader && authHeader.toLowerCase().startsWith("bearer ")
-      ? authHeader
-      : `Bearer ${supabaseAnonKey}`;
-
   const res = await fetch(url.toString(), {
     headers: {
-      apikey: supabaseAnonKey,
+      apikey: apiKey,
       Authorization: authorization,
       "Content-Type": "application/json"
     }
@@ -183,6 +223,12 @@ const fetchNoteFromSupabase = async (
 
   if (!res.ok) {
     const error = data && (data as any)?.error ? (data as any).error : raw || "Supabase request failed.";
+    console.error("[notes] Supabase request failed", {
+      status: res.status,
+      subjectKey,
+      topicKey,
+      message: typeof error === "string" ? error.slice(0, 200) : "unknown"
+    });
     return { error } as const;
   }
 
@@ -217,6 +263,8 @@ const handleNotes = async (request: Request, env: Record<string, string | undefi
     topicKey = resolveDentalTopicKey(topic);
   } else if (subjectKey === "anatomy") {
     topicKey = resolveAnatomyTopicKey(topic);
+  } else if (subjectKey === "general_embryology") {
+    topicKey = "summary";
   } else {
     topicKey = normalizeKey(topic);
   }
@@ -226,22 +274,45 @@ const handleNotes = async (request: Request, env: Record<string, string | undefi
   }
 
   const authHeader = request.headers.get("Authorization");
-  const result = await fetchNoteFromSupabase(env, subjectKey, topicKey, authHeader);
-  if ("error" in result) {
-    return jsonResponse(500, { error: result.error });
+  const topicKeysToTry = [topicKey];
+  if (subjectKey === "anatomy") {
+    if (topicKey === "skull_bones") topicKeysToTry.push("psterolgy");
+    if (topicKey === "sphenoid_ethmoid") {
+      topicKeysToTry.push("sphenoid", "ethmoid");
+    }
   }
 
-  if (!result.note) {
+  let note: NoteRecord | null = null;
+  let lastError: string | null = null;
+  for (const key of topicKeysToTry) {
+    const result = await fetchNoteFromSupabase(env, subjectKey, key, authHeader);
+    if ("error" in result) {
+      if (result.error === "AUTH_REQUIRED") {
+        return jsonResponse(401, { error: "Authentication required." });
+      }
+      lastError = typeof result.error === "string" ? result.error : "Supabase request failed.";
+      continue;
+    }
+    if (result.note) {
+      note = result.note;
+      break;
+    }
+  }
+
+  if (!note) {
+    if (lastError) {
+      return jsonResponse(500, { error: lastError });
+    }
     return jsonResponse(404, { error: "Notes not found." });
   }
 
-  const safeContent = stripImagesFromHtml(result.note.content || "");
+  const safeContent = stripImagesFromHtml(note.content || "");
 
   return jsonResponse(200, {
-    subject: result.note.subject || subject,
-    topic: result.note.topic || topic,
+    subject: note.subject || subject,
+    topic: note.topic || topic,
     content: safeContent,
-    keyPoints: Array.isArray(result.note.key_points) ? result.note.key_points : []
+    keyPoints: Array.isArray(note.key_points) ? note.key_points : []
   });
 };
 

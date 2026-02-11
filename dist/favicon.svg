@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Molar tooth shape -->
+  <path d="
+    M 16 8
+    C 12 8, 8 12, 8 18
+    C 8 24, 12 28, 14 32
+    C 16 36, 16 42, 17 48
+    C 18 54, 20 56, 22 56
+    C 24 56, 24 50, 26 46
+    C 28 42, 30 42, 32 46
+    C 34 50, 34 56, 36 56
+    C 38 56, 39 54, 40 50
+    C 41 46, 42 42, 42 38
+    C 42 34, 44 30, 48 26
+    C 52 22, 56 18, 56 14
+    C 56 10, 52 8, 48 8
+    C 44 8, 42 12, 38 14
+    C 36 16, 34 16, 32 14
+    C 30 12, 28 10, 26 10
+    C 24 10, 22 12, 20 12
+    C 18 12, 18 8, 16 8
+    Z"
+    fill="#38bdf8" stroke="#0284c7" stroke-width="1.5"/>
+
+  <!-- "D" letter -->
+  <text x="32" y="38" text-anchor="middle" dominant-baseline="central"
+    font-family="Inter, Arial, sans-serif" font-weight="700" font-size="22"
+    fill="#ffffff" stroke="#0369a1" stroke-width="0.5">D</text>
+</svg>
