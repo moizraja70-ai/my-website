@@ -163,6 +163,101 @@ const buildRecords = () => {
     });
   }
 
+  // --- Anatomy sub-topics (separate files in parent data/ directory) ---
+  const PARENT_DATA = path.join(ROOT, '..', 'data');
+  const anatomyExtras = [
+    { filePath: path.join(PARENT_DATA, 'cranialNervesNotes.ts'), exportName: 'CRANIAL_NERVES_NOTES', topicKey: 'cranial_nerves' },
+    { filePath: path.join(PARENT_DATA, 'headNeckMusclesNotes.ts'), exportName: 'HEAD_NECK_MUSCLES_NOTES', topicKey: 'head_neck_muscles' },
+    { filePath: path.join(PARENT_DATA, 'triangleNeckNotes.ts'), exportName: 'TRIANGLE_NECK_NOTES', topicKey: 'triangle_neck' },
+    { filePath: path.join(PARENT_DATA, 'larynxThyroidNotes.ts'), exportName: 'LARYNX_THYROID_NOTES', topicKey: 'larynx_thyroid' },
+  ];
+
+  for (const { filePath, exportName, topicKey } of anatomyExtras) {
+    try {
+      if (!fs.existsSync(filePath)) { console.warn(`Skipping ${exportName}: file not found`); continue; }
+      const data = loadExport(filePath, exportName);
+      const note = data?.overview;
+      if (!note || !note.content) continue;
+      records.push({
+        subject_key: 'anatomy',
+        topic_key: topicKey,
+        subject: 'Anatomy',
+        topic: '',
+        is_public: false,
+        content: replaceImagesWithPlaceholders(note.content, 'anatomy', topicKey),
+        key_points: note.keyPoints || note.key_points || []
+      });
+    } catch (err) {
+      console.warn(`Skipping ${exportName}:`, err.message);
+    }
+  }
+
+  // --- Tooth Morphology ---
+  try {
+    const tmPath = path.join(PARENT_DATA, 'toothMorphologyNotes.ts');
+    if (fs.existsSync(tmPath)) {
+      const TOOTH_MORPHOLOGY_NOTES = loadExport(tmPath, 'TOOTH_MORPHOLOGY_NOTES');
+      const tmNote = TOOTH_MORPHOLOGY_NOTES?.overview;
+      if (tmNote?.content) {
+        records.push({
+          subject_key: 'tooth_morphology',
+          topic_key: 'overview',
+          subject: 'Tooth Morphology',
+          topic: 'Overview',
+          is_public: false,
+          content: replaceImagesWithPlaceholders(tmNote.content, 'tooth_morphology', 'overview'),
+          key_points: tmNote.keyPoints || tmNote.key_points || []
+        });
+      }
+    }
+  } catch (err) {
+    console.warn('Skipping TOOTH_MORPHOLOGY_NOTES:', err.message);
+  }
+
+  // --- General Pathology ---
+  try {
+    const gpPath = path.join(PARENT_DATA, 'generalPathologyNotes.ts');
+    if (fs.existsSync(gpPath)) {
+      const GENERAL_PATHOLOGY_NOTES = loadExport(gpPath, 'GENERAL_PATHOLOGY_NOTES');
+      const gpNote = GENERAL_PATHOLOGY_NOTES?.summary;
+      if (gpNote?.content) {
+        records.push({
+          subject_key: 'general_pathology',
+          topic_key: 'summary',
+          subject: 'General Pathology',
+          topic: 'Summary',
+          is_public: false,
+          content: replaceImagesWithPlaceholders(gpNote.content, 'general_pathology', 'summary'),
+          key_points: gpNote.keyPoints || gpNote.key_points || []
+        });
+      }
+    }
+  } catch (err) {
+    console.warn('Skipping GENERAL_PATHOLOGY_NOTES:', err.message);
+  }
+
+  // --- Community Medicine ---
+  try {
+    const cmPath = path.join(PARENT_DATA, 'communityMedicineNotes.ts');
+    if (fs.existsSync(cmPath)) {
+      const COMMUNITY_MEDICINE_NOTES = loadExport(cmPath, 'COMMUNITY_MEDICINE_NOTES');
+      const cmNote = COMMUNITY_MEDICINE_NOTES?.summary;
+      if (cmNote?.content) {
+        records.push({
+          subject_key: 'community_medicine',
+          topic_key: 'summary',
+          subject: 'Community Medicine',
+          topic: 'Summary',
+          is_public: false,
+          content: replaceImagesWithPlaceholders(cmNote.content, 'community_medicine', 'summary'),
+          key_points: cmNote.keyPoints || cmNote.key_points || []
+        });
+      }
+    }
+  } catch (err) {
+    console.warn('Skipping COMMUNITY_MEDICINE_NOTES:', err.message);
+  }
+
   return records;
 };
 
