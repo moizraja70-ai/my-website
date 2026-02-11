@@ -1,6 +1,22 @@
 {
   "routes": [
     {
+      "routePath": "/api/admin-delete-user",
+      "mountPath": "/api",
+      "method": "OPTIONS",
+      "module": [
+        "api/admin-delete-user.ts:onRequestOptions"
+      ]
+    },
+    {
+      "routePath": "/api/admin-delete-user",
+      "mountPath": "/api",
+      "method": "POST",
+      "module": [
+        "api/admin-delete-user.ts:onRequestPost"
+      ]
+    },
+    {
       "routePath": "/api/notes",
       "mountPath": "/api",
       "method": "GET",

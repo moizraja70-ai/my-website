@@ -1,6 +1,109 @@
 var __defProp = Object.defineProperty;
 var __name = (target, value) => __defProp(target, "name", { value, configurable: true });
 
+// api/admin-delete-user.ts
+var onRequestOptions = /* @__PURE__ */ __name(() => {
+  return new Response(null, {
+    status: 204,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "POST, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type, Authorization"
+    }
+  });
+}, "onRequestOptions");
+var onRequestPost = /* @__PURE__ */ __name(async ({ request, env }) => {
+  const corsHeaders3 = {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type, Authorization"
+  };
+  const jsonResponse3 = /* @__PURE__ */ __name((status, payload) => new Response(JSON.stringify(payload), {
+    status,
+    headers: { "Content-Type": "application/json", ...corsHeaders3 }
+  }), "jsonResponse");
+  try {
+    const supabaseUrl = env.SUPABASE_URL || env.VITE_SUPABASE_URL;
+    const supabaseAnonKey = env.SUPABASE_ANON_KEY || env.VITE_SUPABASE_ANON_KEY;
+    const serviceRoleKey = env.SUPABASE_SERVICE_ROLE_KEY;
+    if (!supabaseUrl || !supabaseAnonKey || !serviceRoleKey) {
+      return jsonResponse3(500, { error: "Missing Supabase environment variables." });
+    }
+    const authHeader = request.headers.get("Authorization") || "";
+    if (!authHeader.startsWith("Bearer ")) {
+      return jsonResponse3(401, { error: "Missing Authorization header." });
+    }
+    let body;
+    try {
+      body = await request.json();
+    } catch {
+      return jsonResponse3(400, { error: "Invalid JSON body." });
+    }
+    const userId = typeof body?.userId === "string" ? body.userId : "";
+    if (!userId) {
+      return jsonResponse3(400, { error: "Missing userId." });
+    }
+    const meRes = await fetch(`${supabaseUrl}/auth/v1/user`, {
+      headers: {
+        "Content-Type": "application/json",
+        "apikey": supabaseAnonKey,
+        "Authorization": authHeader
+      }
+    });
+    if (!meRes.ok) {
+      return jsonResponse3(401, { error: "Unauthorized." });
+    }
+    const me = await meRes.json();
+    const callerId = me?.id;
+    if (!callerId) {
+      return jsonResponse3(401, { error: "Unauthorized." });
+    }
+    const profileRes = await fetch(`${supabaseUrl}/rest/v1/profiles?id=eq.${callerId}&select=role`, {
+      headers: {
+        "Content-Type": "application/json",
+        "apikey": supabaseAnonKey,
+        "Authorization": authHeader
+      }
+    });
+    if (!profileRes.ok) {
+      return jsonResponse3(403, { error: "Forbidden. Admins only." });
+    }
+    const profileData = await profileRes.json();
+    const role = Array.isArray(profileData) ? profileData?.[0]?.role : profileData?.role;
+    if (role !== "admin") {
+      return jsonResponse3(403, { error: "Forbidden. Admins only." });
+    }
+    const deleteProfileRes = await fetch(`${supabaseUrl}/rest/v1/profiles?id=eq.${userId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        "apikey": serviceRoleKey,
+        "Authorization": `Bearer ${serviceRoleKey}`
+      }
+    });
+    if (!deleteProfileRes.ok) {
+      const errText = await deleteProfileRes.text();
+      return jsonResponse3(500, { error: errText || "Failed to delete profile." });
+    }
+    const deleteAuthRes = await fetch(`${supabaseUrl}/auth/v1/admin/users/${userId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        "apikey": serviceRoleKey,
+        "Authorization": `Bearer ${serviceRoleKey}`
+      }
+    });
+    if (!deleteAuthRes.ok) {
+      const errText = await deleteAuthRes.text();
+      return jsonResponse3(500, { error: errText || "Failed to delete auth user." });
+    }
+    return jsonResponse3(200, { ok: true });
+  } catch (err) {
+    console.error("Admin delete error:", err);
+    return jsonResponse3(500, { error: err?.message || "Server error" });
+  }
+}, "onRequestPost");
+
 // api/notes.ts
 var corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -248,13 +351,13 @@ var handleNotes = /* @__PURE__ */ __name(async (request, env) => {
     keyPoints: Array.isArray(note.key_points) ? note.key_points : []
   });
 }, "handleNotes");
-var onRequestOptions = /* @__PURE__ */ __name(() => {
+var onRequestOptions2 = /* @__PURE__ */ __name(() => {
   return new Response(null, { status: 204, headers: corsHeaders });
 }, "onRequestOptions");
 var onRequestGet = /* @__PURE__ */ __name(async ({ request, env }) => {
   return handleNotes(request, env);
 }, "onRequestGet");
-var onRequestPost = /* @__PURE__ */ __name(async ({ request, env }) => {
+var onRequestPost2 = /* @__PURE__ */ __name(async ({ request, env }) => {
   return handleNotes(request, env);
 }, "onRequestPost");
 
@@ -328,10 +431,10 @@ var fetchProfile = /* @__PURE__ */ __name(async (supabaseUrl, supabaseAnonKey, a
   if (!Array.isArray(data) || data.length === 0) return null;
   return data[0];
 }, "fetchProfile");
-var onRequestOptions2 = /* @__PURE__ */ __name(() => {
+var onRequestOptions3 = /* @__PURE__ */ __name(() => {
   return new Response(null, { status: 204, headers: corsHeaders2 });
 }, "onRequestOptions");
-var onRequestPost2 = /* @__PURE__ */ __name(async ({ request, env }) => {
+var onRequestPost3 = /* @__PURE__ */ __name(async ({ request, env }) => {
   try {
     const apiKey = env?.OPENAI_API_KEY;
     if (!apiKey) {
@@ -405,8 +508,22 @@ var onRequestPost2 = /* @__PURE__ */ __name(async ({ request, env }) => {
   }
 }, "onRequestPost");
 
-// ../.wrangler/tmp/pages-ZAb6tV/functionsRoutes-0.5979214067240917.mjs
+// ../.wrangler/tmp/pages-vQHA7t/functionsRoutes-0.23518387893360682.mjs
 var routes = [
+  {
+    routePath: "/api/admin-delete-user",
+    mountPath: "/api",
+    method: "OPTIONS",
+    middlewares: [],
+    modules: [onRequestOptions]
+  },
+  {
+    routePath: "/api/admin-delete-user",
+    mountPath: "/api",
+    method: "POST",
+    middlewares: [],
+    modules: [onRequestPost]
+  },
   {
     routePath: "/api/notes",
     mountPath: "/api",
@@ -419,28 +536,28 @@ var routes = [
     mountPath: "/api",
     method: "OPTIONS",
     middlewares: [],
-    modules: [onRequestOptions]
+    modules: [onRequestOptions2]
   },
   {
     routePath: "/api/notes",
     mountPath: "/api",
     method: "POST",
     middlewares: [],
-    modules: [onRequestPost]
+    modules: [onRequestPost2]
   },
   {
     routePath: "/api/openai",
     mountPath: "/api",
     method: "OPTIONS",
     middlewares: [],
-    modules: [onRequestOptions2]
+    modules: [onRequestOptions3]
   },
   {
     routePath: "/api/openai",
     mountPath: "/api",
     method: "POST",
     middlewares: [],
-    modules: [onRequestPost2]
+    modules: [onRequestPost3]
   }
 ];
 
