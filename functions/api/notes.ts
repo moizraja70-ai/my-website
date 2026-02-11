@@ -330,12 +330,10 @@ const handleNotes = async (request: Request, env: Record<string, string | undefi
     return jsonResponse(404, { error: "Notes not found." });
   }
 
-  const safeContent = stripImagesFromHtml(note.content || "");
-
   return jsonResponse(200, {
     subject: note.subject || subject,
     topic: note.topic || topic,
-    content: safeContent,
+    content: note.content || "",
     keyPoints: Array.isArray(note.key_points) ? note.key_points : []
   });
 };
