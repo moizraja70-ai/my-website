@@ -5,6 +5,7 @@ const vm = require('vm');
 const ROOT = path.resolve(__dirname, '..');
 const NOTES_PATH = path.join(ROOT, 'data', 'notesData.ts');
 const ANATOMY_PATH = path.join(ROOT, 'data', 'anatomyNotes.ts');
+const PARENT_DATA = path.join(ROOT, '..', 'data');
 let esbuild = null;
 
 try {
@@ -163,8 +164,30 @@ const buildRecords = () => {
     });
   }
 
+  // --- Physiology (separate file in parent data/ directory) ---
+  try {
+    const physPath = path.join(PARENT_DATA, 'physiologyNotes.ts');
+    if (fs.existsSync(physPath)) {
+      const PHYSIOLOGY_NOTES = loadExport(physPath, 'PHYSIOLOGY_NOTES') || {};
+      const PHYSIOLOGY_TOPIC_LABELS = loadExport(physPath, 'PHYSIOLOGY_TOPIC_LABELS') || {};
+      for (const [topicKey, note] of Object.entries(PHYSIOLOGY_NOTES)) {
+        if (!note || !note.content) continue;
+        records.push({
+          subject_key: 'physiology',
+          topic_key: topicKey,
+          subject: 'Physiology',
+          topic: PHYSIOLOGY_TOPIC_LABELS[topicKey] || topicKey,
+          is_public: false,
+          content: note.content,
+          key_points: note.keyPoints || note.key_points || []
+        });
+      }
+    }
+  } catch (err) {
+    console.warn('Skipping PHYSIOLOGY_NOTES:', err.message);
+  }
+
   // --- Anatomy sub-topics (separate files in parent data/ directory) ---
-  const PARENT_DATA = path.join(ROOT, '..', 'data');
   const anatomyExtras = [
     { filePath: path.join(PARENT_DATA, 'cranialNervesNotes.ts'), exportName: 'CRANIAL_NERVES_NOTES', topicKey: 'cranial_nerves' },
     { filePath: path.join(PARENT_DATA, 'headNeckMusclesNotes.ts'), exportName: 'HEAD_NECK_MUSCLES_NOTES', topicKey: 'head_neck_muscles' },
