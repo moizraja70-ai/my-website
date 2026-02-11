@@ -132,7 +132,7 @@ const buildRecords = () => {
       subject: 'Dental Materials',
       topic: '',
       is_public: isPublic,
-      content: replaceImagesWithPlaceholders(note.content, 'dental_materials', topicKey),
+      content: note.content,
       key_points: note.keyPoints || note.key_points || []
     });
   }
@@ -145,7 +145,7 @@ const buildRecords = () => {
       subject: 'General Embryology',
       topic: 'Summary',
       is_public: false,
-      content: replaceImagesWithPlaceholders(emb.content, 'general_embryology', 'summary'),
+      content: emb.content,
       key_points: emb.keyPoints || emb.key_points || []
     });
   }
@@ -158,7 +158,7 @@ const buildRecords = () => {
       subject: 'Anatomy',
       topic: '',
       is_public: false,
-      content: replaceImagesWithPlaceholders(note.content, 'anatomy', topicKey),
+      content: note.content,
       key_points: note.keyPoints || note.key_points || []
     });
   }
@@ -184,7 +184,7 @@ const buildRecords = () => {
         subject: 'Anatomy',
         topic: '',
         is_public: false,
-        content: replaceImagesWithPlaceholders(note.content, 'anatomy', topicKey),
+        content: note.content,
         key_points: note.keyPoints || note.key_points || []
       });
     } catch (err) {
@@ -205,7 +205,7 @@ const buildRecords = () => {
           subject: 'Tooth Morphology',
           topic: 'Overview',
           is_public: false,
-          content: replaceImagesWithPlaceholders(tmNote.content, 'tooth_morphology', 'overview'),
+          content: tmNote.content,
           key_points: tmNote.keyPoints || tmNote.key_points || []
         });
       }
@@ -227,7 +227,7 @@ const buildRecords = () => {
           subject: 'General Pathology',
           topic: 'Summary',
           is_public: false,
-          content: replaceImagesWithPlaceholders(gpNote.content, 'general_pathology', 'summary'),
+          content: gpNote.content,
           key_points: gpNote.keyPoints || gpNote.key_points || []
         });
       }
@@ -249,7 +249,7 @@ const buildRecords = () => {
           subject: 'Community Medicine',
           topic: 'Summary',
           is_public: false,
-          content: replaceImagesWithPlaceholders(cmNote.content, 'community_medicine', 'summary'),
+          content: cmNote.content,
           key_points: cmNote.keyPoints || cmNote.key_points || []
         });
       }
@@ -295,13 +295,28 @@ const main = async () => {
   console.log(`Seeding ${records.length} notes...`);
   for (let i = 0; i < records.length; i += batchSize) {
     const batch = records.slice(i, i + batchSize);
-    await upsertBatch(supabaseUrl, supabaseKey, batch);
-    console.log(`Uploaded ${Math.min(i + batchSize, records.length)}/${records.length}`);
+    console.log(`Uploading batch ${i} - ${i + batchSize}...`);
+    try {
+      await upsertBatch(supabaseUrl, supabaseKey, batch);
+      console.log(`Uploaded ${Math.min(i + batchSize, records.length)}/${records.length}`);
+    } catch (e) {
+      console.log("ERROR IN BATCH:", e);
+      throw e;
+    }
   }
   console.log('Done.');
 };
 
-main().catch((err) => {
-  console.error(err);
+main().catch(async (err) => {
+  console.log("FATAL ERROR:");
+  console.log(err);
+  if (err.message) console.log(err.message);
+  if (err.response) {
+    try {
+      console.log(await err.response.text());
+    } catch (e) {
+      console.log("Could not read response text");
+    }
+  }
   process.exit(1);
 });
