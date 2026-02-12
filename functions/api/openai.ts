@@ -97,6 +97,50 @@ const fetchProfile = async (
   return data[0] as ProfileRow;
 };
 
+const MAX_HISTORY = 50;
+const MAX_CHARS = 20000;
+const VALID_ROLES = new Set(["system", "user", "assistant"]);
+
+const validateMessages = (messages: any[]): { validMessages: any[]; error?: string } => {
+  if (!Array.isArray(messages)) {
+    return { validMessages: [], error: "Expected messages array" };
+  }
+
+  // Truncate to last N messages
+  const recentMessages = messages.slice(-MAX_HISTORY);
+
+  const validMessages = [];
+  let totalChars = 0;
+
+  for (const msg of recentMessages) {
+    if (!msg || typeof msg !== "object") return { validMessages: [], error: "Invalid message format" };
+
+    const role = msg.role;
+    const content = msg.content;
+
+    if (!VALID_ROLES.has(role)) {
+      return { validMessages: [], error: `Invalid role: ${role}` };
+    }
+
+    if (typeof content !== "string") {
+      return { validMessages: [], error: "Content must be a string" };
+    }
+
+    totalChars += content.length;
+    if (totalChars > MAX_CHARS) {
+      return { validMessages: [], error: `Total content length exceeds limit of ${MAX_CHARS} characters` };
+    }
+
+    validMessages.push({ role, content });
+  }
+
+  if (validMessages.length === 0) {
+    return { validMessages: [], error: "No valid messages found" };
+  }
+
+  return { validMessages };
+};
+
 export const onRequestOptions: PagesFunction = () => {
   return new Response(null, { status: 204, headers: corsHeaders });
 };
@@ -135,10 +179,14 @@ export const onRequestPost: PagesFunction = async ({ request, env }) => {
       return jsonResponse(400, { error: "Invalid JSON body" });
     }
 
-    const messages = Array.isArray(body?.messages) ? body.messages : null;
-    if (!messages) {
-      return jsonResponse(400, { error: "Expected messages array" });
+    const rawMessages = Array.isArray(body?.messages) ? body.messages : null;
+    const { validMessages, error: validationError } = validateMessages(rawMessages);
+
+    if (validationError || !validMessages) {
+      return jsonResponse(400, { error: validationError || "Invalid messages" });
     }
+
+    const messages = validMessages;
 
     const allowedModels = String(env?.OPENAI_ALLOWED_MODELS || "gpt-4o-mini")
       .split(",")
