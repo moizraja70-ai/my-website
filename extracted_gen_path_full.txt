@@ -1,0 +1,1436 @@
+GENERAL PATHOLOGY NOTES
+Based on BRS Pathology (5th Edition)
+📚 REFERENCE: BRS Pathology (Board Review Series) 5th Edition by Arthur S. Schneider & Philip A. Szanto
+TABLE OF CONTENTS
+Chapter 1: Cellular Reaction to Injury
+Chapter 2: Inflammation
+Chapter 3: Hemodynamic Dysfunction
+Chapter 4: Genetic Disorders
+Chapter 5: Immune Dysfunction
+Chapter 6: Neoplasia
+Chapter 7: Environmental Pathology
+Chapter 8: Nutritional Disorders
+CHAPTER 1: CELLULAR REACTION TO INJURY
+🔬 OVERVIEW
+Definition: Cellular reaction to injury encompasses all the morphologic and functional changes that cells undergo when exposed to stress or noxious stimuli.
+Clinical Importance: Understanding cell injury is fundamental to pathology as it explains the basis of all disease processes. Recognizing reversible vs irreversible injury helps determine treatment windows.
+I. ADAPTATION TO ENVIRONMENTAL STRESS
+A. Hypertrophy
+Increase in size of organ/tissue due to increase in cell SIZE (not number)
+↑ Protein synthesis and ↑ size/number of intracellular organelles
+Examples: Skeletal muscle with exercise, Left ventricle in hypertension
+KEY POINT: Result of increased WORKLOAD
+B. Hyperplasia
+Increase in organ/tissue size due to increase in cell NUMBER
+Examples: Glandular proliferation in breast during pregnancy
+Often occurs TOGETHER with hypertrophy (e.g., uterus in pregnancy)
+KEY POINT: Only cells capable of division can undergo hyperplasia
+C. Aplasia
+FAILURE of cell production
+Fetal development: Results in AGENESIS (absence of organ)
+Later in life: Caused by permanent loss of precursor cells (e.g., bone marrow)
+D. Hypoplasia
+DECREASE in cell production (less extreme than aplasia)
+Examples: Partial lack of gonadal growth in Turner syndrome, Klinefelter syndrome
+E. Atrophy
+Decrease in organ/tissue size due to decrease in mass of PREEXISTING cells
+Causes: Disuse, nutritional/oxygen deprivation, ↓ endocrine stimulation, aging, denervation
+Features: Autophagic granules (vacuoles with debris from degraded organelles)
+Mechanism: Ubiquitin-proteasome pathway of protein degradation
+F. Metaplasia
+Definition: Replacement of one differentiated tissue by another
+Types:
+1. Squamous Metaplasia:
+Columnar → Squamous epithelium
+Sites: Cervix (squamocolumnar junction), Bronchus, Endometrium, Pancreatic ducts
+Causes: Chronic irritation (tobacco), Vitamin A deficiency
+KEY POINT: Often REVERSIBLE
+2. Osseous Metaplasia:
+Formation of NEW BONE at sites of tissue injury
+Cartilaginous metaplasia may also occur
+3. Myeloid Metaplasia (Extramedullary Hematopoiesis):
+Proliferation of hematopoietic tissue at sites OTHER than bone marrow
+Sites: Liver, Spleen
+II. HYPOXIC CELL INJURY
+A. Causes of Hypoxia
+ISCHEMIA (most common) - obstruction of arterial blood flow
+ANEMIA - reduction in oxygen-carrying RBCs
+CARBON MONOXIDE poisoning - ↓ oxygen-carrying capacity of hemoglobin
+DECREASED PERFUSION - cardiac failure, hypotension, shock
+POOR OXYGENATION - pulmonary disease
+B. Early Stage (REVERSIBLE)
+First affected: MITOCHONDRIA → ↓ oxidative phosphorylation → ↓ ATP synthesis
+Consequences of ↓ ATP:
+Cell membrane pump FAILURE (Na+-K+-ATPase) → ↑ intracellular Na+ and water, ↓ K+
+   - Results in CELLULAR SWELLING (hydropic change)
+   - Endoplasmic reticulum swelling (first ultrastructural change)
+   - Mitochondrial swelling (reversible → irreversible)
+RIBOSOME DISAGGREGATION → failure of protein synthesis
+↑ GLYCOLYSIS → lactate accumulation → ↓ pH → chromatin clumping
+C. Late Stage
+MEMBRANE DAMAGE to plasma and organelle membranes
+Reversible signs: Myelin figures (whorl-like structures), Cell blebs (surface deformity)
+D. Cell Death (IRREVERSIBLE)
+POINT OF NO RETURN: Irreversible membrane damage → massive CALCIUM INFLUX
+Extensive mitochondrial calcification
+Intracellular enzymes released into circulation (basis of lab tests)
+💡 HIGH-YIELD: Cardiac enzymes (LDH, CK, troponin) are released due to membrane damage in myocardial necrosis
+III. FREE RADICAL INJURY
+A. Definition
+Free radicals: Chemical species with unpaired electrons that damage cells by lipid peroxidation, cross-linking proteins, and DNA fragmentation
+B. Sources
+Normal metabolism (oxidative phosphorylation)
+Radiation
+Inflammation (respiratory burst in neutrophils)
+Chemicals and drugs
+Reperfusion injury
+C. Mechanisms of Damage
+LIPID PEROXIDATION of cell membranes
+CROSS-LINKING of proteins
+FRAGMENTATION of DNA
+D. Protection/Scavengers
+SUPEROXIDE DISMUTASE (SOD): Converts superoxide to H2O2
+CATALASE: Converts H2O2 to water
+GLUTATHIONE PEROXIDASE: Removes H2O2
+VITAMINS E and C: Antioxidants
+IV. CHEMICAL CELL INJURY
+Direct toxicity to cellular components
+Conversion to toxic metabolites (e.g., CCl4 → CCl3 free radical)
+Examples: Acetaminophen (liver), Carbon tetrachloride
+V. NECROSIS
+A. Definition
+Necrosis: Morphologic changes that follow cell death in living tissue; involves enzymatic digestion of dead cells
+B. Types of Necrosis
+1. COAGULATIVE NECROSIS:
+Most common type
+Due to ISCHEMIA in most organs (EXCEPT brain)
+Preservation of cell OUTLINE (ghost cells)
+Increased eosinophilia (loss of RNA/DNA)
+Examples: Myocardial infarction, Renal infarction
+2. LIQUEFACTIVE NECROSIS:
+Tissue transformed into viscous liquid
+CNS ischemia (brain infarction)
+Suppurative infections (abscess formation)
+Due to rich lipid content and lack of structural framework
+3. CASEOUS NECROSIS:
+Cheese-like (caseous) appearance
+Characteristic of TUBERCULOSIS
+Amorphous, eosinophilic debris
+Associated with granulomatous inflammation
+4. FAT NECROSIS:
+Specific to adipose tissue
+Mechanisms:
+   a) Enzymatic (pancreatitis) - lipase releases fatty acids → calcium soaps (SAPONIFICATION)
+   b) Traumatic (breast) - direct injury to fat
+Chalky white appearance due to calcium deposits
+Can be visualized on X-ray
+5. FIBRINOID NECROSIS:
+Immune-mediated vascular damage
+Deposition of IMMUNE COMPLEXES and fibrin in vessel walls
+Brightly eosinophilic ("fibrin-like")
+Examples: Polyarteritis nodosa, Malignant hypertension
+C. Nuclear Changes in Necrosis
+PYKNOSIS: Nuclear shrinkage and increased basophilia
+KARYORRHEXIS: Nuclear fragmentation
+KARYOLYSIS: Fading of basophilia due to DNA digestion
+💡 HIGH-YIELD: These nuclear changes are IRREVERSIBLE signs of cell death
+VI. APOPTOSIS
+A. Definition
+Apoptosis: Programmed cell death - energy-dependent, genetically regulated process of cell suicide
+B. Features (Contrast with Necrosis)
+C. Physiologic Apoptosis
+Organogenesis (embryonic development)
+Hormone-dependent involution (menstrual cycle, lactation)
+Deletion of autoreactive T cells in thymus
+Cell turnover in proliferating tissues
+D. Pathologic Apoptosis
+DNA damage (p53-mediated)
+Viral infections
+Atrophy
+Tumor cell death
+E. Mechanisms
+1. Intrinsic (Mitochondrial) Pathway:
+Triggered by: DNA damage, growth factor deprivation, oxidative stress
+Bcl-2 family proteins regulate mitochondrial permeability
+Cytochrome c release → caspase activation
+p53 promotes apoptosis by transcription of bax gene
+2. Extrinsic (Death Receptor) Pathway:
+Triggered by Fas ligand and TNF
+Fas-Fas ligand interaction important in immune regulation
+Direct caspase activation
+💡 HIGH-YIELD: Caspases are proteases that execute apoptosis. bcl-2 is anti-apoptotic; bax is pro-apoptotic
+VII. REVERSIBLE CELLULAR CHANGES AND ACCUMULATIONS
+A. Cellular Swelling (Hydropic Change)
+First manifestation of cell injury
+Due to failure of Na+-K+ pump → water influx
+Small clear vacuoles in cytoplasm
+Reversible with restoration of blood flow
+B. Fatty Change (Steatosis)
+Accumulation of intracellular triglycerides
+Most common in LIVER (also heart, kidney)
+Causes: Alcoholism, Diabetes, Obesity, Protein malnutrition, Anoxia, Toxins
+Mechanism: Imbalance between uptake, utilization, and mobilization of fat
+Appearance: Clear vacuoles in cytoplasm (fat dissolves during processing)
+Nucleus pushed to periphery (signet ring appearance)
+C. Hyaline Change
+Definition: Nonspecific term for any glassy, homogeneous, pink (eosinophilic) appearance
+Examples:
+   - Hyaline arteriolosclerosis (vessels in hypertension/diabetes)
+   - Mallory bodies (alcoholic liver disease)
+   - Russell bodies (plasma cells)
+D. Pigment Accumulations
+1. ENDOGENOUS PIGMENTS:
+LIPOFUSIN ("wear-and-tear" pigment):
+   - Brown, granular, perinuclear
+   - Indigestible material from autophagocytosis
+   - Associated with AGING and atrophy
+   - Example: Brown atrophy of heart
+MELANIN:
+   - Black-brown pigment from tyrosine
+   - Synthesized by melanocytes
+   - Increased in melanocytic tumors
+HEMOSIDERIN:
+   - Golden-brown, granular
+   - Iron storage form (ferritin aggregates)
+   - Stains blue with Prussian blue
+   - Local hemosiderosis: Local hemorrhage (bruise)
+   - Systemic hemosiderosis: Excess body iron
+   - HEMOCHROMATOSIS: Hereditary (HFE gene) or secondary iron overload
+BILIRUBIN:
+   - Yellow pigment from heme catabolism
+   - JAUNDICE: Yellow discoloration from hyperbilirubinemia
+   - Types: Hemolytic, Hepatocellular, Obstructive
+2. EXOGENOUS PIGMENTS:
+Carbon/anthracotic pigment (lungs - air pollution)
+Tattoo pigments
+Asbestos fibers
+E. Pathologic Calcifications
+1. DYSTROPHIC CALCIFICATION:
+Calcium deposition in DAMAGED or DEAD tissues
+NORMAL serum calcium levels
+Examples: Atherosclerotic plaques, Old TB lesions, Fat necrosis
+2. METASTATIC CALCIFICATION:
+Calcium deposition in NORMAL tissues
+ELEVATED serum calcium (hypercalcemia)
+Causes of hypercalcemia:
+   - Hyperparathyroidism
+   - Malignancy with bone metastases
+   - Vitamin D toxicity
+   - Sarcoidosis
+Sites: Kidney, Lungs, Stomach, Blood vessels
+VIII. DISORDERS OF PROTEIN FOLDING
+A. Basic Concept
+Protein misfolding leads to: Loss of function OR Toxic gain of function
+B. Examples
+Alzheimer disease: β-amyloid and tau protein aggregates
+Parkinson disease: α-synuclein (Lewy bodies)
+Prion diseases: PrPsc (Creutzfeldt-Jakob disease)
+Cystic fibrosis: ΔF508 mutation in CFTR protein
+α1-antitrypsin deficiency: Misfolded protein accumulates in hepatocytes
+📋 CHAPTER 1 QUICK REVISION
+HYPERTROPHY = ↑ cell SIZE; HYPERPLASIA = ↑ cell NUMBER
+ATROPHY = ↓ cell size (disuse, denervation, ↓ hormones)
+METAPLASIA = one tissue type replaces another (often reversible)
+Hypoxic injury: MITOCHONDRIA affected first → ↓ ATP → pump failure → cell swelling
+REVERSIBLE injury: ER swelling, myelin figures, cell blebs
+IRREVERSIBLE injury: Membrane damage, calcium influx, nuclear changes (pyknosis, karyorrhexis, karyolysis)
+COAGULATIVE necrosis: Ischemia in solid organs (heart, kidney)
+LIQUEFACTIVE necrosis: Brain, abscesses
+CASEOUS necrosis: TB (cheese-like)
+FAT necrosis: Pancreas, breast (saponification)
+APOPTOSIS = programmed cell death (NO inflammation)
+FATTY CHANGE: Most common in LIVER (alcohol, diabetes)
+LIPOFUSIN = "wear-and-tear" pigment (aging)
+HEMOSIDERIN = iron storage (Prussian blue positive)
+DYSTROPHIC calcification: Dead/damaged tissue, NORMAL calcium
+METASTATIC calcification: Normal tissue, HIGH calcium
+CHAPTER 2: INFLAMMATION
+🔬 OVERVIEW
+Definition: Inflammation is a vascular response to injury involving exudation of fluid, attraction of leukocytes, and activation of chemical mediators.
+Cardinal Signs (Celsus): Rubor (redness), Dolor (pain), Calor (heat), Tumor (swelling), Functio laesa (loss of function)
+Causes: Infection, Trauma, Physical injury, Chemical injury, Immunologic injury, Tissue death
+II. ACUTE INFLAMMATION
+A. Adhesion Molecules
+Role: Mediate leukocyte-endothelial interactions
+Three Families:
+SELECTINS:
+   - E-selectin, P-selectin (endothelium)
+   - L-selectin (leukocytes)
+   - Bind to sialyl-Lewis X
+   - Mediate ROLLING
+IMMUNOGLOBULIN FAMILY:
+   - ICAM-1, ICAM-2, VCAM
+   - Bind to integrins
+   - Mediate FIRM ADHESION
+INTEGRINS:
+   - LFA-1, MAC-1, VLA-4 (leukocytes)
+   - Bind to Ig-family proteins
+   - Mediate TRANSENDOTHELIAL MIGRATION
+B. Vasoactive Changes
+Brief vasoconstriction → VASODILATION of arterioles, capillaries, venules
+↑ Blood flow → REDNESS (rubor) and HEAT (calor)
+↑ Vascular permeability → EDEMA (tumor)
+Mechanisms: Endothelial cell contraction, Direct endothelial injury
+C. Inflammatory Cells
+NEUTROPHILS (First 24 hours):
+   - Most prominent in early acute inflammation
+   - Phagocytosis and killing of bacteria
+   - NEUTROPHILIA in peripheral blood
+   - BAND NEUTROPHILS (immature forms) indicate acute infection
+MONOCYTES/MACROPHAGES (After 2-3 days):
+   - Replace neutrophils
+   - Longer lived, can proliferate in tissue
+   - Phagocytosis of larger particles, debris
+   - MONOCYTOSIS in TB, brucellosis, typhus
+LYMPHOCYTES:
+   - Prominent in VIRAL infections
+   - Also in chronic inflammation
+D. Leukocyte Events (The Migration Cascade)
+1. MARGINATION: Leukocytes move to periphery of vessel
+2. ROLLING: Selectin-mediated, reversible
+3. ACTIVATION: Chemokines activate integrins on leukocytes
+4. ADHESION: Integrin-mediated firm attachment
+5. DIAPEDESIS: Migration through vessel wall (ICAM-1, PECAM-1)
+6. CHEMOTAXIS: Directed movement toward chemoattractants
+7. PHAGOCYTOSIS: Recognition, engulfment, killing
+E. Chemotactic Factors
+Bacterial products (N-formyl methionine peptides)
+C5a (complement component)
+Leukotriene B4 (LTB4)
+Chemokines (IL-8)
+F. Phagocytosis and Killing
+RECOGNITION:
+   - Opsonins enhance phagocytosis (IgG, C3b)
+   - Toll-like receptors (TLRs) recognize PAMPs
+KILLING MECHANISMS:
+   - OXYGEN-DEPENDENT (respiratory burst):
+       • NADPH oxidase → superoxide → H2O2 → hypochlorous acid (HOCl)
+       • Myeloperoxidase + H2O2 + Cl- → HOCl (most potent)
+   - OXYGEN-INDEPENDENT:
+       • Lysozyme, Lactoferrin, Acid hydrolases, Defensins
+💡 HIGH-YIELD: Chronic granulomatous disease (CGD) = defect in NADPH oxidase → recurrent infections
+G. Chemical Mediators
+III. CHRONIC INFLAMMATION
+A. Characteristics
+Duration: Weeks to years
+Cells: Macrophages, Lymphocytes, Plasma cells (NOT neutrophils)
+Tissue destruction and repair occur simultaneously
+Often follows acute inflammation or begins insidiously
+B. Causes
+Persistent infections (TB, fungi, intracellular bacteria)
+Prolonged exposure to toxic agents (silica, asbestos)
+Autoimmune diseases (RA, SLE)
+Foreign bodies
+C. Granulomatous Inflammation
+Definition: Specialized form of chronic inflammation characterized by granulomas
+Granuloma: Aggregate of activated macrophages (epithelioid cells) surrounded by lymphocytes
+Types:
+   1. IMMUNE GRANULOMAS: Antigen-presenting cells activate CD4+ T cells → Th1 response → IFN-γ activation of macrophages
+       • Examples: TB, Sarcoidosis
+   2. FOREIGN BODY GRANULOMAS: No immune mechanism
+       • Examples: Sutures, talc, silica
+Morphology:
+   - Central: Caseous necrosis (in TB) or foreign material
+   - Epithelioid macrophages (activated, abundant cytoplasm)
+   - Multinucleated giant cells (Langhans type in TB, foreign body type)
+   - Peripheral: Lymphocytes, fibroblasts
+Diseases with Granulomas:
+   - Tuberculosis (caseating)
+   - Sarcoidosis (non-caseating)
+   - Crohn disease
+   - Syphilis
+   - Leprosy
+   - Fungal infections
+💡 HIGH-YIELD: Langhans giant cells: Nuclei arranged in horseshoe pattern (TB). Foreign body giant cells: Nuclei scattered randomly
+IV. TISSUE REPAIR
+A. Regeneration
+Definition: Replacement of lost cells by proliferation of residual cells
+Labile tissues: Continuously dividing (skin, gut, bone marrow)
+Stable tissues: Can regenerate if stimulated (liver, kidney, pancreas)
+Permanent tissues: Cannot regenerate (neurons, cardiac muscle, skeletal muscle)
+B. Healing by Repair (Fibrosis)
+Occurs when tissue cannot regenerate
+Replacement by CONNECTIVE TISSUE (scar)
+Steps:
+   1. Formation of granulation tissue
+   2. Collagen deposition
+   3. Scar maturation
+C. Granulation Tissue
+Highly vascular, edematous, pink, granular appearance
+Components:
+   - New blood vessels (angiogenesis)
+   - Fibroblasts
+   - Inflammatory cells
+   - Loose extracellular matrix
+Functions: Fills defects, provides nutrients for healing
+D. Wound Healing
+PRIMARY UNION (First intention):
+   - Clean, surgical incision with approximation
+   - Minimal scarring
+   - Steps: Clot formation → Epidermal regeneration → Dermal repair
+SECONDARY UNION (Second intention):
+   - Large wounds with tissue loss, infection
+   - More extensive granulation tissue
+   - Wound contraction (myofibroblasts)
+   - Larger scar
+E. Complications of Wound Healing
+Infection
+Wound dehiscence (separation)
+Exuberant granulation (proud flesh)
+Keloid formation (excessive collagen, especially in African Americans)
+Contractures (limit function, especially over joints)
+📋 CHAPTER 2 QUICK REVISION
+Cardinal signs: Rubor, Dolor, Calor, Tumor, Functio laesa
+SELECTINS mediate ROLLING; INTEGRINS mediate FIRM ADHESION
+NEUTROPHILS first 24 hours; MONOCYTES after 2-3 days
+Migration cascade: Margination → Rolling → Activation → Adhesion → Diapedesis → Chemotaxis → Phagocytosis
+Opsonins: IgG and C3b enhance phagocytosis
+Respiratory burst: NADPH oxidase → superoxide → H2O2 → HOCl (myeloperoxidase)
+CGD = defective NADPH oxidase
+HISTAMINE = first mediator (vasodilation, ↑ permeability)
+C5a and LTB4 = potent chemoattractants
+Chronic inflammation: Macrophages, lymphocytes, plasma cells
+GRANULOMA = epithelioid macrophages + lymphocytes
+Caseating granulomas = TB; Non-caseating = Sarcoidosis
+Labile tissues regenerate; Permanent tissues scar
+Granulation tissue = new vessels + fibroblasts + inflammatory cells
+Keloid = excessive collagen in African Americans
+CHAPTER 3: HEMODYNAMIC DYSFUNCTION
+🔬 OVERVIEW
+Definition: Hemodynamic dysfunction encompasses abnormalities in blood flow including hemorrhage, hyperemia, thrombosis, embolism, infarction, edema, and shock.
+I. HEMORRHAGE
+A. Definitions
+HEMORRHAGE: Escape of blood from vasculature
+HEMATOMA: Localized collection of blood in tissue
+HEMOTHORAX: Blood in pleural cavity
+HEMOPERICARDIUM: Blood in pericardial cavity
+HEMARthROSIS: Blood in joint space
+PETECHIAE: Small (1-2 mm) hemorrhages
+PURPURA: Larger (3-5 mm) hemorrhages
+ECCHYMOSES: Large (>1-2 cm) hemorrhages (bruises)
+B. Causes
+Vessel wall defect (trauma, inflammation)
+Coagulation disorder
+Platelet abnormality
+II. HYPEREMIA
+A. Active Hyperemia (Hyperemia)
+Increased blood INFLOW due to arteriolar dilation
+Physiologic: Exercise, blushing
+Pathologic: Inflammation
+B. Passive Hyperemia (Congestion)
+Impaired blood OUTFLOW due to venous obstruction
+ACUTE: Acute right heart failure → acute hepatic congestion (nutmeg liver)
+CHRONIC: Chronic right heart failure → cardiac cirrhosis
+Morphology:
+   - Engorged, cyanotic tissue
+   - Centrilobular necrosis (liver)
+   - Hemosiderin-laden macrophages ("heart failure cells" in lungs)
+III. INFARCTION
+A. Definition
+Infarction: Area of ischemic necrosis caused by occlusion of arterial supply or venous drainage
+B. Types
+COAGULATIVE infarct: Most organs (heart, kidney, spleen) - occlusion of arterial supply
+LIQUEFACTIVE infarct: Brain - ischemia
+HEMORRHAGIC infarct: Lung, intestine - dual circulation or loose tissue
+C. Factors Influencing Infarct Development
+Nature of vascular supply (end-arteries vs collateral circulation)
+Rate of occlusion (slow allows collateral development)
+Tissue vulnerability to hypoxia (neurons most sensitive)
+Oxygen content of blood (anemia increases risk)
+💡 HIGH-YIELD: Brain infarct = liquefactive; Heart infarct = coagulative; Lung infarct = hemorrhagic
+IV. THROMBOSIS
+A. Definitions
+THROMBUS: Solid mass formed from blood constituents within vasculature during life
+THROMBOSIS: Process of thrombus formation
+POSTMORTEM CLOT: Forms after death (NOT a thrombus)
+B. Virchow Triad (Risk Factors)
+ENDOTHELIAL INJURY:
+   - Most important factor
+   - Atherosclerosis, trauma, inflammation
+   - Exposes subendothelium (collagen, vWF)
+STASIS OR TURBULENCE:
+   - Atrial fibrillation, immobilization, varicose veins
+   - Prevents washout of activated clotting factors
+HYPERCOAGULABILITY:
+   - Primary (genetic): Factor V Leiden, Prothrombin G20210A, Antithrombin III deficiency
+   - Secondary (acquired): Malignancy, pregnancy, OCPs, smoking
+C. Thrombus Formation
+1. Platelet adhesion: vWF binds to exposed collagen → platelet glycoprotein Ib
+2. Platelet activation: Shape change, granule release (ADP, TXA2)
+3. Platelet aggregation: GP IIb-IIIa links platelets via fibrinogen
+4. Coagulation cascade activation: Thrombin generation
+5. Fibrin formation: Stabilizes platelet plug
+D. Lines of Zahn
+Alternating pale (platelets/fibrin) and dark (RBCs) bands in thrombus
+Significance: Indicates thrombus formed in flowing blood (vs postmortem clot)
+E. Fate of Thrombus
+DISSOLUTION: Fibrinolysis by plasmin
+ORGANIZATION: Ingrowth of smooth muscle and fibroblasts → recanalization
+CALCIFICATION: Dystrophic calcification
+EMBOLIZATION: Thrombus breaks off and travels
+F. Clinical Consequences
+Occlusion of vessel → ischemia/infarction
+Embolization
+Thrombosis on cardiac valves (vegetations)
+💡 HIGH-YIELD: Factor V Leiden = most common cause of hereditary thrombophilia; APC resistance
+V. EMBOLISM
+A. Definition
+Embolism: Intravascular solid, liquid, or gaseous mass carried by blood to distant site
+B. Types of Emboli
+THROMBOEMBOLISM (most common):
+   - Venous → Pulmonary embolism (PE)
+       • Source: Deep vein thrombosis (DVT) of legs
+       • Saddle embolus: Large PE at bifurcation (sudden death)
+   - Arterial → Systemic embolism
+       • Source: Left heart (AF, MI, endocarditis)
+       • Sites: Brain, kidney, spleen, lower extremities
+FAT EMBOLISM:
+   - Long bone fractures, trauma to fatty tissue
+   - 1-3 days after injury
+   - Symptoms: Respiratory distress, neurologic symptoms, petechial rash
+   - Fat droplets in urine (fat globules in retinal vessels)
+AIR EMBOLISM:
+   - Neck wounds, chest trauma, surgical procedures
+   - >100 mL air can be fatal
+   - Decompression sickness ("the bends"): N2 bubbles in tissues
+AMNIOTIC FLUID EMBOLISM:
+   - Rare, catastrophic complication of labor
+   - Fetal cells, hair, debris enter maternal circulation
+   - DIC, respiratory failure
+VI. EDEMA
+A. Definition
+Edema: Accumulation of excess fluid in interstitial spaces
+B. Types
+TRANSUDATE (hydrostatic pressure ↑ or oncotic pressure ↓):
+   - Low protein (<3 g/dL)
+   - Specific gravity <1.015
+   - Causes: CHF, nephrotic syndrome, cirrhosis
+EXUDATE (vascular permeability ↑):
+   - High protein (>3 g/dL)
+   - Specific gravity >1.015
+   - Causes: Inflammation, infection, malignancy
+C. Mechanisms
+↑ Hydrostatic pressure (CHF, venous obstruction)
+↓ Oncotic pressure (nephrotic syndrome, liver disease, protein malnutrition)
+↑ Vascular permeability (inflammation)
+Lymphatic obstruction (filariasis, malignancy)
+Sodium retention (renal failure)
+D. Clinical Manifestations
+Pitting edema: Pressure leaves indentation
+Anasarca: Massive generalized edema
+Pulmonary edema: Life-threatening (left heart failure)
+Cerebral edema: Life-threatening (herniation)
+VII. SHOCK
+A. Definition
+Shock: Systemic hypoperfusion causing tissue hypoxia and cellular injury
+B. Types
+HYPOVOLEMIC SHOCK:
+   - ↓ Blood volume
+   - Causes: Hemorrhage, burns, severe dehydration
+   - Most common type
+CARDIOGENIC SHOCK:
+   - ↓ Cardiac output
+   - Causes: MI, arrhythmias, valvular disease, cardiac tamponade
+SEPTIC SHOCK:
+   - Systemic inflammatory response to infection
+   - Endotoxin (LPS) from Gram-negative bacteria
+   - Early: Vasodilation, warm skin
+   - Late: Vasoconstriction, cold skin, DIC
+ANAPHYLACTIC SHOCK:
+   - Systemic vasodilation (histamine)
+   - Type I hypersensitivity
+NEUROGENIC SHOCK:
+   - Loss of vascular tone
+   - Spinal cord injury
+C. Stages of Shock
+1. INITIAL (non-progressive): Compensatory mechanisms maintain perfusion
+2. PROGRESSIVE: Tissue hypoperfusion, acidosis, organ dysfunction
+3. IRREVERSIBLE: Cellular damage, multi-organ failure, death
+D. Complications
+Acute respiratory distress syndrome (ARDS)
+Acute tubular necrosis (ATN)
+Disseminated intravascular coagulation (DIC)
+Multi-organ failure
+📋 CHAPTER 3 QUICK REVISION
+Petechiae (<2mm), Purpura (3-5mm), Ecchymoses (>1-2cm)
+Active hyperemia = ↑ inflow; Passive hyperemia (congestion) = ↓ outflow
+Nutmeg liver = chronic passive congestion
+Infarct types: Coagulative (heart), Liquefactive (brain), Hemorrhagic (lung)
+Virchow Triad: Endothelial injury, Stasis, Hypercoagulability
+Lines of Zahn = alternating platelet/fibrin and RBC layers (sign of thrombus)
+Factor V Leiden = most common hereditary thrombophilia
+PE = DVT from legs; Systemic emboli = left heart
+Fat embolism = long bone fractures; 1-3 days later; triad: respiratory + neuro + rash
+Transudate = low protein (<3g/dL), SG<1.015; Exudate = high protein, SG>1.015
+Shock types: Hypovolemic, Cardiogenic, Septic (most common cause of death in ICU)
+Septic shock: Early = warm; Late = cold + DIC
+CHAPTER 4: GENETIC DISORDERS
+🔬 OVERVIEW
+Definition: Genetic disorders result from abnormalities in the genome including chromosomal abnormalities, single gene mutations, and multifactorial inheritance.
+I. CHROMOSOMAL DISORDERS
+A. Aneuploidy
+Definition: Abnormal number of chromosomes (not multiple of haploid set)
+Causes:
+Nondisjunction in meiosis or mitosis
+Anaphase lag
+B. Autosomal Aneuploidy
+DOWN SYNDROME (Trisomy 21):
+   - Karyotype: 47,XX/XY,+21
+   - Incidence: 1 in 700 births
+   - Risk increases with maternal age
+   - Clinical features:
+       • Flat facial profile, upslanting palpebral fissures
+       • Intellectual disability
+       • Congenital heart disease (AV canal defects)
+       • Duodenal atresia, Hirschsprung disease
+       • ↑ Risk of ALL and Alzheimer disease
+       • Single palmar crease, clinodactyly
+EDWARDS SYNDROME (Trisomy 18):
+   - Karyotype: 47,XX/XY,+18
+   - Severe, death within 1 year
+   - Features: Rocker-bottom feet, clenched hands, micrognathia
+PATAU SYNDROME (Trisomy 13):
+   - Karyotype: 47,XX/XY,+13
+   - Severe, death within 1 year
+   - Features: Polydactyly, microphthalmia, holoprosencephaly
+C. Sex Chromosome Aneuploidy
+TURNER SYNDROME (45,X):
+   - Only monosomy compatible with life
+   - Female hypogonadism
+   - Features: Short stature, webbed neck, lymphedema at birth
+   - Primary amenorrhea, streak ovaries
+   - Coarctation of aorta, bicuspid aortic valve
+   - Requires estrogen replacement
+KLINEFELTER SYNDROME (47,XXY):
+   - Male hypogonadism
+   - Features: Tall, eunuchoid proportions, small testes, infertility
+   - Gynecomastia
+   - ↑ Risk of breast cancer
+   - Normal intelligence (may have learning disabilities)
+TRIPLE X SYNDROME (47,XXX):
+   - Usually normal phenotype
+   - May have mild learning disabilities
+XYY SYNDROME (47,XYY):
+   - Tall males
+   - Normal fertility
+   - May have learning/behavioral problems
+D. Structural Abnormalities
+DELETIONS:
+   - Cri du chat syndrome: Deletion of 5p
+       • Cat-like cry, severe intellectual disability
+   - DiGeorge syndrome: Deletion of 22q11.2
+       • Thymic hypoplasia, cardiac defects, hypocalcemia
+TRANSLOCATIONS:
+   - ROBERTSONIAN TRANSLOCATION: Fusion at centromeres of two acrocentric chromosomes
+       • Most common: 14;21 → Hereditary Down syndrome
+   - RECIPROCAL TRANSLOCATION: Exchange between non-homologous chromosomes
+💡 HIGH-YIELD: Robertsonian translocation carriers have ↑ risk of offspring with trisomy (not related to maternal age)
+II. MODES OF INHERITANCE
+A. Autosomal Dominant Disorders
+Affected individual has affected parent (unless new mutation)
+Males and females equally affected
+Male-to-male transmission occurs
+Variable expressivity and penetrance
+Examples: Huntington disease, Marfan syndrome, Achondroplasia, Familial hypercholesterolemia
+B. Autosomal Recessive Disorders
+Usually seen only in siblings (not parents)
+Males and females equally affected
+Consanguinity increases risk
+Both parents are carriers
+Examples: Cystic fibrosis, Sickle cell disease, Tay-Sachs, PKU
+C. X-Linked Recessive Disorders
+Males predominantly affected
+No male-to-male transmission
+Carrier females pass to 50% of sons
+Examples: Hemophilia A and B, Duchenne muscular dystrophy, G6PD deficiency
+D. X-Linked Dominant Disorders
+Twice as many affected females as males
+Affected males have affected daughters (ALL)
+Examples: Vitamin D-resistant rickets, Fragile X syndrome
+E. Mitochondrial Inheritance
+Inherited ONLY from mother
+All children of affected mother are affected
+NO paternal inheritance
+Examples: MELAS, MERRF, Leber hereditary optic neuropathy
+III. MENDELIAN DISORDERS
+A. Autosomal Dominant
+MARFan SYNDROME:
+   - Fibrillin-1 gene mutation (chromosome 15)
+   - Features: Tall, long limbs (arachnodactyly), lens dislocation (upward)
+   - Aortic root dilation, mitral valve prolapse
+   - Cystic medial necrosis of aorta → dissection
+HUNTINGTON DISEASE:
+   - CAG trinucleotide repeat expansion
+   - Choreiform movements, dementia, psychiatric symptoms
+   - Anticipation: Earlier onset in successive generations
+   - Expansion during SPERMATOGENESIS
+FAMILIAL HYPERCHOLESTEROLEMIA:
+   - LDL receptor defect
+   - Xanthomas, premature atherosclerosis
+   - Homozygotes: MI in childhood
+B. Autosomal Recessive
+CYSTIC FIBROSIS:
+   - CFTR gene (chromosome 7), ΔF508 most common
+   - Defective chloride transport
+   - Thick mucus in lungs → recurrent infections (Pseudomonas)
+   - Pancreatic insufficiency, malabsorption
+   - Meconium ileus in newborns
+   - ↑ Chloride in sweat (diagnostic)
+   - Infertility in males (absent vas deferens)
+SICKLE CELL DISEASE:
+   - β-globin mutation (Glu6Val)
+   - HbS polymerizes when deoxygenated → sickling
+   - Vaso-occlusive crises, hemolysis
+   - Functional asplenia (autosplenectomy)
+   - Heterozygotes (HbAS) have malaria resistance
+TAY-SACHS DISEASE:
+   - Hexosaminidase A deficiency
+   - GM2 ganglioside accumulation
+   - Cherry-red spot on macula
+   - Neurodegeneration, death by age 3-4
+   - Ashkenazi Jewish population
+PHENYLKETONURIA (PKU):
+   - Phenylalanine hydroxylase deficiency
+   - ↑ Phenylalanine → intellectual disability
+   - Musty odor, fair hair/skin (↓ melanin)
+   - Newborn screening (Guthrie test)
+   - Treatment: Low phenylalanine diet
+C. X-Linked Recessive
+HEMOPHILIA A:
+   - Factor VIII deficiency
+   - Prolonged PTT, normal PT
+   - Spontaneous bleeding into joints (hemarthrosis)
+DUCHENNE MUSCULAR DYSTROPHY:
+   - Dystrophin gene mutation
+   - Progressive muscle weakness
+   - Pseudohypertrophy of calves
+   - Gower sign (climbing up legs to stand)
+   - ↑ CK, myoglobinuria
+   - Death from respiratory/cardiac failure
+IV. BALANCED POLYMORPHISM
+Heterozygote advantage maintains deleterious genes in population
+Examples:
+   - Sickle cell trait (HbAS): Resistance to malaria
+   - G6PD deficiency: Resistance to malaria
+   - Cystic fibrosis heterozygotes: Resistance to cholera
+V. POLYGENIC AND MULTIFACTORIAL DISORDERS
+Result from interaction of multiple genes + environmental factors
+Examples:
+   - Ischemic heart disease
+   - Diabetes mellitus
+   - Hypertension
+   - Neural tube defects
+   - Schizophrenia, bipolar disorder
+📋 CHAPTER 4 QUICK REVISION
+Down syndrome: 47,+21; ↑ maternal age; AV canal defects; ↑ risk ALL and Alzheimer
+Turner: 45,X; webbed neck, short stature, coarctation, streak ovaries
+Klinefelter: 47,XXY; male hypogonadism, tall, infertility
+Cri du chat: Deletion 5p; DiGeorge: Deletion 22q11
+Robertsonian translocation: Hereditary Down syndrome
+AD: Huntington, Marfan, Familial hypercholesterolemia, Achondroplasia
+AR: CF, Sickle cell, Tay-Sachs, PKU
+XLR: Hemophilia, Duchenne muscular dystrophy, G6PD deficiency
+Mitochondrial: Maternal inheritance only
+CF: CFTR ΔF508; ↑ sweat chloride; lung infections, pancreatic insufficiency
+Sickle cell: Glu6Val; sickling when deoxygenated; malaria resistance in heterozygotes
+Tay-Sachs: Hexosaminidase A deficiency; cherry-red spot; Ashkenazi Jews
+PKU: Phenylalanine hydroxylase deficiency; low Phe diet; newborn screening
+CHAPTER 5: IMMUNE DYSFUNCTION
+🔬 OVERVIEW
+Definition: Immune dysfunction encompasses disorders of the immune system including immunodeficiency, autoimmunity, hypersensitivity reactions, and amyloidosis.
+I. CELLS OF THE IMMUNE SYSTEM
+A. Lymphocytes
+B CELLS (15% of circulating lymphocytes):
+   - Originate in bone marrow
+   - Differentiate in bone marrow and germinal centers
+   - Surface immunoglobulin (IgM, IgD)
+   - Function: Antibody production (humoral immunity)
+T CELLS (70% of circulating lymphocytes):
+   - Originate in bone marrow, differentiate in THYMUS
+   - Populate paracortical areas of lymph nodes
+   - CD4+ T cells (60%): Helper T cells, MHC class II restricted
+   - CD8+ T cells (30%): Cytotoxic T cells, MHC class I restricted
+   - Normal CD4:CD8 ratio = 2:1 (reversed in AIDS)
+   - Function: Cell-mediated immunity
+NK CELLS (15% of circulating lymphocytes):
+   - Large granular lymphocytes (LGLs)
+   - Kill tumor cells, virus-infected cells (NO prior sensitization)
+   - Antibody-dependent cellular cytotoxicity (ADCC)
+B. Macrophages
+Derived from blood monocytes
+Mononuclear phagocyte system
+Functions: Phagocytosis, antigen presentation, cytokine secretion (IL-1)
+Participate in delayed hypersensitivity
+C. Dendritic Cells
+Antigen-presenting cells (APCs)
+Express high levels of HLA class II
+Poorly phagocytic but excellent APCs
+D. Langerhans Cells
+Dendritic cells of skin
+Contain BIRBECK GRANULES (tennis racket-shaped)
+Antigen-presenting cells
+II. CYTOKINES
+IL-1: Fever, acute phase response, T cell activation
+IL-2: T cell proliferation (from Th1 cells)
+IL-4: B cell activation, IgE class switching (from Th2 cells)
+IL-5: Eosinophil activation
+IL-6: Acute phase proteins, B cell differentiation
+IL-8: Neutrophil chemotaxis
+IL-12: NK cell activation, Th1 differentiation
+TNF-α: Fever, acute phase response, septic shock
+IFN-γ: Macrophage activation, Th1 response
+III. COMPLEMENT SYSTEM
+Classical pathway: Antigen-antibody complexes activate C1
+Alternative pathway: Microbial surfaces activate C3 directly
+Lectin pathway: Mannose-binding lectin binds microbes
+Functions: Opsonization (C3b), Chemotaxis (C5a), Cytolysis (MAC)
+C3 is most abundant complement protein
+C1 esterase inhibitor deficiency → Hereditary angioedema
+IV. HLA SYSTEM
+MHC Class I (HLA-A, B, C): Present to CD8+ T cells; on ALL nucleated cells
+MHC Class II (HLA-DR, DP, DQ): Present to CD4+ T cells; on APCs only
+HLA-B27: Ankylosing spondylitis, Reiter syndrome
+HLA-DR3/DR4: Type 1 diabetes mellitus
+HLA-DR2: Multiple sclerosis, Goodpasture syndrome
+V. INNATE VS ACQUIRED IMMUNITY
+VI. MECHANISMS OF IMMUNE INJURY (HYPERSENSITIVITY)
+Type I - Immediate (Anaphylactic)
+IgE-mediated
+Sensitization: IgE binds to Fc receptors on mast cells/basophils
+Re-exposure: Allergen cross-links IgE → degranulation
+Mediators: Histamine, leukotrienes, prostaglandins
+Examples: Anaphylaxis, Asthma, Hay fever, Eczema
+Type II - Cytotoxic
+IgG or IgM against cell surface or matrix antigens
+Mechanisms:
+   - Complement activation → cell lysis
+   - Opsonization → phagocytosis
+   - Antibody-dependent cellular cytotoxicity (ADCC)
+Examples:
+   - Autoimmune hemolytic anemia
+   - Goodpasture syndrome (anti-GBM)
+   - Myasthenia gravis (anti-AChR)
+   - Graves disease (anti-TSHR - STIMULATING antibody)
+Type III - Immune Complex
+Antigen-antibody complexes deposit in tissues
+Complement activation → neutrophil recruitment
+Examples:
+   - Serum sickness
+   - SLE (DNA-anti-DNA complexes in kidney)
+   - Post-streptococcal glomerulonephritis
+   - Polyarteritis nodosa (HBV antigen)
+   - Arthus reaction (localized immune complex vasculitis)
+Type IV - Delayed (Cell-Mediated)
+T cell-mediated (NO antibody)
+CD4+ Th1 cells release IFN-γ → macrophage activation
+CD8+ T cells directly kill target cells
+Delayed onset (24-72 hours)
+Examples:
+   - Contact dermatitis (poison ivy, nickel)
+   - TB skin test (PPD)
+   - Granuloma formation
+   - Type 1 diabetes (anti-β cell)
+   - Multiple sclerosis
+   - Graft rejection
+💡 HIGH-YIELD: Type I = IgE; Type II = Anti-cell surface; Type III = Immune complexes; Type IV = T cells (NO antibody)
+VII. TRANSPLANTATION IMMUNOLOGY
+HYPERACUTE REJECTION:
+   - Minutes to hours
+   - Pre-existing antibodies against donor HLA
+   - Vascular thrombosis, infarction
+   - UNPREVENTABLE (must cross-match)
+ACUTE REJECTION:
+   - Days to weeks
+   - T cell-mediated (Type IV hypersensitivity)
+   - Treatable with immunosuppressants
+   - Biopsy: Lymphocytic infiltrate, vasculitis
+CHRONIC REJECTION:
+   - Months to years
+   - Vascular fibrosis (graft arteriosclerosis)
+   - Irreversible
+   - Leading cause of late graft failure
+GVHD (Graft-versus-Host Disease):
+   - Donor T cells attack recipient
+   - Seen in bone marrow transplantation
+   - Skin rash, diarrhea, hepatitis
+VIII. IMMUNODEFICIENCY DISEASES
+PRIMARY (Congenital):
+B CELL DEFECTS:
+   - X-linked agammaglobulinemia (Bruton): No B cells, ↓ all Igs
+       • Boys, infections after 6 months (when maternal IgG gone)
+       • Encapsulated bacteria (Strep pneumo, Hib)
+   - Selective IgA deficiency: Most common primary immunodeficiency
+       • Respiratory/GI infections, atopy, autoimmune disease
+   - Common variable immunodeficiency: Adult onset, ↓ Igs
+T CELL DEFECTS:
+   - DiGeorge syndrome: Thymic aplasia, cardiac defects, hypocalcemia
+       • Viral, fungal, protozoal infections
+   - Severe combined immunodeficiency (SCID): No T or B cells
+       • "Bubble boy" - requires bone marrow transplant
+PHAGOCYTE DEFECTS:
+   - Chronic granulomatous disease (CGD): Defective NADPH oxidase
+       • Cannot make superoxide
+       • Catalase-positive organisms (Staph, Serratia, Aspergillus)
+       • Nitroblue tetrazolium (NBT) test negative
+   - Chediak-Higashi syndrome: Defective lysosomal degranulation
+       • Partial albinism, neuropathy
+COMPLEMENT DEFECTS:
+   - C1 esterase inhibitor deficiency: Hereditary angioedema
+   - C5-C8 deficiency: Neisseria infections
+   - C3 deficiency: Severe pyogenic infections
+SECONDARY (Acquired):
+HIV/AIDS (most common)
+Immunosuppressive therapy
+Malnutrition
+Diabetes mellitus
+Malignancy (especially hematologic)
+IX. AUTOIMMUNITY
+Mechanisms of Autoimmunity:
+   - Loss of self-tolerance
+   - Molecular mimicry (infection triggers)
+   - Release of sequestered antigens
+   - Defective Treg function
+Examples:
+   - SLE (Systemic Lupus Erythematosus)
+   - Rheumatoid arthritis
+   - Type 1 diabetes mellitus
+   - Multiple sclerosis
+   - Autoimmune thyroid disease
+X. CONNECTIVE TISSUE DISEASES
+SYSTEMIC LUPUS ERYTHEMATOSUS (SLE):
+   - Autoantibodies against nuclear antigens (ANA)
+   - Anti-dsDNA, Anti-Smith (specific)
+   - Type III hypersensitivity (immune complex)
+   - Clinical: Malar rash, photosensitivity, arthritis, nephritis
+   - Libman-Sacks endocarditis (vegetations on both sides of valve)
+   - Lupus anticoagulant → thrombosis (paradoxical)
+RHEUMATOID ARTHRITIS:
+   - Anti-CCP antibodies, Rheumatoid factor (IgM against IgG)
+   - Symmetric polyarthritis (PIP, MCP joints)
+   - Pannus formation → joint destruction
+   - Rheumatoid nodules (fibrinoid necrosis with palisading histiocytes)
+   - Felty syndrome: RA + splenomegaly + neutropenia
+SJÖGREN SYNDROME:
+   - Autoimmune destruction of exocrine glands
+   - Dry eyes (keratoconjunctivitis sicca), dry mouth (xerostomia)
+   - Anti-SSA (Ro), Anti-SSB (La)
+   - ↑ Risk of lymphoma
+SCLERODERMA (Systemic Sclerosis):
+   - Anti-Scl-70 (anti-topoisomerase I), Anti-centromere
+   - Excessive fibrosis of skin and internal organs
+   - CREST syndrome: Calcinosis, Raynaud, Esophageal dysmotility, Sclerodactyly, Telangiectasia
+XI. AMYLOIDOSIS
+Definition:
+   - Extracellular deposition of fibrillar proteins (amyloid)
+   - β-pleated sheet structure
+   - Congo red positive, apple-green birefringence on polarized light
+Types:
+   - AL (Primary): Light chains (multiple myeloma)
+   - AA (Secondary): Serum amyloid A (chronic inflammation)
+   - ATTR (Familial): Transthyretin (mutated)
+   - Dialysis-related: β2-microglobulin
+Clinical Features:
+   - Nephrotic syndrome (most common)
+   - Restrictive cardiomyopathy
+   - Hepatosplenomegaly
+   - Macroglossia (AL amyloid)
+📋 CHAPTER 5 QUICK REVISION
+B cells: 15%, bone marrow, antibody production
+T cells: 70%, thymus, cell-mediated immunity
+CD4:CD8 ratio = 2:1 (reversed in AIDS)
+NK cells: Kill tumors/viruses, ADCC
+Langerhans cells: Skin APCs, Birbeck granules
+C3b = opsonization; C5a = chemotaxis; MAC = lysis
+MHC I: All nucleated cells, CD8+; MHC II: APCs only, CD4+
+Type I: IgE, mast cells, immediate (anaphylaxis, asthma)
+Type II: Anti-cell surface, cytotoxic (AIHA, Goodpasture, Graves)
+Type III: Immune complexes (SLE, serum sickness, PSGN)
+Type IV: T cells, delayed (contact dermatitis, TB test, GVHD)
+Hyperacute rejection: Pre-formed antibodies, minutes
+Acute rejection: T cells, days-weeks, treatable
+Chronic rejection: Fibrosis, months-years, irreversible
+Bruton agammaglobulinemia: X-linked, ↓ all Igs, after 6 months
+CGD: Defective NADPH oxidase, catalase+ organisms, NBT negative
+SLE: ANA+, anti-dsDNA, immune complex nephritis, malar rash
+RA: Anti-CCP, symmetric PIP/MCP, pannus, rheumatoid nodules
+Amyloid: Congo red+, apple-green birefringence, AL (myeloma), AA (chronic inflammation)
+CHAPTER 6: NEOPLASIA
+🔬 OVERVIEW
+Definition: Neoplasia refers to abnormal and uncontrolled cell growth resulting in a mass (tumor). Understanding neoplasia is crucial for diagnosis, prognosis, and treatment of cancer.
+I. GENERAL CONSIDERATIONS
+A. Definitions
+NEOPLASM: Clonal proliferation of cells that is uncontrolled and excessive
+BENIGN: Non-cancerous, well-differentiated, non-invasive, no metastasis
+MALIGNANT: Cancerous, may be poorly differentiated, invasive, metastasizes
+METASTASIS: Spread to distant sites (hallmark of malignancy)
+DYSPLASIA: Disordered growth, pre-neoplastic (may be reversible)
+CARCINOMA IN SITU: Full-thickness dysplasia without basement membrane invasion
+B. Nomenclature
+BENIGN TUMORS:
+   - Add -oma to cell type
+   - Adenoma (glandular), Lipoma (fat), Fibroma (fibrous)
+   - Papilloma (surface epithelium), Nevus (melanocytes)
+MALIGNANT TUMORS:
+   - CARCINOMA: Epithelial origin
+       • Adenocarcinoma (glandular)
+       • Squamous cell carcinoma
+       • Transitional cell carcinoma
+   - SARCOMA: Mesenchymal origin
+       • Liposarcoma, Fibrosarcoma, Osteosarcoma
+   - EXCEPTIONS:
+       • Lymphoma, Melanoma, Hepatoma, Teratoma (ALL malignant)
+       • Leukemia (malignant blood cells, no mass)
+III. PROPERTIES OF NEOPLASMS
+A. Benign vs Malignant
+B. Invasion and Metastasis
+LOCAL INVASION:
+   - Loss of cell-cell adhesion (↓ E-cadherin)
+   - Degradation of basement membrane (collagenases)
+   - Motility and migration into stroma
+METASTASIS Pathways:
+   1. LYMPHATIC: Most common for carcinomas
+       • Regional lymph nodes first
+   2. HEMATOGENOUS: Sarcomas and some carcinomas
+       • Liver (portal vein) and lungs first
+   3. SEEDING of body cavities:
+       • Ovarian cancer to peritoneum
+       • Lung cancer to pleura
+Common Metastasis Sites:
+   - Liver: GI cancers, lung, breast
+   - Lung: Breast, colon, kidney, bone
+   - Bone: Prostate, breast, lung, thyroid, kidney
+   - Brain: Lung, breast, melanoma, kidney, colon
+C. Tumor Markers
+PSA: Prostate cancer
+CEA: Colorectal cancer (also pancreas, lung, breast)
+CA-125: Ovarian cancer
+CA 19-9: Pancreatic cancer
+AFP: Hepatocellular carcinoma, Yolk sac tumor
+hCG: Choriocarcinoma, Germ cell tumors
+Calcitonin: Medullary thyroid carcinoma
+Catecholamines: Pheochromocytoma
+💡 HIGH-YIELD: Tumor markers are for monitoring, NOT diagnosis (low sensitivity/specificity)
+IV. CARCINOGENESIS AND ETIOLOGY
+A. Multistep Carcinogenesis
+INITIATION:
+   - Irreversible DNA damage by carcinogen
+   - Mutation in proto-oncogene or tumor suppressor gene
+   - Cell is primed but not yet cancerous
+PROMOTION:
+   - Clonal expansion of initiated cells
+   - Reversible (if promoter removed)
+   - Promoters do not damage DNA
+PROGRESSION:
+   - Accumulation of more mutations
+   - Genomic instability
+   - Malignant transformation
+B. Proto-oncogenes and Oncogenes
+PROTO-ONCOGENE: Normal gene that promotes cell growth
+ONCOGENE: Mutated/abnormal proto-oncogene that causes cancer
+Mechanisms of activation:
+   1. Point mutation (ras)
+   2. Chromosomal translocation (bcr-abl, c-myc)
+   3. Gene amplification (N-myc, HER-2/neu)
+   4. Promoter insertion
+Important Oncogenes:
+ras: GTP-binding protein - Colon, lung, pancreas (25-30% of cancers)
+myc: Transcription factor - Burkitt lymphoma, neuroblastoma
+HER-2/neu: Growth factor receptor - Breast cancer (poor prognosis)
+bcr-abl: Tyrosine kinase - CML (Philadelphia chromosome)
+bcl-2: Anti-apoptotic protein - Follicular lymphoma
+C. Tumor Suppressor Genes
+Normal function: INHIBIT cell growth, promote DNA repair, induce apoptosis
+Both alleles must be inactivated ("two-hit hypothesis")
+Inherited mutation = ↑ cancer risk (familial cancer syndromes)
+Important Tumor Suppressor Genes:
+p53: "Guardian of the genome" - >50% of cancers (Li-Fraumeni syndrome)
+Rb: Cell cycle regulation - Retinoblastoma, osteosarcoma (Retinoblastoma)
+APC: β-catenin regulation - Colon cancer (Familial adenomatous polyposis)
+BRCA1/2: DNA repair - Breast, ovarian cancer (Hereditary breast cancer)
+WT-1: Transcription factor - Wilms tumor (WAGR syndrome)
+NF-1: Ras regulation - Neurofibromatosis type 1 (Neurofibromatosis type 1)
+D. Chemical Carcinogens
+Direct-acting: Alkylating agents (chemotherapy)
+Indirect-acting (require metabolic activation):
+   - Polycyclic aromatic hydrocarbons (smoking - lung cancer)
+   - Aflatoxin B1 (Aspergillus - hepatocellular carcinoma)
+   - Nitrosamines (gastric cancer)
+   - Vinyl chloride (angiosarcoma of liver)
+   - Asbestos (mesothelioma, lung cancer)
+   - Benzene (leukemia)
+   - Arsenic (skin cancer, angiosarcoma)
+E. Radiation
+UV light: Skin cancer (basal cell, squamous cell, melanoma)
+   - DNA damage: Pyrimidine dimers
+   - Xeroderma pigmentosum: Defective DNA repair
+Ionizing radiation: Leukemia, thyroid cancer, breast cancer
+F. Viral Oncogenesis
+HPV (16, 18): Cervical cancer - E6 (inhibits p53), E7 (inhibits Rb)
+EBV: Burkitt lymphoma, Nasopharyngeal carcinoma, Hodgkin lymphoma - LMP-1
+HBV, HCV: Hepatocellular carcinoma - Chronic inflammation, integration
+HTLV-1: Adult T-cell leukemia - Tax protein
+HHV-8 (KSHV): Kaposi sarcoma - Various oncogenes
+H. pylori: Gastric adenocarcinoma, MALT lymphoma - Chronic inflammation
+💡 HIGH-YIELD: HPV E6 inhibits p53; E7 inhibits Rb. Both are critical tumor suppressors!
+V. OTHER NEOPLASTIC DISORDERS WITH KNOWN DNA DEFECTS
+NEUROFIBROMATOSIS TYPE 1:
+   - NF-1 gene (Ras GAP protein)
+   - Café-au-lait spots, neurofibromas, Lisch nodules
+MEN TYPE IIa:
+   - RET proto-oncogene
+   - Medullary thyroid carcinoma, pheochromocytoma, hyperparathyroidism
+FAMILIAL ADENOMATOUS POLYPOSIS:
+   - APC gene mutation
+   - Thousands of colon polyps, 100% cancer risk
+   - Prophylactic colectomy
+VI. GRADING AND STAGING
+GRADING: Degree of differentiation (histologic)
+   - Well-differentiated (low grade) vs Poorly differentiated (high grade)
+   - Based on: Nuclear pleomorphism, Mitotic rate, Necrosis
+STAGING: Extent of spread (anatomic)
+   - TNM system:
+       • T: Tumor size/local extent (T0-T4)
+       • N: Node involvement (N0-N3)
+       • M: Metastasis (M0, M1)
+   - Stage I (localized) to Stage IV (metastatic)
+Prognosis: STAGING is more important than grading for most cancers
+📋 CHAPTER 6 QUICK REVISION
+Benign: -oma; Malignant epithelial: Carcinoma; Malignant mesenchymal: Sarcoma
+Exceptions: Lymphoma, Melanoma, Hepatoma, Teratoma (all malignant)
+Metastasis = hallmark of malignancy; Malignant tumors metastasize
+Carcinomas metastasize via lymphatics; Sarcomas via blood
+First sites of metastasis: Liver (GI), Lungs (most), Bone (prostate, breast)
+Initiation → Promotion → Progression (multistep carcinogenesis)
+Oncogenes: ras (25-30% of cancers), bcr-abl (CML), HER-2/neu (breast)
+Tumor suppressors: p53 (>50% cancers), Rb, APC, BRCA1/2
+p53 = "guardian of genome"; causes G1 arrest or apoptosis
+HPV E6 inhibits p53; E7 inhibits Rb
+Smoking (polycyclic hydrocarbons) → lung cancer
+Aflatoxin B1 → HCC; Asbestos → mesothelioma; UV → skin cancer
+EBV → Burkitt lymphoma; HBV/HCV → HCC; H. pylori → gastric cancer
+Grading = differentiation; Staging = extent (TNM more important)
+CHAPTER 7: ENVIRONMENTAL PATHOLOGY
+🔬 OVERVIEW
+Definition: Environmental pathology deals with diseases caused by physical agents, chemical abuse, environmental toxins, and adverse drug effects.
+I. PHYSICAL INJURY
+A. Mechanical Injury
+Abrasion: Superficial scrape
+Contusion: Bruise (hemorrhage into tissue)
+Laceration: Irregular tear of tissue
+Incision: Clean cut by sharp object
+Puncture: Deep, narrow wound
+B. Thermal Injury
+BURNS:
+   - First degree: Epidermis only (erythema, pain)
+   - Second degree: Epidermis + dermis (blisters)
+   - Third degree: Full thickness (white/charred, painless)
+   - Rule of Nines: Head 9%, Each arm 9%, Each leg 18%, Front trunk 18%, Back 18%
+   - Complications: Infection, hypovolemic shock, ARDS
+COLD INJURY:
+   - Frostbite: Ice crystal formation → cell death
+   - Trench foot: Prolonged cold + wet
+C. Electrical Injury
+Severity depends on voltage, current type, duration
+AC more dangerous than DC (causes tetany)
+Current pathway determines injury
+Cardiac arrest (VF) most common cause of death
+Entry and exit wounds
+Rhabdomyolysis → acute renal failure
+D. Radiation Injury
+Ionizing radiation: DNA damage
+Acute radiation syndrome:
+   - Hematopoietic (>2 Gy): Bone marrow suppression
+   - GI (>6 Gy): Mucosal destruction
+   - CNS (>20 Gy): Immediate death
+Delayed effects: Cancer, cataracts, infertility
+Fetus most sensitive (teratogenic)
+II. CHEMICAL ABUSE
+A. Alcohol (Ethanol)
+LIVER (most important):
+   - Fatty change (steatosis): Earliest, reversible
+   - Alcoholic hepatitis: Hepatocyte swelling, Mallory bodies, neutrophils
+   - Cirrhosis: Irreversible fibrosis, regenerative nodules
+PANCREAS:
+   - Acute pancreatitis: Enzymatic autodigestion
+   - Chronic pancreatitis: Fibrosis, calcification, diabetes
+NERVOUS SYSTEM:
+   - Wernicke encephalopathy: Thiamine deficiency
+       • Confusion, ataxia, ophthalmoplegia
+   - Korsakoff syndrome: Memory loss, confabulation
+   - Peripheral neuropathy
+CARDIOVASCULAR:
+   - Alcoholic cardiomyopathy: Dilated cardiomyopathy
+   - Hypertension
+OTHER:
+   - Fetal alcohol syndrome: Microcephaly, facial anomalies, ID
+   - Increased risk of oral, esophageal, liver cancer
+   - Mallory-Weiss tears (esophagus)
+B. Smoking (Tobacco)
+Lung cancer (squamous cell, small cell)
+COPD (emphysema, chronic bronchitis)
+Atherosclerosis, MI, stroke
+Bladder cancer
+Oral cancer
+Pancreatic cancer
+Cervical cancer
+Peptic ulcer disease
+C. Other Drugs of Abuse
+Cocaine: Vasoconstriction → MI, stroke, seizures
+Opiates: Respiratory depression, infective endocarditis
+Methamphetamine: Cardiomyopathy, dental disease
+IV drug use: HIV, hepatitis, abscesses
+III. ENVIRONMENTAL CHEMICAL INJURIES
+A. Carbon Monoxide
+Binds hemoglobin (200x affinity of O2) → carboxyhemoglobin
+Cherry-red skin color
+Headache, confusion, coma, death
+Treatment: 100% O2, hyperbaric O2
+B. Cyanide
+Inhibits cytochrome oxidase → cellular hypoxia
+Bitter almond odor
+Treatment: Nitrites + thiosulfate
+C. Lead
+Children: Developmental delay, learning disabilities
+Adults: Peripheral neuropathy (wrist/foot drop), anemia
+Basophilic stippling of RBCs
+ Burton line (gum lead line)
+Encephalopathy at high levels
+Treatment: EDTA, dimercaprol, succimer
+D. Mercury
+Inorganic: Renal tubular damage
+Organic (methylmercury): CNS damage (Minamata disease)
+Erethism: Irritability, tremor, memory loss
+E. Arsenic
+Acute: Gastroenteritis, shock, death
+Chronic: Hyperpigmentation, hyperkeratosis, peripheral neuropathy
+Skin cancer, lung cancer, angiosarcoma
+Mees lines (white transverse nail lines)
+IV. ADVERSE EFFECTS OF THERAPEUTIC DRUGS
+ACETAMINOPHEN:
+   - Hepatotoxic metabolite (NAPQI)
+   - Centrilobular hepatic necrosis
+   - Treatment: N-acetylcysteine
+ASPIRIN:
+   - Gastric mucosal damage
+   - Reye syndrome in children (encephalopathy + fatty liver)
+   - Salicylism (tinnitus, hyperventilation)
+CHEMOTHERAPY AGENTS:
+   - Bone marrow suppression
+   - Mucositis
+   - Alopecia
+   - Secondary malignancies (alkylating agents → leukemia)
+TERATOGENS:
+   - Thalidomide: Limb defects
+   - Isotretinoin: Craniofacial, cardiac, CNS defects
+   - ACE inhibitors: Renal agenesis
+   - Warfarin: Nasal hypoplasia, stippled epiphyses
+   - Phenytoin: Fetal hydantoin syndrome
+📋 CHAPTER 7 QUICK REVISION
+Burns: 1st (epidermis), 2nd (blisters), 3rd (full thickness, painless)
+Rule of Nines: Head 9%, Arms 9% each, Legs 18% each, Trunk 36%
+Alcohol: Fatty change → Hepatitis (Mallory bodies) → Cirrhosis
+Wernicke: Thiamine deficiency - confusion, ataxia, ophthalmoplegia
+Smoking: Lung cancer, COPD, CVD, bladder cancer
+CO: Binds Hb 200x > O2, cherry-red color, headache, coma
+Cyanide: Inhibits cytochrome oxidase, bitter almond odor
+Lead: Children (developmental delay), Adults (neuropathy, wrist drop)
+Lead: Basophilic stippling, Burton line
+Arsenic: Skin cancer, Mees lines, hyperpigmentation
+Acetaminophen: Hepatotoxic (NAPQI), treat with N-acetylcysteine
+Teratogens: Thalidomide (limbs), Isotretinoin (craniofacial), Warfarin (nasal hypoplasia)
+CHAPTER 8: NUTRITIONAL DISORDERS
+🔬 OVERVIEW
+Definition: Nutritional disorders result from deficiencies or excesses of nutrients including proteins, calories, vitamins, and minerals.
+I. MALNUTRITION
+A. Protein-Energy Malnutrition (PEM)
+MARASMUS (calorie deficiency):
+   - Severe wasting, loss of subcutaneous fat
+   - Muscle atrophy
+   - Growth retardation in children
+   - Preserved visceral proteins (albumin)
+   - "Skin and bones" appearance
+KWASHIORKOR (protein deficiency):
+   - Edema (↓ albumin)
+   - Fatty liver (↓ apolipoproteins)
+   - Skin changes (flaky paint dermatosis)
+   - Growth retardation
+   - "Pot belly" from ascites and hepatomegaly
+   - Hair changes (reddish, sparse)
+MARASMIC KWASHIORKOR: Combination of both
+B. Anorexia Nervosa and Bulimia
+Anorexia: Severe calorie restriction, low BMI
+Bulimia: Binge eating + purging
+Complications: Electrolyte abnormalities, arrhythmias, osteoporosis
+II. VITAMINS
+A. Fat-Soluble Vitamins (A, D, E, K)
+VITAMIN A (Retinol):
+   - Functions: Vision, epithelial differentiation, immunity
+   - Sources: Liver, dairy, carrots (β-carotene)
+   - DEFICIENCY:
+       • Night blindness (earliest)
+       • Xerophthalmia (dry eyes)
+       • Bitot spots (foamy conjunctival patches)
+       • Keratomalacia (corneal necrosis) → blindness
+       • Follicular hyperkeratosis
+       • Immunodeficiency
+   - EXCESS:
+       • Pseudotumor cerebri (headache, papilledema)
+       • Hepatotoxicity
+       • Teratogenic (avoid in pregnancy)
+VITAMIN D (Calciferol):
+   - Functions: Calcium absorption, bone mineralization
+   - Sources: Sunlight, fortified dairy, fish
+   - Activation: Liver (25-OH) → Kidney (1,25-OH2)
+   - DEFICIENCY (Rickets in children, Osteomalacia in adults):
+       • Rickets: Craniotabes, rachitic rosary, bow legs
+       • Osteomalacia: Bone pain, fractures
+       • Hypocalcemia → tetany
+   - EXCESS: Hypercalcemia, nephrocalcinosis
+VITAMIN E (Tocopherol):
+   - Function: Antioxidant
+   - DEFICIENCY (rare):
+       • Hemolytic anemia (newborns)
+       • Neuromuscular degeneration
+       • Posterior column dysfunction
+VITAMIN K (Phylloquinone):
+   - Function: Cofactor for γ-carboxylation (factors II, VII, IX, X, Protein C, S)
+   - Sources: Green leafy vegetables, gut bacteria
+   - DEFICIENCY:
+       • Bleeding (prolonged PT/PTT)
+       • Hemorrhagic disease of newborn
+   - Causes: Antibiotics (kill gut flora), Malabsorption, Warfarin
+B. Water-Soluble Vitamins
+VITAMIN C (Ascorbic Acid):
+   - Functions: Collagen synthesis, iron absorption, antioxidant
+   - DEFICIENCY (SCURVY):
+       • Impaired collagen → weak vessels
+       • Bleeding gums, petechiae, ecchymoses
+       • Poor wound healing
+       • Corkscrew hairs
+       • Perifollicular hemorrhages
+THIAMINE (B1):
+   - Function: Cofactor for glucose metabolism
+   - DEFICIENCY:
+       • Beriberi:
+           - Wet: High-output cardiac failure, edema
+           - Dry: Polyneuropathy, Wernicke-Korsakoff
+       • Wernicke encephalopathy (alcoholics)
+   - Precipitated by glucose administration without thiamine
+RIBOFLAVIN (B2):
+   - DEFICIENCY: Cheilosis, angular stomatitis, glossitis
+NIACIN (B3):
+   - Function: NAD/NADP cofactor
+   - DEFICIENCY (PELLAGRA):
+       • 4 Ds: Dermatitis, Diarrhea, Dementia, Death
+       • Casal necklace (photosensitive rash on neck)
+   - Caused by: Malnutrition, Isoniazid, Carcinoid syndrome (tryptophan diversion), Hartnup disease
+PYRIDOXINE (B6):
+   - Function: Cofactor for neurotransmitter synthesis
+   - DEFICIENCY:
+       • Peripheral neuropathy, seizures
+       • Sideroblastic anemia
+   - Caused by: Isoniazid, Oral contraceptives
+FOLATE:
+   - Function: DNA synthesis
+   - DEFICIENCY:
+       • Megaloblastic anemia (macrocytic, hypersegmented neutrophils)
+       • NO neurologic symptoms (vs B12)
+       • Neural tube defects in pregnancy
+   - Causes: Poor intake (alcoholics), Malabsorption, Pregnancy, Methotrexate
+COBALAMIN (B12):
+   - Function: DNA synthesis, myelin maintenance
+   - Sources: Animal products only
+   - DEFICIENCY:
+       • Megaloblastic anemia
+       • SUBACUTE COMBINED DEGENERATION:
+           - Posterior column (vibration, proprioception)
+           - Lateral corticospinal tracts (motor)
+       • Dementia, optic neuropathy
+   - Causes:
+       • Pernicious anemia (autoimmune, anti-intrinsic factor)
+       • Gastrectomy (no intrinsic factor)
+       • Crohn disease (terminal ileum)
+       • Vegan diet
+       • Diphyllobothrium latum (fish tapeworm)
+BIOTIN:
+   - DEFICIENCY: Dermatitis, alopecia, enteritis
+   - Caused by: Raw egg whites (avidin binds biotin), Antibiotics
+III. OBESITY
+BMI >30 kg/m²
+Visceral (central) obesity more dangerous than subcutaneous
+Complications:
+   - Type 2 diabetes mellitus
+   - Hypertension, Dyslipidemia
+   - Atherosclerosis, Coronary artery disease
+   - Non-alcoholic fatty liver disease (NAFLD)
+   - Obstructive sleep apnea
+   - Certain cancers (breast, colon, endometrial)
+   - Osteoarthritis
+Metabolic syndrome: Central obesity + 2 of: HTN, ↑ TG, ↓ HDL, ↑ fasting glucose
+📋 CHAPTER 8 QUICK REVISION
+Marasmus: Calorie deficiency, wasting, fat loss, albumin preserved
+Kwashiorkor: Protein deficiency, edema, fatty liver, flaky paint dermatosis
+Vitamin A: Night blindness (early), Bitot spots, keratomalacia → blindness
+Vitamin D: Rickets (children) - craniotabes, rachitic rosary, bow legs
+Vitamin K: Factors II, VII, IX, X; Deficiency → bleeding; Newborns at risk
+Vitamin C (Scurvy): Bleeding gums, corkscrew hairs, poor wound healing
+Thiamine (B1): Beriberi (wet=CHF, dry=neuropathy), Wernicke (alcoholics)
+Niacin (B3): Pellagra - 4 Ds: Dermatitis, Diarrhea, Dementia, Death
+Pellagra causes: Malnutrition, Isoniazid, Carcinoid, Hartnup disease
+Folate: Megaloblastic anemia, NO neuro symptoms, NTD in pregnancy
+B12: Megaloblastic anemia + SUBACUTE COMBINED DEGENERATION (posterior columns)
+B12 causes: Pernicious anemia, Gastrectomy, Crohn disease, Vegan
+Obesity: BMI >30; Metabolic syndrome = central obesity + 2 criteria
+📚 COMPREHENSIVE GENERAL PATHOLOGY SUMMARY
+HIGH-YIELD CONCEPTS FOR EXAMS
+CELL INJURY:
+   • Hypoxia affects MITOCHONDRIA first → ↓ ATP → pump failure
+   • REVERSIBLE: ER swelling, myelin figures, cell blebs
+   • IRREVERSIBLE: Membrane damage, calcium influx, nuclear changes
+   • Coagulative necrosis = ischemia in solid organs (heart, kidney)
+   • Liquefactive = brain, abscesses; Caseous = TB; Fat = pancreas
+INFLAMMATION:
+   • Cardinal signs: Rubor, Dolor, Calor, Tumor, Functio laesa
+   • Selectins = ROLLING; Integrins = FIRM ADHESION
+   • Neutrophils first 24h; Macrophages after 2-3 days
+   • C5a and LTB4 = potent chemoattractants
+   • Granuloma = epithelioid macrophages + lymphocytes
+   • Type I = IgE; Type II = Anti-cell; Type III = Complexes; Type IV = T cells
+HEMODYNAMICS:
+   • Virchow Triad: Endothelial injury, Stasis, Hypercoagulability
+   • Factor V Leiden = most common hereditary thrombophilia
+   • PE = DVT from legs; Systemic emboli = left heart
+   • Transudate = low protein; Exudate = high protein
+   • Shock types: Hypovolemic, Cardiogenic, Septic (most common in ICU)
+GENETICS:
+   • Down syndrome: 47,+21; Turner: 45,X; Klinefelter: 47,XXY
+   • CF: CFTR ΔF508; ↑ sweat chloride; lung infections
+   • Sickle cell: Glu6Val; malaria resistance in heterozygotes
+   • Mitochondrial inheritance: MATERNAL only
+IMMUNOLOGY:
+   • CD4:CD8 ratio = 2:1 (reversed in AIDS)
+   • C3b = opsonization; C5a = chemotaxis
+   • MHC I: All nucleated cells, CD8+; MHC II: APCs, CD4+
+   • CGD: Defective NADPH oxidase, catalase+ organisms
+   • SLE: ANA+, anti-dsDNA, immune complex nephritis
+NEOPLASIA:
+   • Metastasis = hallmark of malignancy
+   • Oncogenes: ras (25-30%), bcr-abl (CML), HER-2/neu (breast)
+   • Tumor suppressors: p53 (>50%), Rb, APC, BRCA1/2
+   • HPV E6 inhibits p53; E7 inhibits Rb
+   • Grading = differentiation; Staging = extent (TNM)
+ENVIRONMENTAL:
+   • Alcohol: Fatty change → Hepatitis → Cirrhosis
+   • CO binds Hb 200x > O2; Cyanide inhibits cytochrome oxidase
+   • Lead: Basophilic stippling, wrist drop, Burton line
+   • Acetaminophen: Treat with N-acetylcysteine
+NUTRITION:
+   • Vitamin A: Night blindness (early), keratomalacia (blindness)
+   • Vitamin C (Scurvy): Bleeding gums, corkscrew hairs
+   • Niacin: Pellagra (4 Ds)
+   • Folate: Megaloblastic anemia, NO neuro symptoms
+   • B12: Megaloblastic anemia + Subacute combined degeneration
+NOTE: These notes are compiled from BRS Pathology (5th Edition) and focus on basic pathology concepts rather than disease-specific details. For comprehensive understanding, refer to the full textbook and supplement with clinical correlations.
+Best wishes for your exams! 🎓
+
+--- IMAGES LIST ---

@@ -1,0 +1,584 @@
+// mechanical_properties.js
+// Source: MEHCNAICAL .pdf
+// Notes exported as continuous text (NO page-number sections).
+// Images/diagrams from the PDF are represented as inline placeholders where they appear.
+
+export const mechanicalText = `
+Before We Start: How to Think About “Properties”
+To use dental materials safely and intelligently, we first need:
+1. Clear definitions
+○ What each property actually means (strength, toughness, rheology,
+solubility, etc.).
+2. Clinical correlation (the more important part)
+○ How that property affects:
+■ Operative (restorations, liners, composites)
+■ Ortho (wires, adhesives)
+■ Prostho (impressions, cements, denture bases, crowns)
+This may feel like a lot of theory, but the goal is simple:
+Know the few key properties that actually change how you select, handle, and
+evaluate materials in the clinic—and the way they are asked in exams.
+
+MECHANICAL PROPERTIES
+The fundamental relationship between force and deformation.
+
+1) Stress (σ)
+Definition:
+Stress is the internal resistance of a material to an external load.
+When an external force is applied, the material “pushes back” internally to maintain its
+structure—this internal reaction is stress.
+Formula (Docs-friendly):
+Stress = Force / Area
+Written as:
+σ = F / A
+
+Units:
+● Pascal (Pa)
+● Megapascal (MPa)
+● Common dental unit: MPa = N/mm²
+
+Clinical example:
+1. When a patient bites on a restoration, the biting force is distributed over the restoration’s
+surface area, creating stress within the material. If the force is concentrated over a very
+small area (stress concentration), the stress becomes very high and may overload the
+restoration or tooth structure, leading to fracture of the restoration or even a cusp.
+2. So clinically, we try to avoid excessively high stress by improving occlusal contacts
+and distributing forces evenly.
+
+1. Denture note (occlusal table):
+If a denture tooth has a very large (wide) occlusal table, the chewing load is less efficient
+and tends to increase lateral/tipping forces. This can lead to poor cutting/biting efficiency
+and may destabilize the denture (more tipping/rocking). Therefore, denture teeth are
+often designed with a more appropriate occlusal table width to improve efficiency and
+stability.
+2. However: If the occlusal table is made too narrow, the same chewing force is applied
+over a smaller contact area, which can increase the pressure transmitted to the
+denture-bearing tissues. This may concentrate load on the mucosa/gingiva (especially if
+the denture is unstable), leading to tissue soreness and sore spots.
+3. Clinical principle: Aim for an occlusal table width that balances chewing efficiency
+and denture stability while avoiding excessive stress concentration on the supporting
+tissues.
+
+2) Strain (ε)
+Definition: The amount of deformation (change in shape) that
+occurs in response to stress.
+When a material is subjected to stress, it physically changes dimensions (stretches,
+compresses, or twists). Strain measures this change relative to the original length.
+• Formula: Strain (ε) = ΔL / L₀
+– ΔL = change in length
+– L₀ = original length
+• Units: Dimensionless (often expressed as a percentage, %).
+•Dental bridge example:
+If a dental bridge bends slightly in the middle under chewing forces, the force from chewing is
+the stress, and the bending/deformation of the bridge is the strain.
+● Impression material / “chewing gum” analogy:
+When you pull an impression material (or something elastic like chewing gum), the pulling force you apply is the stress, and the material elongating/stretching is the strain.
+
+[IMAGE PLACEHOLDER: description="Occlusal Table Width in Dentures — wide vs balanced vs too narrow + stress/strain examples diagram"]
+
+One-line rule to remember:
+Stress = the load you apply (cause).
+Strain = the deformation that happens (effect).
+
+3) The Stress-Strain Curve Zones
+The Stress–Strain Relationship
+Stress (σ) causes strain (ε).
+A stress–strain curve shows how a material deforms as you increase the load.
+We uses a metal diagram showing if u applies the stress on a material what phases it undergoes on a stress strain curve
+
+[IMAGE PLACEHOLDER: description="Dental stress vs strain: bridge + impression material/gum diagram"]
+
+Elastic Region (The "Spring" Zone):
+1. Elastic Modulus (Stiffness): slope of the elastic (linear) part of the stress–strain curve =
+Modulus of Elasticity (E).
+This tells you how rigid (stiff) or flexible a material is.
+● Higher E (steeper slope) = more rigid / stiffer
+→ very little strain (bending) for a given stress.
+Example idea: Porcelain / glass-like materials are extremely stiff, so they don’t bend much.
+● Lower E (less steep slope) = more flexible
+→ more strain (bending) for the same stress.
+Example: metals with lower E flex more.
+● It is the stiffness of the material — i.e., how much it bends/strains for a given stress.
+■ High Modulus: Rigid (e.g., PFM Metal Framework).
+■ Low Modulus: Flexible (e.g., Class V filling to flex with the tooth)
+
+[IMAGE PLACEHOLDER: description="Engineering stress–strain curve (ductile metal) with labeled features + key definitions"]
+
+2. Resilience = area under the curve in the elastic region only
+
+3. Proportional limit:
+The highest point on the stress–strain curve where stress is directly proportional to strain (the end of the perfectly straight/linear region).
+After this point:
+The curve stops being perfectly linear, so stress and strain no longer have a constant proportional relationship (Hooke’s law no longer strictly applies).
+Why we care about this because this affects modulus of elasticity and we care about that alot
+
+Why it matters clinically
+1. Predictable deflection (using E)
+● Below the proportional limit, stress ∝ strain, so calculations based on E are accurate.
+● Above it, the curve becomes nonlinear, so E no longer predicts bending/deflection reliably.
+2. Safety margin for “springback” behavior
+● For things that must act like springs (wires, clasps), you want them to work within the proportional/elastic range.
+● A higher proportional limit means the material can take more stress while still behaving elastically/linearly.
+3. Early warning before permanent distortion
+● The proportional limit is usually close to the onset of non-ideal behavior that leads toward plastic deformation.
+● In frameworks/bridges/wires, once you start leaving the linear elastic range, you risk distortion, loss of fit, or fatigue.
+
+So if Straight line (stress and strain increase together evenly) = safe → material springs back.
+Line starts to curve = warning → you may be near yield, so stop to avoid permanent bend.
+
+Simple one-liner
+E tells you “how stiff.” The proportional limit tells you “how far you can load it and still trust that stiffness and get a clean springback.”
+
+Elastic limit: the maximum stress a material can take and still return completely to its original shape when the load is removed.
+● Below elastic limit: returns to original shape (no permanent change).
+● Beyond elastic limit: permanent deformation occurs → it will not fully return to its original position.
+(Elastic limit is basically the boundary between elastic and plastic behavior.)
+It's pretty hard to see in metals so we use another terminology called the yield strength
+
+Yield Strength (σy)
+Definition: The stress required to produce 0.2% permanent (plastic) strain (also called 0.2% proof stress
+
+1) Modulus of Elasticity (E) and “Stiffness” in Dental Alloys
+High E = stiffer (less bending)
+Low E = more flexible (more bending)
+
+1) Base-metal alloys (very stiff)
+● Cobalt–Chromium (Co–Cr) → very high stiffness
+● Nickel–Chromium (Ni–Cr) → very high stiffness
+Clinical meaning: frameworks can be thinner and still resist flexing.
+
+2) Stainless steel (stiff)
+● Used in orthodontics; still high stiffness, but generally discussed more as a wire material.
+
+3) Noble alloys (less stiff than base metals)
+Noble alloys = high noble (gold-rich) or palladium-based alloys.
+● Gold alloys (Type III/IV, high noble) → lower modulus than Co–Cr / Ni–Cr
+● Palladium-based noble alloys → moderate to high modulus, but in many dental teaching comparisons, base metals are still stiffer.
+Clinical meaning:
+If you use a gold/high-noble framework, it may need to be bulkier/thicker than a base-metal framework to achieve the same rigidity (same “no-flex” behavior).
+
+Orthodontic Wires: Stiffness (E) vs Springback (Resilience)
+Common wire stiffness order (for similar size wires)
+● Stainless steel = stiff
+● Beta-titanium (TMA) = moderate stiffness
+● NiTi = low stiffness, but high springback (resilience)
+
+Key clinical idea:
+● NiTi: bends easily but springs back strongly → best for initial alignment with light continuous forces.
+● Stainless steel: stiff control → best for working/finishing, detailing, sliding mechanics.
+● TMA: middle ground and easy to bend → good for loops and adjustments.
+
+How wire stiffness changes with radius (ORTHO SPECIFIC)
+When you change the thickness of a wire, stiffness changes a LOT.
+
+A) Bending stiffness (like when a wire flexes up/down)
+Bending stiffness ∝ E × r⁴ (for a round wire)
+So radius is to the 4th power (super sensitive).
+Quick memory examples:
+● If radius doubles → stiffness increases 2⁴ = 16×
+● If diameter doubles → stiffness also increases 16× (because diameter ∝ radius)
+Even small changes matter:
+● Increase radius by 10% → stiffness ≈ (1.1)⁴ ≈ 1.46 → about 46% stiffer
+
+B) Axial stiffness (pulling along its length)
+Axial stiffness ∝ E × r²
+(less dramatic than bending)
+
+C) Torsional stiffness (twisting)
+For a round wire, torsional stiffness also scales strongly with size (commonly taught as ∝ r⁴).
+
+To make it simple if u increase the radius if the wire is twice as thicker it will be 16 times hard to bend 4 times hard to pull it and 16 times harder to twist it
+That's why when we were making adams clasp from a 0.7mm wire it was so difficult on the other hand finger spring and z spring were so easy as they were 0.5mm wire
+
+[IMAGE PLACEHOLDER: description="Ortho-specific: wire stiffness changes with radius (bending r^4, axial r^2, torsional r^4) infographic"]
+
+Wire thickness (radius) effect — super important rule
+For a round wire, thickness affects stiffness a LOT:
+● If the radius doubles (wire becomes twice as thick):
+○ Bending stiffness becomes 16× higher (r⁴) → 16× harder to bend
+○ Pulling (axial) stiffness becomes 4× higher (r²) → 4× harder to stretch/pull
+○ Twisting (torsional) stiffness becomes 16× higher (r⁴) → 16× harder to twist
+
+One-line memory:
+Small increase in wire thickness → huge increase in bending and twisting stiffness (r⁴).
+
+One-line summary
+● E (modulus) = stiffness (how much it bends).
+● Base metals (Co–Cr, Ni–Cr) are very stiff; gold/noble alloys are less stiff → need more bulk for the same rigidity.
+● Orthodontic wires: Stainless steel stiff, TMA medium, NiTi low stiffness but high springback.
+● Wire thickness rule: bending stiffness ∝ r⁴ → small increase in radius makes wire much stiffer.
+
+2) Resilience (elastic energy storage)
+Definition: The energy a material can absorb and store in the elastic range (i.e., without permanent deformation) and then release when the load is removed.
+Where on the stress–strain curve:
+● Resilience = area under the curve in the elastic region only
+● Practically: up to the yield point / elastic limit
+● This is the “blue shaded area” in many diagrams.
+
+Meaning (simple):
+It is the energy absorbed before permanent deformation begins.
+So is it “energy required to permanently bend something”?
+Not exactly.
+● Resilience = energy absorbed up to the start of permanent bending (yield).
+how much energy a material can absorb and still be “unaffected”
+Energy that can absorbed and return or its original position
+
+Clinical example:
+● Mouthguards: need high resilience so they can absorb impact and spring back (no permanent deformation).
+
+Orthodontic wire examples (Resilience / “springback”)
+● NiTi (Nickel–Titanium) — early alignment
+○ Very high springback / high resilience
+○ Can be deflected a lot in crowded teeth and still returns
+○ Gives light, more constant forces over a long activation range
+● TMA / Beta-titanium — mid-stage, loops & bends
+○ Moderate springback (between NiTi and stainless steel)
+○ Easier to bend than NiTi, good for loops and adjustments
+○ Useful when you want flexibility + ability to customize
+● Stainless steel — working/finishing
+○ High stiffness (high modulus) → less deflection
+○ Lower springback than NiTi
+○ Best for control, detailing, sliding mechanics, and maintaining arch form
+
+One-line memory:
+NiTi = maximum springback → TMA = workable + moderate springback → Stainless steel = stiff control,
+Resilience = elastic energy before yield.
+
+[IMAGE PLACEHOLDER: description="Resilience: energy absorption in elastic region diagram (blue shaded area)"]
+
+Plastic Region (The "Dent" Zone):
+3) Yield Strength (σy)
+Definition: The amount of stress required to start permanent (plastic) deformation.
+Yield Strength: The exact point where the material stops springing back and permanently deforms. If a bridge passes this point, it is ruined.
+
+Why we use “0.2% yield strength” (proof stress)
+Plastic deformation (permanent strain) starts gradually in many metals, so there isn’t always a sharp, obvious “yield point” on the stress–strain curve. Also, the first tiny amount of permanent strain is hard to detect directly.
+So we define a measurable standard: 0.2% yield strength (0.2% proof stress).
+● It is the stress required to produce 0.2% permanent (plastic) strain.
+● 0.2% strain = 0.002 (as a decimal).
+● Method (conceptually): draw a line parallel to the elastic slope, but shifted to start at 0.2% strain on the x-axis; where it meets the curve is the 0.2% yield strength.
+
+Meaning:
+At stresses below this value → deformation is mostly elastic (material springs back).
+At stresses at/above this value → the material has measurable permanent deformation.
+
+Clinical link:
+If a bridge/framework is stressed beyond its yield strength (especially the 0.2% proof value), it can become permanently distorted → misfit, open margins, occlusal issues.
+If a material has low yield strength meaning less strength is required to bend it
+It tells how easily it bends do not confuse with modulus of elasticity which is how much it bends
+
+Important distinction (so you don’t mix terms):
+● Yield strength (σy) tells you how easily it permanently bends.
+● Modulus (E) tells you how much it elastically bends before permanent change.
+
+One-line example:
+A wire with low yield strength will get permanently bent with a smaller load compared to a wire with high yield strength.
+
+Why not call it “plastic deformation”?
+Because plastic deformation is the result (how much permanent strain occurred), while yield strength is the cause threshold (how much stress is needed to cause a standard amount of permanent strain).
+
+Because the exact start of plastic deformation can be unclear, we use the yield strength (often 0.2% proof stress) to define the onset of plastic deformation on the stress–strain curve.”
+
+Clinically we want every material to have a very large yield point so that it is very hard to ruin it or deform it
+
+In most clinical situations, higher yield strength is “safer” because it means the material is harder to permanently bend or distort.
+
+Why higher yield strength is usually better:
+● Needs more stress before permanent deformation starts
+● Maintains fit, margins, occlusion, and appliance shape under chewing/handling forces
+● Reduces risk of distortion in frameworks and wires
+
+Where this matters most (high priority):
+● Bridges / PFM frameworks / RPD frameworks
+● Implant bars/frameworks
+● Working/finishing orthodontic wires (stainless steel)
+
+But the correct exam line is:
+“Higher yield strength is generally preferred, provided other required properties are also met (e.g., stiffness/modulus, toughness, corrosion resistance, workability).”
+
+One-line memory:
+Higher yield strength = harder to permanently bend = more clinically durable shape
+
+UTS (Ultimate Tensile Strength)
+Definition: The maximum stress a material can withstand in tension before it starts to fail.
+On a stress–strain curve, it is the highest point (peak) of the curve.
+
+What happens after UTS (metals):
+● After reaching UTS, the material begins necking (local thinning).
+● Then the stress the sample can carry drops until fracture.
+
+The maximum tensile stress a material can withstand before fracture.
+Clinical meaning (dentistry):
+● High UTS = the material can withstand higher tensile stress before it fractures.
+● Relevant for: bridges/frameworks, orthodontic wires, cast/forged metals, and any component under pulling/bending forces.
+
+Remember:
+● Yield strength = stress where permanent bending starts
+● UTS = stress where the material reaches its maximum strength before necking/fracture
+
+Definition: Toughness is the total energy a material absorbs before it fractures.
+On the stress–strain curve: it is the total area under the entire curve (elastic + plastic parts) up to fracture.
+
+Meaning (simple):
+“The total amount of energy required to break something.”
+
+Do NOT confuse with fracture toughness:
+● Toughness = overall energy absorption until fracture (bulk behavior).
+● Fracture toughness = resistance to crack propagation (behavior when a crack/defect is present).
+
+Examples (dentistry):
+● Zirconia: relatively tough for a ceramic (more crack-resistant, harder to break than many ceramics).
+● Porcelain: brittle (low energy absorption; tends to crack/shatter suddenly).
+
+Fracture Toughness (KIC)
+Definition:
+Fracture toughness is a material’s resistance to crack growth (crack propagation).
+It tells you how hard it is for an existing crack to spread and cause sudden failure.
+
+Why it matters:
+In real life, materials often contain tiny flaws or microcracks. A material can have high strength, but if its fracture toughness is low, a small crack can rapidly grow and the material can fracture catastrophically.
+
+How to think of it (simple):
+● High fracture toughness: cracks tend to stop or grow slowly → more damage-tolerant
+● Low fracture toughness: cracks run fast → brittle, sudden fracture
+
+[IMAGE PLACEHOLDER: description="Fracture Toughness (KIC) infographic: crack growth vs material toughness"]
+
+On a stress–strain curve:
+Fracture toughness is not the same as “area under the curve.”
+● Area under curve = toughness (energy to fracture)
+● Fracture toughness = crack resistance
+
+Units (common): MPa√m
+
+Dental relevance examples (conceptual):
+● Glass/porcelain: low fracture toughness → cracks spread easily
+● Metals: high fracture toughness → cracks are less likely to run suddenly
+● Zirconia: higher fracture toughness than many ceramics (crack resistance is improved)(HOW in ceramic )
+
+One-line memory:
+Fracture toughness = resistance to crack propagation.
+
+Other Mechanical Properties
+
+1) Tensile Strength
+Definition: The maximum stress a material can withstand when being pulled before it fractures.
+(Usually refers to UTS on the stress–strain curve.)
+Example: Orthodontic wires must resist tensile/bending forces without breaking.
+
+Even though amalgam is a metal, it is much stronger in compression than in tension.
+So thin or unsupported margins/edges are prone to fracture, which is why amalgam restorations need adequate bulk minimum of 1.5 mm and well-supported cavity design
+Dental ceramics and enamel are strong in compression but weak in tension.
+Typically brittle materials are weak in tensile strength but strong in compression reasoning in ceramics
+
+2) Compressive Strength
+Definition: The maximum stress a material can withstand when being compressed (pushed/squeezed) before it crushes or fails.
+Example: Dental ceramics and enamel perform well under compression.
+Amalgam is strong in compression but weaker in tension (so thin edges can fracture if unsupported).
+Most materials are stronger in compression than in tension, because tensile forces open cracks/defects, while compression tends to close them.
+Metals are stronger in both
+
+3) Impact Strength
+Definition: The ability of a material to absorb sudden shock/impact energy without fracturing.
+(Related to toughness under rapid loading.)
+
+Impact Strength (examples)
+● Mouthguards should have high impact strength so they can absorb sudden blows without cracking.
+
+For restorations Impact strength (shock resistance) tends to be:
+Resin composite > Amalgam > Glass ionomer cement (GIC)
+
+Why
+● Composite (higher impact strength): polymer resin matrix can absorb and dissipate energy, and crack growth is slowed by fillers/resin bonding → less “shattering.”
+● Amalgam (lower impact strength than composite): it’s relatively brittle in tension with limited ability to absorb sudden energy → thin/unsupported parts can chip/fracture.
+● GIC (low impact strength): more brittle (glass + ionic matrix) → cracks propagate easily, so it fractures with sudden удар/shock.
+
+One-line note:
+Composite = more shock-resistant; Amalgam and GIC = more brittle (especially GIC
+
+Low impact strength materials (brittle)
+● Dental ceramics have low impact strength → they can chip or fracture if dropped or struck.
+● Denture base acrylic (PMMA) has lower impact strength than mouthguard materials, so dentures can fracture if dropped, especially on hard surfaces.
+
+Impact strength tells us whether a material will break or not when a large amount of energy is applied very quickly.”
+
+Simple comparison (for memory)
+● Toughness: “Total energy to break it (slow or fast).”
+● Impact strength: “How well it survives a sudden blow.”
+
+When we try to break something like a stick or something we try to do in in a fast jerk if we do it slowly it dosent break as smoothly
+
+4) Ductility
+Definition: The ability of a material to undergo plastic deformation in tension (can be drawn into wire) before fracture.
+Measured by % elongation or reduction in area.
+Example: Metals used for wires and bending procedures need good ductility.
+Gold — especially pure/annealed gold (gold foil) — is considered the most ductile dental material (can be stretched/drawn without breaking).
+
+How we measure it:
+● % elongation (how much it lengthens before breaking)
+● % reduction in area
+
+Simple meaning:
+“How much a wire can be stretched (permanently) before it breaks.”
+
+Important note:
+This is about plastic stretch before fracture, not just elastic stretch.
+This is pulling force
+
+5) Malleability
+Definition: The ability of a material to undergo plastic deformation in compression (can be hammered/rolled into sheets) without cracking.
+Example: Gold is the most ductile and highly malleable (can be made into thin foils/sheets).
+This is pushing force or compression force
+
+[IMAGE PLACEHOLDER: description="Ductility: measurement (% elongation, % reduction in area) diagram + malleability definition"]
+
+6) Brittleness
+Definition:
+Brittleness is the tendency of a material to fracture suddenly with little or no plastic deformation.
+Simple meaning:
+“It breaks without bending.” glass like
+
+On the stress–strain curve:
+● Very small plastic region (almost no “dent zone”)
+● Low strain at fracture
+● Low toughness (small area under curve)
+
+[IMAGE PLACEHOLDER: description="Ductility & Malleability comparison image + brittleness section"]
+
+Related properties:
+● Brittle materials usually have low fracture toughness (cracks spread easily).
+● Brittle ≠ soft. A material can be hard but brittle (e.g., ceramics).
+
+Dental examples (brittle):
+● Porcelain / dental ceramics
+● Enamel (brittle compared to dentin)
+● Glass ionomer cement (GIC)
+● Denture porcelain teeth (more brittle than resin teeth)
+
+Less brittle (more ductile/energy-absorbing):
+● Metals (gold alloys, stainless steel, Co–Cr, Ni–Cr)
+● Resin composites (generally tougher than ceramics)
+
+Clinical importance:
+Brittle materials should not be left thin or unsupported → they crack/chip easily.
+So we use: adequate thickness + rounded internal line angles + good support (avoid sharp corners/stress concentration).
+
+Brittleness — Clinical Summary (Margin Design)
+Core rule: Brittle materials fracture if they are thin or unsupported → they need bulk and support at margins.
+
+1) Amalgam (low edge strength)
+● Problem: Thin amalgam margins snap.
+● Result: Marginal fracture/ditching → leakage + recurrent caries.
+● Margin design: 90° butt joint; no bevels.
+
+2) Porcelain / ceramics (low fracture toughness)
+● Problem: Cracks propagate easily, especially in thin areas.
+● Result: Chipping or catastrophic fracture.
+● Margin design: Shoulder / heavy chamfer + adequate thickness (avoid feather edges).
+
+3) Unsupported enamel
+● Problem: Enamel is brittle without dentin support.
+● Result: Margin fractures under chewing.
+● Fix: Remove unsupported enamel rods.
+
+Quick comparison
+● Amalgam: brittle → butt joint (no bevel).
+● Porcelain: brittle → shoulder/heavy chamfer (bulk).
+● Gold: ductile → bevel/feather (can thin + burnish).
+
+[IMAGE PLACEHOLDER: description="Clinical impact of ceramic brittleness: margin failure vs success (diagram)"]
+
+7) Hardness:
+Hardness = surface scratch/indentation resistance.
+Clinically, it mainly tells you (1) how fast the restoration itself wears and (2) how much it might wear the opposing surface — but opposing-tooth wear depends MORE on surface roughness/polish than hardness alone.
+
+What hardness correlates with (clinically useful)
+● Higher hardness → better self–wear resistance (keeps anatomy/occlusion longer; less scratching)
+● Higher hardness → harder to finish/adjust/polish (more bur time, more heat, more difficulty getting a smooth surface)
+● Higher hardness + rough surface → more antagonist wear (enamel gets abraded)
+
+What hardness does NOT guarantee
+● Hard ≠ automatically more abrasive.
+A high-hardness but well-polished surface can be gentle, while a less-hard but rough surface can still abrade.
+● Hardness ≠ strength.
+Strength = load before fracture/bending; hardness = surface resistance.
+
+[IMAGE PLACEHOLDER: description="Brittleness: sudden failure with minimal plastic deformation (diagram) + hardness section"]
+
+“Different materials” — how hardness plays out clinically
+
+Very hard / hard surfaces
+Ceramics (porcelain) and zirconia
+● Self-wear: very low (they stay shiny/anatomic)
+● Opposing enamel: can be high wear if rough (after adjustment or if glaze is removed)
+● Clinical key: polish matters more than glaze for antagonist friendliness; rough ceramic is the enemy.
+
+Porcelain denture teeth
+● Harder → keep cusps (good self-wear resistance)
+● Can be more abrasive to opposing natural teeth if occlusion/polish isn’t ideal.
+
+Natural tooth reference
+Enamel
+● Hard, but can still wear if the opposing surface is rough/harder and unpolished.
+
+Medium hardness (varies)
+Composites
+● Usually wear more than ceramics (can lose occlusal anatomy over time)
+● Often kinder to opposing enamel than rough ceramics because they’re less hard and can be polished smoothly.
+
+Amalgam
+● Good in compression, but surface can wear/ditch over time compared to ceramics
+● Generally less abrasive to opposing enamel than rough ceramics (again: surface + microstructure matter).
+
+Lower hardness
+Gold / high noble
+● Softer → can wear a bit, but tends to be “kind” to opposing enamel
+● Great when you want a restoration that doesn’t act like sandpaper.
+
+Acrylic denture teeth (PMMA)
+● Low hardness → wears faster (flat cusps over time)
+● Usually gentler on opposing teeth than porcelain denture teeth.
+
+Base-metal alloys (Co–Cr, Ni–Cr): hardness correlation + clinical relevance
+Hardness level: generally high (harder than noble gold alloys, often harder than many restorative metals).
+
+What that means clinically
+1. They resist scratching and surface wear (self-wear)
+● Co–Cr / Ni–Cr surfaces don’t get scratched easily → durable metal surface.
+● Useful where you want the metal surface to stay intact (e.g., metal components rubbing/contacts).
+
+2. They are harder to adjust, finish, and polish
+● Chairside: more difficult to cut/shape; burs wear faster; takes longer to get a smooth polish.
+● Lab: finishing and polishing is more demanding than gold.
+
+3. Opposing tooth wear
+● A high-hardness metal can contribute to wear of the opposing surface if left rough (after adjustment).
+● But metals (including base metals) are usually less abrasive than rough ceramics because polished metal can be very smooth.
+● Clinical key: after adjusting Co–Cr/Ni–Cr, polish it properly to reduce antagonist wear.
+
+Quick comparison line (exam-friendly)
+● Ceramic hardness + roughness → highest risk of opposing enamel wear.
+● Base-metal alloys are hard, but when well polished they are usually relatively “enamel-friendly.”
+● Gold is softer and typically the most “kind” to opposing enamel (but may wear itself more).
+
+The simplest clinical rule
+● If it’s hard + rough → it will abrade the opposing tooth.
+● If it’s hard + highly polished → much safer.
+● If it’s soft → it may wear itself (lose anatomy), but is often kinder to the opposing tooth.
+
+B. The "Confusables" Table
+Concept A  Concept B  The Difference
+Ductility  Malleability  Ductility = Pulling into a wire (Tension). Malleability = Hammering into a sheet (Compression).
+Most malleable dental material: Gold (especially pure/annealed gold, e.g., gold foil).
+
+Memory line:
+● Ductile = wire → Gold is best
+● Malleable = sheet/foil → Gold is best
+
+Stress  Strain  Stress = The internal force (Pressure). Strain = The physical shape change (Deformation).
+
+Hardness  Abrasion
+Hardness = Resistance to indentation. Abrasion = Resistance to rubbing/wear.
+A material can be hard but still wear away (abrade) opposing teeth!
+`;
+
+export default mechanicalText;

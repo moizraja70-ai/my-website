@@ -1,0 +1,278 @@
+================================================================================
+CRANIAL NERVES DOCUMENT - IMAGE SEQUENCE & CONTENT MAPPING
+Quick Reference Guide
+================================================================================
+
+APPEARANCE ORDER IN DOCUMENT (Images as they appear):
+
+[IMG 1] image10.png → Figure 1: Inferior brain view with cranial nerves (790x901px)
+        Location: After brainstem concept introduction
+        Content: Orientation diagram showing CN attachment points to brainstem
+
+[IMG 2] image1.png → Figure 2: Cranial nerves overview schematic (1104x461px)
+        Location: Immediately after Figure 1
+        Content: Another textbook layout showing all 12 cranial nerves
+
+[IMG 3] image13.png → Figure 3: Brainstem nuclei orientation (442x808px)
+        Location: Fiber Types & Brainstem Nuclei section
+        Content: Motor nuclei MEDIAL (yellow), sensory nuclei LATERAL (blue)
+        Key Concept: Motor medial, sensory lateral rule
+
+================================================================================
+SECTION: CN V - TRIGEMINAL NERVE (IMAGES 4-13)
+This is the SUPER HIGH-YIELD section for dentistry
+================================================================================
+
+[IMG 4] image4.png → Figure 4: Trigeminal nerve overview (1107x587px)
+        Content: V1/V2/V3 divisions and major branches
+        Key: Shows how large sensory root, motor root, and three divisions organize
+
+[IMG 5] image3.png → Figure 5: Deep head view - trigeminal divisions (1113x601px)
+        Content: Anatomical relationships of trigeminal divisions in head cross-section
+        Shows: How divisions relate to skull, brain, and surrounding structures
+
+[IMG 6] image14.png → Figure 6: Trigeminal divisions & foramina (595x653px)
+        Content: V1 (SOF), V2 (foramen rotundum), V3 (foramen ovale)
+        Exam Focus: Skull exits and common block target points
+        Key: Essential for understanding foramen-based localization
+
+[IMG 7] image16.png → Figure 7: Cutaneous sensory distribution V1/V2/V3 (595x317px)
+        Content: Gray's Anatomy classic plate showing facial sensory territories
+        Shows: Exact distribution of each division on face
+        Exam Use: Testing sensory loss patterns
+
+[IMG 8] image15.png → Figure 8: V1/V2/V3 cutaneous map - simplified (528x372px)
+        Content: Easy-to-memorize simplified version of sensory territories
+        For: Quick bedside reference during OSCE
+
+[IMG 9] image18.png → Figure 9: V2/V3 distribution + submandibular ganglion (576x672px)
+        Content: Gray's plate showing maxillary and mandibular distribution
+        Key: Shows how submandibular ganglion (VII parasympathetic hitchhikes on V3)
+        Dental Relevance: Lingual nerve carries taste/salivation fibers here
+
+[IMG 10] image2.png → Figure 10: Mandibular division (V3) branches (1120x604px)
+         Content: Detailed Gray's plate of all V3 branches
+         Shows: IAN, lingual, buccal, auriculotemporal, others
+         Exam Critical: All major sensory and motor branches labeled
+
+[IMG 11] image17.png → Figure 11: Inferior alveolar nerve terminal branches (480x504px)
+         Content: IAN entering mandibular foramen, through mandibular canal, splitting into:
+                  - Mental nerve (exits mental foramen)
+                  - Incisive nerve (continues anteriorly)
+         Dental Critical: Core block anatomy (IANB target)
+
+[IMG 12] image20.png → Figure 12: Onion-skin pattern - spinal trigeminal nucleus (499x428px)
+         Content: "Onion-skin" pain/temperature distribution on face
+         Shows: Concentric rings representing different spinal trigeminal levels
+         Clinical Pearl: Wallenberg syndrome classic sign
+         Represents: Rostral → caudal organization of pain fibers
+
+[IMG 13] image19.png → Figure 13: Corneal reflex arc (528x319px)
+         Content: V1 nasociliary sensory pathway → CN VII orbicularis oculi motor
+         Shows: Complete arc from stimulation to blink
+         Exam Use: Testing afferent (V1) vs efferent (VII) components
+         Diagnostic: Absent reflex = V1 problem OR VII problem?
+
+================================================================================
+SECTION: CN VII - FACIAL NERVE (IMAGES 14-18)
+This is the VERY HIGH-YIELD section for dentistry
+================================================================================
+
+[IMG 14] image7.png → Figure 14: Facial nerve complete course (1737x684px)
+         Content: COMPREHENSIVE diagram showing entire VII pathway:
+                  - Leaves brainstem at pontomedullary junction
+                  - Enters internal acoustic meatus with CN VIII
+                  - Travels through facial canal in temporal bone
+                  - Geniculate ganglion location (sensory ganglion for taste)
+                  - Greater petrosal nerve branch (→ lacrimal gland)
+                  - Nerve to stapedius branch (→ stapedius muscle)
+                  - Chorda tympani branch (→ lingual nerve for taste + salivation)
+                  - Exits stylomastoid foramen
+                  - 5 terminal parotid branches
+         Exam Critical: Memorize this complete pathway for lesion localization
+         Uses: Identifies at what level a lesion is based on preserved vs lost functions
+
+[IMG 15] image24.png → Figure 15: Facial nerve in temporal bone (977x592px)
+         Content: Another schematic of VII through temporal bone
+         Shows: Path through facial canal with branch points
+         Exam Use: Temporal bone fracture injury patterns
+
+[IMG 16] image9.png → Figure 16: Facial nerve parotid plexus (1119x604px)
+         Content: 5 terminal branches in parotid gland
+         Mnemonic: To Zanzibar By Motor Car (Temporal, Zygomatic, Buccal, Marginal, Cervical)
+         Critical: Marginal mandibular branch at risk in oral/neck surgery
+         Shows: How VII divides within parotid substance
+
+[IMG 17] image21.png → Figure 17: Facial nerve dissection photo (1095x1007px)
+         Content: Real anatomical dissection showing facial nerve branches
+         Use: Practical/realistic view of actual anatomy
+         Value: Helps visualize 3D relationships
+
+[IMG 18] image5.png → Figure 18: UMN vs LMN facial palsy (1099x587px)
+         Content: Side-by-side comparison of two palsy patterns
+         CRITICAL CONCEPT for Exam:
+         - UMN (stroke): Forehead SPARED, lower face weak
+         - LMN (Bell palsy, nerve injury): BOTH upper + lower weak
+         Shows: Why forehead matters in diagnosis
+         Dental Link: Facial palsy after IAN block = LMN pattern
+
+================================================================================
+IMAGES 19-25: SUPPORTING FIGURES
+================================================================================
+
+[IMG 19] image8.png → Supporting anatomical figure (1116x610px)
+[IMG 20] image12.png → Supporting anatomical figure (1103x613px)
+[IMG 21] image22.png → Supporting figure
+[IMG 22] image6.png → Supporting figure
+[IMG 23] image23.jpg → Supporting figure
+[IMG 24] image25.png → Supporting figure
+[IMG 25] image11.png → Supporting figure
+
+(These images appear in clinical integration and case discussion sections)
+
+================================================================================
+CONTENT ASSOCIATED WITH EACH IMAGE GROUP
+================================================================================
+
+GROUP 1 (IMG 1-3): CRANIAL NERVES ORIENTATION
+Associated Text:
+  - 10-second memory map (CN I-XII quick recall)
+  - Summary tables for CN I-VI and CN VII-XII
+  - Fiber types and brainstem nuclei concepts
+  - Motor nuclei MEDIAL, sensory nuclei LATERAL rule
+
+GROUP 2 (IMG 4-13): CN V TRIGEMINAL - SUPER HIGH-YIELD
+Associated Text:
+  1. Why CN V is #1 dental nerve (largest, main sensation, motor)
+  2. Three divisions: V1 (SOF), V2 (foramen rotundum), V3 (foramen ovale)
+  3. V1 branches and territories (eye, upper eyelid, forehead)
+  4. V2 branches and dental supply:
+     - PSA (posterior superior alveolar) → maxillary molars
+     - MSA (middle superior alveolar) → premolars
+     - ASA (anterior superior alveolar) → incisors/canines
+     - Greater palatine → palate + palatal gingiva
+     - Nasopalatine → anterior palate
+  5. V3 branches and dental supply:
+     - IAN (inferior alveolar) → all mandibular teeth
+     - Mental nerve → lower lip/chin
+     - Incisive nerve → anterior teeth region
+     - Long buccal nerve → buccal gingiva of molars
+     - Lingual nerve → tongue sensation + chorda tympani hitchhike (taste/salivation)
+  6. Trigeminal sensory nuclei:
+     - Mesencephalic (proprioception from mastication/TMJ/PDL)
+     - Principal sensory (fine touch/vibration)
+     - Spinal trigeminal (pain/temperature → onion-skin pattern)
+  7. LOCAL ANESTHESIA BLOCKS (9 blocks detailed):
+     - IANB (Inferior alveolar) - most important
+     - Long buccal block
+     - Mental/incisive block
+     - Gow-Gates block
+     - Akinosi block
+     - Infraorbital block
+     - PSA block
+     - Greater palatine block
+     - Nasopalatine block
+  8. Parasympathetic "hitchhiking":
+     - Lacrimal gland (VII → pterygopalatine → V2)
+     - Salivary glands (VII → submandibular ganglion on V3 lingual)
+     - Parotid (IX → otic ganglion → V3 auriculotemporal)
+  9. Pathologies: trigeminal neuralgia, post-traumatic neuropathy, zoster, etc.
+  10. Referred pain patterns
+
+GROUP 3 (IMG 14-18): CN VII FACIAL - VERY HIGH-YIELD
+Associated Text:
+  1. What VII does: Motor expression, taste ant 2/3, PS to lacrimal + salivary
+  2. Complete course: brainstem → internal acoustic meatus → facial canal → stylomastoid foramen → parotid
+  3. Key branches in temporal bone:
+     - Greater petrosal (lacrimal gland)
+     - Nerve to stapedius (hearing dampening)
+     - Chorda tympani (taste + PS to submandibular/sublingual)
+  4. Parotid plexus: 5 terminal branches (Temporal, Zygomatic, Buccal, Marginal, Cervical)
+  5. Core components: SVE (motor), GVE (parasympathetic), SVA (taste), GSA (ear sensation)
+  6. Nuclei: Facial motor, superior salivatory, solitary, spinal trigeminal
+  7. Testing (OSCE): Raise eyebrows, close eyes, smile, puff cheeks, taste
+  8. UMN vs LMN distinction (CRITICAL):
+     - UMN: Forehead SPARED, lower face weak (contralateral) = stroke
+     - LMN: BOTH upper+lower weak (ipsilateral) = Bell palsy or nerve injury
+  9. Lesion localization by level:
+     - Supranuclear: forehead sparing
+     - CPA/IAM: hearing + facial weakness
+     - Proximal facial canal: hyperacusis + taste loss + dryness
+     - Distal to stapedius: taste loss, salivation loss, NO hyperacusis
+     - Distal to stylomastoid: pure motor
+  10. Pathologies: Bell palsy, Ramsay Hunt, crocodile tears, Frey syndrome
+  11. CRITICAL DENTISTRY: Transient palsy after IAN block
+      - Anesthetic in parotid → facial nerve block
+      - Temporary; protect eye; prevent with correct technique
+
+================================================================================
+QUICK REFERENCE: WHAT EACH IMAGE TEACHES
+================================================================================
+
+Use Image 1 when: Need to show CN attachments to brainstem
+Use Image 2 when: Need general CN overview for CN I-XII
+Use Image 3 when: Explaining motor vs sensory nuclei location
+
+Use Image 4 when: Showing trigeminal nerve organization (3 divisions)
+Use Image 5 when: Explaining deep anatomical relationships of CN V
+Use Image 6 when: Discussing skull foramina for nerve blocks
+Use Image 7 when: Testing facial sensation or teaching cutaneous distribution
+Use Image 8 when: Quick reference for sensory territories during OSCE
+Use Image 9 when: Explaining submandibular ganglion or V2/V3 relationship
+Use Image 10 when: Detailing V3 branches (IAN, lingual, buccal, etc.)
+Use Image 11 when: Teaching inferior alveolar nerve anatomy or IANB technique
+Use Image 12 when: Explaining onion-skin pattern or Wallenberg syndrome
+Use Image 13 when: Discussing corneal reflex anatomy
+
+Use Image 14 when: Teaching complete facial nerve course (most comprehensive)
+Use Image 15 when: Discussing temporal bone anatomy or fracture injuries
+Use Image 16 when: Showing parotid plexus and 5 terminal branches
+Use Image 17 when: Showing realistic anatomical dissection
+Use Image 18 when: Distinguishing UMN from LMN facial palsy (CRITICAL for exam)
+
+Images 19-25: Supporting clinical cases and additional references
+
+================================================================================
+DENSITY & EMPHASIS MARKERS
+================================================================================
+
+SUPER HIGH-YIELD SECTIONS:
+  - CN V complete anatomy (Images 4-13 + extensive text)
+  - Local anesthesia blocks (9 detailed block techniques)
+  - Dental nerve injuries and management
+
+VERY HIGH-YIELD SECTIONS:
+  - CN VII complete anatomy (Images 14-18 + extensive text)
+  - UMN vs LMN facial palsy differentiation (Image 18)
+  - Transient facial palsy after IAN block
+
+HIGH-YIELD SECTIONS:
+  - Referred pain patterns
+  - Trigeminal sensory nuclei and onion-skin distribution
+  - Cranial nerve examination techniques
+  - Clinical mini cases (viva-style)
+
+MODERATE-YIELD SECTIONS:
+  - CN I-IV, CN VI, CN VIII-XII individual descriptions
+  - Brainstem anatomy and nuclei
+  - Image credits and study resources
+
+================================================================================
+
+KEY TAKEAWAY FOR EXAM PREPARATION:
+
+1. MASTER the images in sequence (Images 1-18 at minimum)
+2. MEMORIZE the 10-second CN map
+3. DEEP DIVE into CN V (Images 4-13) - focus on:
+   - Foramen locations (V1/V2/V3)
+   - Dental branch supply (PSA, MSA, ASA, IAN, lingual, long buccal)
+   - Local anesthesia blocks (especially IANB)
+4. DEEP DIVE into CN VII (Images 14-18) - focus on:
+   - Complete course through temporal bone
+   - 5 parotid terminal branches
+   - UMN vs LMN distinction
+   - Transient palsy after IAN block
+5. PRACTICE clinical cases and MCQ stems
+6. REFERENCE Section 7 for dental nerve injury management
+
+================================================================================
