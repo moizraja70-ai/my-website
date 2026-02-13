@@ -3,7 +3,8 @@
     "allow": [
       "WebFetch(domain:dentedge.net)",
       "WebFetch(domain:www.dentedge.net)",
-      "WebFetch(domain:my-website-d93.pages.dev)"
+      "WebFetch(domain:my-website-d93.pages.dev)",
+      "Bash(npm run dev:*)"
     ]
   }
 }

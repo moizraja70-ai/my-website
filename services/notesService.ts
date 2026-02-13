@@ -5,9 +5,9 @@
  * Fallback: Supabase `notes` table for subjects not bundled locally.
  */
 
-import { NOTES } from '../my-website/data/notesData';
-import { ANATOMY_NOTES } from '../my-website/data/anatomyNotes';
-import { IMPRESSION_MATERIALS_NOTES } from '../my-website/data/impressionMaterialsNotes';
+import { NOTES } from '../data/notesData';
+import { ANATOMY_NOTES } from '../data/anatomyNotes';
+import { IMPRESSION_MATERIALS_NOTES } from '../data/impressionMaterialsNotes';
 import { supabase } from './supabaseClient';
 import { MedicalSubject, ExamStream } from '../types';
 
@@ -121,8 +121,8 @@ function resolveTopicAlias(subjectSlug: string, topicSlug: string): string | nul
 /**
  * Resolve note data for a given subject / stream / topic combination.
  *
- * 1. Check local bundled data first (fast, no network).
- * 2. If not found locally, query Supabase `notes` table.
+ * 1. Check Supabase `notes` table FIRST (production data).
+ * 2. If not found in Supabase, check local bundled data as fallback.
  * 3. Return a "coming soon" placeholder only if both sources miss.
  */
 export async function getTopicData(
@@ -131,13 +131,31 @@ export async function getTopicData(
   topic?: string,
 ): Promise<NoteData> {
   const subjectSlug = subjectToSlug(subject);
-  const subjectBucket = ALL_LOCAL_NOTES[subjectSlug];
+  const topicSlug = topic ? topicToSlug(topic) : '';
 
-  // ---------- LOCAL LOOKUP ----------
+  // ---------- SUPABASE FIRST (PRIMARY SOURCE) ----------
+
+  if (topic) {
+    const aliasedTopicKey = resolveTopicAlias(subjectSlug, topicSlug) ?? topicSlug;
+    console.log(`[notesService] 🌐 Supabase query: subject=${subjectSlug} topic=${aliasedTopicKey}`);
+    const remote = await fetchFromSupabase(subjectSlug, aliasedTopicKey);
+
+    if (remote && remote.content) {
+      console.log(`[notesService] ✅ Supabase hit for ${aliasedTopicKey}`);
+      return {
+        content: remote.content,
+        keyPoints: Array.isArray(remote.key_points) ? remote.key_points : [],
+        subject,
+      };
+    }
+  }
+
+  // ---------- LOCAL FALLBACK ----------
+
+  const subjectBucket = ALL_LOCAL_NOTES[subjectSlug];
 
   if (subjectBucket) {
     if (topic) {
-      const topicSlug = topicToSlug(topic);
       console.log(`[notesService] subject=${subjectSlug} topic="${topic}" → slug="${topicSlug}"`);
 
       // Direct match
@@ -146,7 +164,7 @@ export async function getTopicData(
         return { ...subjectBucket[topicSlug], subject };
       }
 
-      // Explicit alias mapping (topic slug from constants.tsx → key in local data)
+      // Explicit alias mapping
       const resolvedKey = resolveTopicAlias(subjectSlug, topicSlug);
       console.log(`[notesService] Alias resolved: ${topicSlug} → ${resolvedKey}`);
       if (resolvedKey && subjectBucket[resolvedKey]) {
@@ -162,8 +180,6 @@ export async function getTopicData(
           subject,
         };
       }
-
-      // Topic not found locally — fall through to Supabase below
     } else {
       // No specific topic — return the first entry in the subject bucket
       const firstKey = Object.keys(subjectBucket)[0];
@@ -171,23 +187,6 @@ export async function getTopicData(
         return { ...subjectBucket[firstKey], subject };
       }
     }
-  }
-
-  // ---------- SUPABASE FALLBACK ----------
-
-  const topicSlug = topic ? topicToSlug(topic) : '';
-  // Use the aliased key if one exists, otherwise use the raw slug
-  const aliasedTopicKey = resolveTopicAlias(subjectSlug, topicSlug) ?? topicSlug;
-  console.log(`[notesService] 🌐 Supabase query: subject=${subjectSlug} topic=${aliasedTopicKey}`);
-  const remote = await fetchFromSupabase(subjectSlug, aliasedTopicKey);
-
-  if (remote && remote.content) {
-    console.log(`[notesService] ✅ Supabase hit for ${aliasedTopicKey}`);
-    return {
-      content: remote.content,
-      keyPoints: Array.isArray(remote.key_points) ? remote.key_points : [],
-      subject,
-    };
   }
 
   // ---------- NOTHING FOUND ----------
