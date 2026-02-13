@@ -140,6 +140,32 @@ export const onRequestPost: PagesFunction = async ({ request, env }) => {
       return jsonResponse(400, { error: "Expected messages array" });
     }
 
+    // Security: Validate messages input
+    if (messages.length > 50) {
+      return jsonResponse(400, { error: "Message history too long (max 50)" });
+    }
+
+    let totalContentLength = 0;
+    const MAX_CONTENT_LENGTH = 20000;
+    const VALID_ROLES = ["system", "user", "assistant"];
+
+    for (const msg of messages) {
+      if (!msg || typeof msg !== "object") {
+        return jsonResponse(400, { error: "Invalid message format" });
+      }
+      if (!VALID_ROLES.includes(msg.role)) {
+        return jsonResponse(400, { error: `Invalid role: ${msg.role}` });
+      }
+      if (typeof msg.content !== "string") {
+        return jsonResponse(400, { error: "Message content must be a string" });
+      }
+      totalContentLength += msg.content.length;
+    }
+
+    if (totalContentLength > MAX_CONTENT_LENGTH) {
+      return jsonResponse(400, { error: `Total content too long (max ${MAX_CONTENT_LENGTH})` });
+    }
+
     const allowedModels = String(env?.OPENAI_ALLOWED_MODELS || "gpt-4o-mini")
       .split(",")
       .map((s) => s.trim())
