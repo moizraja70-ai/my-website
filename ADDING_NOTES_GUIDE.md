@@ -1,6 +1,25 @@
-# Adding New Notes to DentEdge
+﻿# Adding New Notes to DentEdge
 
 Step-by-step guide for adding new anatomy/subject topics with images and styled content.
+
+---
+
+## Recommended Workflow (Supabase First, Local Bundle Second)
+
+If you want to reduce content being shipped in the frontend bundle (and keep behavior consistent across local/preview/production), use this order:
+
+1. Add/Update the note in **Supabase** first (recommended for most content).
+2. Only after it is correct, optionally copy a condensed/offline version into the **local bundle**.
+
+Why:
+- Bundled notes (`data/*.ts`) are downloaded by every user, so they are easy to copy.
+- Supabase notes can be served via `/api/notes` (server-side) with your access rules (login/subscription), which is harder to scrape.
+
+Supabase keys to use (example):
+- `subject_key`: `general_pathology`
+- `topic_key`: `general_patho_overview`
+
+The app generates these slugs in `services/notesService.ts` (`subjectToSlug()` and `topicToSlug()`), and can map mismatches via `TOPIC_ALIASES`.
 
 ---
 

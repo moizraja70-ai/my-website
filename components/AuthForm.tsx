@@ -47,11 +47,30 @@ const signInWithEmail = async (email: string, password: string) => {
   return { data, error };
 };
 
+const getAuthRedirectUrl = (): string => {
+  // Allow overriding in local dev via `.env.local`:
+  // `VITE_AUTH_REDIRECT_URL=http://localhost:5173/`
+  const configured = (import.meta as any)?.env?.VITE_AUTH_REDIRECT_URL;
+  if (typeof configured === 'string' && configured.trim()) return configured.trim();
+
+  // Include trailing slash to match common Supabase allowlist patterns.
+  try {
+    const url = new URL(window.location.href);
+    url.hash = '';
+    url.search = '';
+    const base = `${url.origin}${url.pathname}`;
+    return base.endsWith('/') ? base : `${base}/`;
+  } catch {
+    const origin = window.location.origin;
+    return origin.endsWith('/') ? origin : `${origin}/`;
+  }
+};
+
 const signInWithGoogle = async () => {
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
     options: {
-      redirectTo: window.location.origin,
+      redirectTo: getAuthRedirectUrl(),
       queryParams: {
         access_type: 'offline',
         prompt: 'consent',

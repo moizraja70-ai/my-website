@@ -1528,10 +1528,18 @@ const SummaryView: React.FC<SummaryViewProps> = ({
 
   // ----- Load note data -----
   useEffect(() => {
+    let cancelled = false;
+
     (async () => {
       setLoading(true);
       try {
-        const data = await getTopicData(subject, stream, topic);
+        const withTimeout = <T,>(promise: Promise<T>, ms = 12000): Promise<T> =>
+          Promise.race([
+            promise,
+            new Promise<T>((_, reject) => setTimeout(() => reject(new Error(`Notes load timeout after ${ms}ms`)), ms)),
+          ]);
+
+        const data = await withTimeout(getTopicData(subject, stream, topic), 12000);
         const overrideKey = `${subject}|${topic || ''}`;
 
         // Check for local admin edits first
@@ -1552,15 +1560,29 @@ const SummaryView: React.FC<SummaryViewProps> = ({
           }
         }
 
-        setNoteData(data);
-        setContentReady(false);
-        onPageContentChange?.(data?.content);
+        if (!cancelled) {
+          setNoteData(data);
+          setContentReady(false);
+          onPageContentChange?.(data?.content);
+        }
       } catch (err) {
         console.error('Failed to load summary', err);
+        if (!cancelled) {
+          setNoteData({
+            content: `# ${topic || subject}\n\nCould not load notes right now. Please retry in a few seconds.`,
+            keyPoints: [],
+            subject,
+          });
+          setContentReady(false);
+        }
       } finally {
-        setLoading(false);
+        if (!cancelled) setLoading(false);
       }
     })();
+
+    return () => {
+      cancelled = true;
+    };
   }, [subject, stream, topic]);
 
   // ----- Deferred content render (idle callback) -----

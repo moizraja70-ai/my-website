@@ -39,6 +39,7 @@ const FCPS_PART_1_MBBS_MINOR = [
   MedicalSubject.BIOCHEMISTRY,
   MedicalSubject.PHARMACOLOGY,
   MedicalSubject.MICROBIOLOGY,
+  MedicalSubject.GENERAL_PATHOLOGY,
   MedicalSubject.GENERAL_EMBRYOLOGY
 ];
 
@@ -190,6 +191,41 @@ const clearClientStoredState = async (clearHttpCache: boolean) => {
   }
 };
 
+type AccessCache = {
+  hasSubscription: boolean;
+  isAdmin: boolean;
+  at: number;
+};
+
+const ACCESS_CACHE_KEY = 'dentedge_access_cache_v1';
+const readAccessCache = (): AccessCache | null => {
+  try {
+    const raw = localStorage.getItem(ACCESS_CACHE_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw) as Partial<AccessCache> | null;
+    if (!parsed || typeof parsed !== 'object') return null;
+    if (typeof parsed.at !== 'number') return null;
+    if (typeof parsed.hasSubscription !== 'boolean') return null;
+    if (typeof parsed.isAdmin !== 'boolean') return null;
+
+    // Cache is purely for fast UI on reload; keep it short-lived.
+    const MAX_AGE_MS = 24 * 60 * 60 * 1000;
+    if (Date.now() - parsed.at > MAX_AGE_MS) return null;
+    return parsed as AccessCache;
+  } catch {
+    return null;
+  }
+};
+
+const writeAccessCache = (value: Omit<AccessCache, 'at'>) => {
+  try {
+    const payload: AccessCache = { ...value, at: Date.now() };
+    localStorage.setItem(ACCESS_CACHE_KEY, JSON.stringify(payload));
+  } catch {
+    // ignore storage errors
+  }
+};
+
 const getOAuthErrorFromUrl = () => {
   if (typeof window === 'undefined') return null;
 
@@ -216,9 +252,11 @@ const getOAuthErrorFromUrl = () => {
 };
 
 const App: React.FC = () => {
+  const initialAccessCache = readAccessCache();
   const [user, setUser] = useState<User | null>(null);
-  const [isAdmin, setIsAdmin] = useState(false);
-  const [hasSubscription, setHasSubscription] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(() => initialAccessCache?.isAdmin ?? false);
+  const [hasSubscription, setHasSubscription] = useState(() => initialAccessCache?.hasSubscription ?? false);
+  const [hasAccessCache, setHasAccessCache] = useState(() => Boolean(initialAccessCache));
   const [isAccessChecking, setIsAccessChecking] = useState(false);
   const [authLoading, setAuthLoading] = useState(true);
   const [debugError, setDebugError] = useState<string | null>(null);
@@ -375,6 +413,8 @@ const App: React.FC = () => {
         const active = adminStatus || isSubscriptionActive(data || undefined);
         setIsAdmin(adminStatus);
         setHasSubscription(active);
+        writeAccessCache({ isAdmin: adminStatus, hasSubscription: active });
+        setHasAccessCache(true);
         setIsAccessChecking(false);
         setDebugError(null);
         return active;
@@ -382,9 +422,15 @@ const App: React.FC = () => {
         if (isAuthAbortError(err) || isAuthTimeoutError(err)) {
           continue;
         }
+        // Non-transient failure (RLS, misconfig, etc). Treat as "not subscribed" so
+        // users are not stuck on the verifying screen forever.
         setIsAccessChecking(false);
+        setIsAdmin(false);
+        setHasSubscription(false);
         setDebugError(err?.message || String(err));
-        return null;
+        writeAccessCache({ isAdmin: false, hasSubscription: false });
+        setHasAccessCache(true);
+        return false;
       }
     }
 
@@ -639,15 +685,17 @@ const App: React.FC = () => {
 
     let cancelled = false;
     let retryTimer: number | null = null;
+    let nullAttempts = 0;
+    const retryBackoffMs = [1500, 3000, 6000];
 
-    const scheduleRetry = () => {
+    const scheduleRetry = (ms: number) => {
       if (cancelled) return;
       if (retryTimer) {
         window.clearTimeout(retryTimer);
       }
       retryTimer = window.setTimeout(() => {
         refreshAccessState('retry');
-      }, 1500);
+      }, ms);
     };
 
     const refreshAccessState = async (reason: string) => {
@@ -656,9 +704,17 @@ const App: React.FC = () => {
       if (cancelled) return;
 
       if (access === null) {
-        scheduleRetry();
+        nullAttempts += 1;
+        if (nullAttempts <= retryBackoffMs.length) {
+          scheduleRetry(retryBackoffMs[nullAttempts - 1]);
+        } else {
+          // Stop retrying forever; show the "could not verify" UI instead.
+          setIsAccessChecking(false);
+          setAccessCheckTimedOut(true);
+        }
         return;
       }
+      nullAttempts = 0;
 
       if (retryTimer) {
         window.clearTimeout(retryTimer);
@@ -673,7 +729,6 @@ const App: React.FC = () => {
     };
 
     // Immediate refresh on user/session change.
-    setIsAccessChecking(true);
     refreshAccessState('user-change');
 
     const ONE_HOUR_MS = 60 * 60 * 1000;
@@ -1347,7 +1402,7 @@ const App: React.FC = () => {
         <main className="flex-1 container max-w-[1800px] mx-auto px-4 py-8 pb-32 md:pb-8">
 
           {/* STRICT GATE: Block everything if not subscribed/admin, unless in preview mode */}
-          {(!hasSubscription && !canSeeAdmin && !previewMode && isAccessChecking) ? (
+          {(!hasSubscription && !canSeeAdmin && !previewMode && isAccessChecking && !debugError && !hasAccessCache) ? (
             <div className="max-w-3xl mx-auto text-center py-16 animate-in fade-in duration-300">
               <div className="inline-flex items-center gap-3 px-5 py-3 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-sm">
                 <Loader2 className="w-5 h-5 animate-spin text-purple-600" />

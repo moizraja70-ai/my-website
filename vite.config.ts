@@ -7,6 +7,15 @@ export default defineConfig({
   define: {
     __BUILD_TIMESTAMP__: JSON.stringify(Date.now()),
   },
+  // Keep localhost origin stable for Supabase OAuth redirect allowlists.
+  server: {
+    port: 5173,
+    strictPort: true,
+  },
+  preview: {
+    port: 4173,
+    strictPort: true,
+  },
   build: {
     target: 'es2020',
     minify: 'terser',
