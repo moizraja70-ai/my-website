@@ -11,7 +11,7 @@ This is the foundation of all medicine. We cover how the 100 trillion cells work
 
 - **Physiology:** The study of mechanisms. Not just what happens, but *how* and *why*.
 - **The "Internal Sea" (Milieu Intérieur):** Your cells live in water (ECF), just like their ancient ancestors lived in the ocean. This fluid must be perfect.
-- **Homeostasis:** The central dogma. It is **Dynamic Constancy**, not a frozen state. Like driving a car—you constantly adjust the wheel to stay straight.
+- **Homeostasis:** The central dogma. It is **Dynamic Constancy**, not a frozen state. Like driving a car--you constantly adjust the wheel to stay straight.
 - **Control Systems:**
   - **Negative Feedback:** The "Course Corrector". The response opposes the stimulus. (e.g., You get hot → You sweat → You cool down).
   - **Positive Feedback:** The "Accelerator". The response amplifies the stimulus. (e.g., Clotting cascade, Childbirth, AP upstroke). Usually pathological/vicious.
@@ -145,11 +145,11 @@ Imagine your body fluid as three buckets separated by filters.
     "Homeostasis = Dynamic Constancy, not a frozen state",
     "Negative Feedback opposes stimulus (Thermostat); Positive Feedback amplifies (Snowball)",
     "Feed-Forward = Anticipatory control (salivation before eating)",
-    "Gain = Correction / Error — higher gain = tighter control",
+    "Gain = Correction / Error -- higher gain = tighter control",
     "60-40-20 Rule: TBW(60%) = ICF(40%) + ECF(20%)",
     "ECF = Plasma(5%) + ISF(15%)",
     "TBW measured with D₂O; ECF with Inulin; Plasma with Evan's Blue",
-    "ISF and ICF cannot be measured directly — must subtract",
+    "ISF and ICF cannot be measured directly -- must subtract",
     "Higher body fat = Lower TBW percentage",
     "Positive Feedback is usually pathological (Shock vicious cycle)"
   ],

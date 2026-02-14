@@ -1629,8 +1629,8 @@ const App: React.FC = () => {
 
         </main>
 
-        {/* AI Tutor */}
-        <AIAssistant pageContext={pageContext} />
+        {/* AI Tutor (subscribed/admin only) */}
+        {(hasSubscription || canSeeAdmin) && <AIAssistant pageContext={pageContext} />}
 
         {/* Quick Quiz Modal */}
         {showQuickQuiz && quizSubject && (

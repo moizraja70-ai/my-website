@@ -52,7 +52,7 @@ Muscle contraction relies on the interaction of contractile proteins (Actin/Myos
    - **Dystrophin:** Links actin to transmembrane proteins (Integrins/Dystroglycans) to transfer force to ECM.
 
 #### 5) Key Numbers
-- Sarcomere length at rest: 2.0–2.2 µm (Optimal overlap).
+- Sarcomere length at rest: 2.0-2.2 µm (Optimal overlap).
 - Myosin filaments: ~1500 per myofibril.
 - Actin filaments: ~3000 per myofibril.
 
@@ -161,9 +161,9 @@ $$Relaxation\ Rate \propto SERCA\ Activity$$
     "Troponin: TnC (Ca²⁺), TnT (Tropomyosin), TnI (Inhibitor)",
     "E-C Coupling: AP → T-tubule → DHPR → RyR1 → Ca²⁺ release → TnC → cross-bridge",
     "Skeletal: DHPR-RyR is MECHANICAL; Cardiac: CHEMICAL (CICR)",
-    "ATP needed for DETACHMENT, not just power stroke — no ATP = rigor",
+    "ATP needed for DETACHMENT, not just power stroke -- no ATP = rigor",
     "SERCA pumps Ca²⁺ back into SR for relaxation",
-    "Dystrophin links actin to ECM — absent in Duchenne MD (X-linked)",
+    "Dystrophin links actin to ECM -- absent in Duchenne MD (X-linked)",
     "Malignant Hyperthermia: RyR mutation → Dantrolene treatment",
     "Titin = elastic spring (prevents overstretch); Nebulin = actin ruler",
     "Motor Unit = 1 alpha motor neuron + all its fibers; Size Principle for recruitment",

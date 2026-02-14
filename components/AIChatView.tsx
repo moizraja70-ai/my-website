@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
+import { supabase } from '../services/supabaseClient';
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -41,46 +42,33 @@ const AI_MODELS: AIModel[] = [
   {
     id: 'gpt-5-2',
     name: 'ChatGPT 5.2',
-    description: 'Latest and most powerful model',
+    description: 'High-end model (best quality)',
     tier: 'Premium',
     dailyLimit: '250K tokens/day (shared)',
-    dailyLimitNote: 'Shared with: GPT-5.1, GPT-4.1, GPT-4o, o1, o3',
+    dailyLimitNote: 'Shared premium pool across all users',
   },
   {
     id: 'gpt-4o',
     name: 'GPT-4o',
-    description: 'Most capable, best for complex queries',
-    tier: 'Premium',
-    dailyLimit: '250K tokens/day (shared)',
-    dailyLimitNote: 'Shared with: GPT-5.2, GPT-5.1, GPT-4.1, o1, o3',
-  },
-  {
-    id: 'gpt-4-turbo',
-    name: 'GPT-4 Turbo',
-    description: 'High performance, good for analysis',
-    tier: 'Premium',
-    dailyLimit: '250K tokens/day (shared)',
-    dailyLimitNote: 'Shared with: GPT-5.2, GPT-5.1, GPT-4.1, GPT-4o, o1, o3',
+    description: 'Standard model (recommended)',
+    tier: 'Standard',
+    dailyLimit: '1M tokens/day (shared)',
+    dailyLimitNote: 'Shared standard pool across all users',
   },
   {
     id: 'gpt-4o-mini',
     name: 'GPT-4o Mini',
-    description: 'Fast and efficient, recommended',
+    description: 'Fast and efficient',
     tier: 'Standard',
-    dailyLimit: '2.5M tokens/day (shared)',
-    dailyLimitNote: 'Shared with: GPT-5-mini, o1-mini, o3-mini, codex-mini',
-  },
-  {
-    id: 'gpt-3.5-turbo',
-    name: 'GPT-3.5 Turbo',
-    description: 'Quick responses, basic queries',
-    tier: 'Standard',
-    dailyLimit: '2.5M tokens/day (shared)',
-    dailyLimitNote: 'Shared with: GPT-5-mini, o1-mini, o3-mini, codex-mini',
+    dailyLimit: '1M tokens/day (shared)',
+    dailyLimitNote: 'Shared standard pool across all users',
   },
 ];
 
-const DEFAULT_MODEL = 'gpt-4o-mini';
+const DEFAULT_MODEL = 'gpt-4o';
+
+const isKnownModel = (modelId: string): boolean =>
+  AI_MODELS.some((m) => m.id === modelId);
 
 /** Number of recent messages to include as conversation context. */
 const RECENT_MESSAGE_WINDOW = 3;
@@ -185,9 +173,16 @@ const sendAIMessage = async (
   conversationContext?: ConversationContext,
   model?: string,
 ): Promise<string> => {
+  const headers: Record<string, string> = { 'Content-Type': 'application/json' };
+  try {
+    const { data } = await supabase.auth.getSession();
+    const accessToken = data?.session?.access_token;
+    if (accessToken) headers.Authorization = `Bearer ${accessToken}`;
+  } catch { /* ignore */ }
+
   const response = await fetch('/api/ai-chat', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers,
     body: JSON.stringify({
       model: model || DEFAULT_MODEL,
       messages: [
@@ -378,9 +373,8 @@ const ModelSelector: React.FC<ModelSelectorProps> = ({
           {/* Footer tips */}
           <div className="mt-8 pt-6 border-t border-slate-200 dark:border-white/5 space-y-3">
             <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-              <strong>Tip:</strong> Premium models (GPT-5.2, GPT-4o) provide
-              better responses for complex queries. Standard models (GPT-4o
-              Mini) are faster and cost-effective.
+              <strong>Tip:</strong> GPT-5.2 uses the Premium pool (250K/day).
+              GPT-4o and GPT-4o Mini use the Standard pool (1M/day).
             </p>
             <div className="bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-800 rounded-lg p-3 space-y-2">
               <p className="text-xs font-semibold text-orange-700 dark:text-orange-300">
@@ -389,11 +383,11 @@ const ModelSelector: React.FC<ModelSelectorProps> = ({
               <div className="space-y-2 text-xs text-orange-600 dark:text-orange-400">
                 <div>
                   <p className="font-semibold mb-1">Premium Tier (250K tokens/day - Shared):</p>
-                  <p className="text-[11px] ml-2">GPT-5.2, GPT-5.1, GPT-4.1, GPT-4o, o1, o3</p>
+                  <p className="text-[11px] ml-2">GPT-5.2</p>
                 </div>
                 <div>
-                  <p className="font-semibold mb-1">Standard Tier (2.5M tokens/day - Shared):</p>
-                  <p className="text-[11px] ml-2">GPT-5-mini, GPT-4o Mini, o1-mini, o3-mini</p>
+                  <p className="font-semibold mb-1">Standard Tier (1M tokens/day - Shared):</p>
+                  <p className="text-[11px] ml-2">GPT-4o, GPT-4o Mini</p>
                 </div>
               </div>
             </div>
@@ -419,7 +413,9 @@ const AIChatView: React.FC = () => {
   const [isModelSelectorOpen, setIsModelSelectorOpen] = useState(false);
   const [selectedModel, setSelectedModel] = useState<string>(() => {
     if (typeof window !== 'undefined') {
-      return localStorage.getItem('selectedAIModel') || DEFAULT_MODEL;
+      const stored = localStorage.getItem('selectedAIModel');
+      const initial = stored || DEFAULT_MODEL;
+      return isKnownModel(initial) ? initial : DEFAULT_MODEL;
     }
     return DEFAULT_MODEL;
   });
@@ -518,9 +514,9 @@ const AIChatView: React.FC = () => {
             text: [
               '**Daily limit reached** - You have hit the daily token limit for this model tier.',
               '',
-              '**Premium Models** (GPT-5.2, GPT-4o, GPT-4 Turbo): 250K tokens/day (shared)',
+              '**Premium Models** (GPT-5.2): 250K tokens/day (shared)',
               '',
-              '**Standard Models** (GPT-4o Mini, GPT-3.5 Turbo): 2.5M tokens/day (shared)',
+              '**Standard Models** (GPT-4o, GPT-4o Mini): 1M tokens/day (shared)',
               '',
               'Please try again after midnight UTC when the quota resets.',
             ].join('\n'),
@@ -541,7 +537,7 @@ const AIChatView: React.FC = () => {
               '**Fix:** Do not use a browser-exposed `VITE_OPENAI_API_KEY` (it will be leaked/blocked). ',
               'In Cloudflare **Pages**: open your project -> **Settings -> Environment variables** -> ',
               'add the server-side secret `OPENAI_API_KEY` (Production, and Preview if needed), then redeploy. ',
-              'The app calls the `/api/openai` proxy.',
+              'The app calls the `/api/ai-chat` endpoint (server-side proxy).',
             ].join(''),
             timestamp: new Date(),
           },

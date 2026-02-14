@@ -44,7 +44,7 @@ Think of the membrane like a sea of lipids with protein icebergs floating in it.
 #### 1) Simple Diffusion (The Ghost)
 - **Mechanism:** Lipid-soluble molecules (O₂, CO₂, Alcohol, Anesthetics) dissolve in the lipid and cross.
 - **Rate:** Limitless. The more you have, the faster it goes (Linear Graph).
-- **Clinical:** This is why Oxygen therapy works—you increase gradient, you increase entry.
+- **Clinical:** This is why Oxygen therapy works--you increase gradient, you increase entry.
 
 #### 2) Facilitated Diffusion (The Revolving Door)
 - **Mechanism:** A carrier protein (e.g., GLUT-4) binds the molecule, changes shape, and releases it inside.
@@ -139,12 +139,12 @@ $$EMF = \pm 61 \times \log\frac{[Concentration\ Out]}{[Concentration\ In]}$$
   keyPoints: [
     "Lipid bilayer = barrier; proteins = doors/channels/receptors",
     "Simple diffusion: no saturation (linear); Facilitated: saturation (Vmax)",
-    "Na⁺/K⁺ Pump: 3 Na⁺ out, 2 K⁺ in, 1 ATP — creates the battery",
+    "Na⁺/K⁺ Pump: 3 Na⁺ out, 2 K⁺ in, 1 ATP -- creates the battery",
     "Secondary active transport uses Na⁺ gradient, NOT direct ATP",
     "Symport = same direction (SGLT-1); Antiport = opposite (Na⁺/Ca²⁺)",
     "Nernst: EMF = ±61 × log(Cout/Cin)",
     "RMP ≈ -90mV because membrane is 100x more permeable to K⁺ than Na⁺",
-    "Osmolarity ≠ Tonicity — urea is isosmotic but hypotonic",
+    "Osmolarity ≠ Tonicity -- urea is isosmotic but hypotonic",
     "No O₂ → pump fails → cell swells and dies",
     "Glycocalyx = carbohydrate coat for cell-cell recognition"
   ],

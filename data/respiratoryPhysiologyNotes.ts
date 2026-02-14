@@ -259,7 +259,7 @@ export const RESPIRATORY_PHYSIOLOGY_NOTES = {
 `,
   keyPoints: [
     "Blood-gas barrier: 0.3µm; Type I (gas exchange), Type II (surfactant/stem cell), Macrophages",
-    "Surfactant (DPPC) prevents atelectasis via Laplace: P=2T/r — reduces T more in small alveoli",
+    "Surfactant (DPPC) prevents atelectasis via Laplace: P=2T/r -- reduces T more in small alveoli",
     "Intrapleural pressure always negative (-5 cmH₂O); FRC = equilibrium of lung vs chest wall recoil",
     "Compliance = ΔV/ΔP; Hysteresis = opening requires more pressure than staying open",
     "Highest resistance: medium bronchi (G3-5), NOT small bronchioles (parallel circuits)",

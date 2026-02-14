@@ -284,7 +284,7 @@ The Engine of Life. We cover the Heart as a pump (Cycle, Output, Valves), the El
     "IE Prophylaxis: Only high-risk (Prosthetic valves, Previous IE, certain CHD); Amox 2g",
     "Cushing Reaction: ↑ICP → Hypertension + Bradycardia + Irregular respiration",
     "Exercise: Vagal withdrawal first → Sympathetic later; SV plateaus, HR keeps rising",
-    "Heart extracts 70-75% O₂ at rest — must increase flow (not extraction) for more O₂"
+    "Heart extracts 70-75% O₂ at rest -- must increase flow (not extraction) for more O₂"
   ],
   mcqs: [
     {

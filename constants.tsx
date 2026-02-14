@@ -26,15 +26,18 @@ export const SUBJECT_TOPICS: Record<string, TopicItem[]> = {
     "Temporomandibular Joint (TMJ) Dynamics"
   ],
   [MedicalSubject.PHYSIOLOGY]: [
-    "Cell Physiology & Membrane Transport",
-    "Nerve & Muscle Physiology",
-    "Cardiovascular: Cardiac Cycle & Output",
-    "Cardiovascular: Blood Pressure Regulation",
-    "Respiratory: Mechanics & Gas Exchange",
-    "Renal: GFR & Clearance",
-    "Endocrinology: Pituitary & Thyroid",
-    "Endocrinology: Adrenal & Pancreas",
-    "GIT: Secretions & Motility"
+    "General Physiology",
+    "Cell Membrane Transport",
+    "Nerve Physiology",
+    "Muscle Physiology",
+    "Muscle Mechanics",
+    "Cardiac Muscle",
+    "Cardiovascular Physiology",
+    "Respiratory Physiology",
+    "Renal Physiology",
+    "GI Physiology",
+    "Neurophysiology",
+    "Endocrinology",
   ],
   [MedicalSubject.BIOCHEMISTRY]: [
     "USMLE Biochemistry Dental Correlations",

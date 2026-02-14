@@ -8,6 +8,18 @@
 import { NOTES } from '../data/notesData';
 import { ANATOMY_NOTES } from '../data/anatomyNotes';
 import { IMPRESSION_MATERIALS_NOTES } from '../data/impressionMaterialsNotes';
+import { CARDIAC_MUSCLE_NOTES } from '../data/cardiacMuscleNotes';
+import { CARDIOVASCULAR_PHYSIOLOGY_NOTES } from '../data/cardiovascularPhysiologyNotes';
+import { CELL_MEMBRANE_TRANSPORT_NOTES } from '../data/cellMembraneTransportNotes';
+import { ENDOCRINOLOGY_NOTES } from '../data/endocrinologyNotes';
+import { GENERAL_PHYSIOLOGY_NOTES } from '../data/generalPhysiologyNotes';
+import { GI_PHYSIOLOGY_NOTES } from '../data/giPhysiologyNotes';
+import { MUSCLE_MECHANICS_NOTES } from '../data/muscleMechanicsNotes';
+import { MUSCLE_PHYSIOLOGY_NOTES } from '../data/musclePhysiologyNotes';
+import { NERVE_PHYSIOLOGY_NOTES } from '../data/nervePhysiologyNotes';
+import { NEUROPHYSIOLOGY_NOTES } from '../data/neurophysiologyNotes';
+import { RENAL_PHYSIOLOGY_NOTES } from '../data/renalPhysiologyNotes';
+import { RESPIRATORY_PHYSIOLOGY_NOTES } from '../data/respiratoryPhysiologyNotes';
 import { supabase } from './supabaseClient';
 import { MedicalSubject, ExamStream } from '../types';
 
@@ -24,6 +36,20 @@ export interface NoteData {
 const ALL_LOCAL_NOTES: Record<string, Record<string, { content: string; keyPoints: string[] }>> = {
   ...(NOTES as unknown as Record<string, Record<string, { content: string; keyPoints: string[] }>>),
   anatomy: ANATOMY_NOTES as unknown as Record<string, { content: string; keyPoints: string[] }>,
+  physiology: {
+    general_physiology: GENERAL_PHYSIOLOGY_NOTES,
+    cell_membrane_transport: CELL_MEMBRANE_TRANSPORT_NOTES,
+    nerve_physiology: NERVE_PHYSIOLOGY_NOTES,
+    muscle_physiology: MUSCLE_PHYSIOLOGY_NOTES,
+    muscle_mechanics: MUSCLE_MECHANICS_NOTES,
+    cardiac_muscle: CARDIAC_MUSCLE_NOTES,
+    cardiovascular_physiology: CARDIOVASCULAR_PHYSIOLOGY_NOTES,
+    respiratory_physiology: RESPIRATORY_PHYSIOLOGY_NOTES,
+    renal_physiology: RENAL_PHYSIOLOGY_NOTES,
+    gi_physiology: GI_PHYSIOLOGY_NOTES,
+    neurophysiology: NEUROPHYSIOLOGY_NOTES,
+    endocrinology: ENDOCRINOLOGY_NOTES,
+  } as unknown as Record<string, { content: string; keyPoints: string[] }>,
 };
 
 /** Map display-name enum values to the slug keys used inside NOTES. */
@@ -191,7 +217,7 @@ export async function getTopicData(
 
   // ---------- NOTHING FOUND ----------
 
-  console.log(`[notesService] ❌ NOTHING FOUND for subject=${subjectSlug} topic=${aliasedTopicKey}`);
+  console.log(`[notesService] ❌ NOTHING FOUND for subject=${subjectSlug} topic=${topicSlug}`);
   return {
     content: `# ${topic || subject}\n\nNotes for this topic are coming soon.`,
     keyPoints: [],

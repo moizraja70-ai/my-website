@@ -388,7 +388,7 @@ export const GI_PHYSIOLOGY_NOTES = {
     "GI hormones: Gastrin (H+ secretion), CCK (gallbladder contraction + pancreatic enzymes), Secretin (pancreatic HCO3-), GIP (incretin effect), Somatostatin (inhibits everything), Motilin (MMC).",
     "Interstitial Cells of Cajal are the gut pacemaker; slow wave frequencies: Stomach 3/min, Duodenum 12/min, Ileum 8/min. Spikes on slow waves determine contraction strength.",
     "Saliva is produced in two stages: isotonic from acini, then ducts reabsorb Na+/Cl- and secrete K+/HCO3- making it hypotonic and alkaline. Both SNS and PSNS stimulate saliva.",
-    "Parietal cell H+ secretion is controlled by 3 inputs: ACh (M3/Gq), Gastrin (CCK-B/Gq), and Histamine (H2/Gs). Histamine potentiates the others — blocking H2 cuts secretion >90%.",
+    "Parietal cell H+ secretion is controlled by 3 inputs: ACh (M3/Gq), Gastrin (CCK-B/Gq), and Histamine (H2/Gs). Histamine potentiates the others -- blocking H2 cuts secretion >90%.",
     "Carbohydrate absorption: Glucose/Galactose via SGLT1 (Na+-dependent), Fructose via GLUT5. All exit basolaterally via GLUT2. Lipids form chylomicrons with ApoB-48 and enter lacteals.",
     "B12 absorption requires R-protein (stomach) → release by proteases → binding to Intrinsic Factor → absorption in Terminal Ileum via cubilin. Iron absorbed in duodenum via DMT1, regulated by Hepcidin.",
     "Bilirubin pathway: Heme → UCB (albumin-bound, toxic) → Conjugated by UGT1A1 → Urobilinogen by gut bacteria → Stercobilin (stool) / Urobilin (urine).",
@@ -397,7 +397,7 @@ export const GI_PHYSIOLOGY_NOTES = {
     "GALT: Peyer's patches with M-cells sample antigens; B-cells class-switch to IgA; secreted via pIgR as sIgA. Same mucosal immune system operates in salivary glands.",
     "Liver: Kupffer cells (macrophages), Stellate/Ito cells (store Vit A, produce collagen in cirrhosis), Space of Disse (lymph formation). Liver synthesizes albumin, clotting factors, urea.",
     "Celiac disease causes enamel hypoplasia and aphthous ulcers in 20% of cases. Crohn's oral cobblestone mucosa can be the first sign of IBD.",
-    "PPIs irreversibly inhibit H+/K+ ATPase (final common pathway — most potent). Erythromycin binds motilin receptors for gastroparesis. Metoclopramide is a D2 antagonist for motility.",
+    "PPIs irreversibly inhibit H+/K+ ATPase (final common pathway -- most potent). Erythromycin binds motilin receptors for gastroparesis. Metoclopramide is a D2 antagonist for motility.",
     "Hirschsprung disease: neural crest migration failure → absent Meissner/Auerbach plexuses in distal colon → no peristalsis. ZE syndrome: gastrinoma → refractory ulcers, paradoxical secretin test."
   ],
   mcqs: []

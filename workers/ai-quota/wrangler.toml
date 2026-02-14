@@ -1,0 +1,11 @@
+name = "dentedge-ai-quota"
+main = "src/index.ts"
+compatibility_date = "2026-02-14"
+
+[durable_objects]
+bindings = [{ name = "AI_QUOTA", class_name = "AIQuota" }]
+
+[[migrations]]
+tag = "v1"
+new_classes = ["AIQuota"]
+

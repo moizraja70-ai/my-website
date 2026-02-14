@@ -494,9 +494,9 @@ export const RENAL_PHYSIOLOGY_NOTES = {
     "Nephrotic syndrome = massive proteinuria (>3.5g/day) from podocyte/charge barrier damage. Nephritic syndrome = hematuria with RBC casts from glomerular inflammation.",
     "AKI differentiation: Prerenal (FENa <1%, BUN/Cr >20), Intrinsic/ATN (FENa >2%, muddy brown casts), Postrenal (obstruction).",
     "Renal osteodystrophy: Loss of lamina dura is often the FIRST sign of secondary hyperparathyroidism; ground glass appearance and brown tumors follow.",
-    "NSAIDs are absolutely contraindicated in GFR <30 — they block prostaglandin-mediated afferent arteriolar dilation, the kidney's 'insurance policy'.",
+    "NSAIDs are absolutely contraindicated in GFR <30 -- they block prostaglandin-mediated afferent arteriolar dilation, the kidney's 'insurance policy'.",
     "Potassium shifts: Insulin and β2-agonists push K+ into cells; acidosis causes K+ to leave cells. Hyperkalemia ECG: peaked T-waves → widened QRS → sine wave.",
-    "In pregnancy, GFR increases 50% and RPF up to 80%; normal serum creatinine drops to 0.4-0.6 mg/dL — a value of 1.0 mg/dL signals renal failure."
+    "In pregnancy, GFR increases 50% and RPF up to 80%; normal serum creatinine drops to 0.4-0.6 mg/dL -- a value of 1.0 mg/dL signals renal failure."
   ],
   mcqs: []
 };

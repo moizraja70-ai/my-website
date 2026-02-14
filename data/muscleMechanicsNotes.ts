@@ -139,7 +139,7 @@ Unlike skeletal muscle (which pulls in one line), smooth muscle is arranged in a
     "Energy sources: Phosphocreatine (10s) → Glycolysis (1-2min) → Oxidative (hours)",
     "Fatigue = Pi accumulation + acidosis + K⁺ in T-tubules, NOT just ATP depletion",
     "Type 1 (Slow/Red/Oxidative/Fatigue-resistant) vs Type 2 (Fast/White/Glycolytic)",
-    "Smooth muscle: NO troponin — uses Ca²⁺-Calmodulin → MLCK → phosphorylates myosin",
+    "Smooth muscle: NO troponin -- uses Ca²⁺-Calmodulin → MLCK → phosphorylates myosin",
     "Latch mechanism: smooth muscle holds tension with near-zero ATP (100x more efficient)",
     "MLCK = contraction switch; Myosin Phosphatase = relaxation switch",
     "Multi-unit smooth muscle (eye, iris) = independent; Unitary (gut, uterus) = gap junctions"

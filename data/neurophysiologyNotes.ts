@@ -9,17 +9,17 @@ export const NEUROPHYSIOLOGY_NOTES = {
 > The nervous system is a biological computer. To understand how it works, you must first understand its hardware: the neuron (the processor) and the glia (the support team). Just like a computer has a CPU that does the calculations and an operating system that manages resources, the brain has neurons that compute signals and glial cells that maintain the environment, insulate the wires, and clean up waste. Without glia, neurons would die in hours.
 
 ### 1) The Neuron: The Computing Substrate
-- **Overview:** The brain contains ~86 billion neurons. Each neuron forms ~1,000 to 10,000 synapses. This means there are roughly 100 trillion synaptic connections in a single human brain — more than the number of stars in the Milky Way.
+- **Overview:** The brain contains ~86 billion neurons. Each neuron forms ~1,000 to 10,000 synapses. This means there are roughly 100 trillion synaptic connections in a single human brain -- more than the number of stars in the Milky Way.
 - **Why does the structure matter?** A neuron is polarized: it receives information at the dendrites, integrates it at the soma/axon hillock, and transmits the output down the axon. Understanding this polarity is essential to understanding how signals flow.
 - **Specific Structures:**
-  - **Nissl Substance:** Ribosomes + RER. Found in Soma and Dendrites. ABSENT in the Axon Hillock (The "Clean Zone"). This is because the axon hillock needs to be a pure electrical integrator — ribosomes would clutter the space where voltage-gated channels need to sit.
-  - **Axon Hillock:** The highest concentration of $Na_v 1.1/1.6$ channels. Think of it as the "decision point" — this is where the Summation of all incoming EPSPs (excitatory) and IPSPs (inhibitory) is calculated. If the net depolarization reaches threshold (~-55 mV), an Action Potential fires. If not, the signal dies.
+  - **Nissl Substance:** Ribosomes + RER. Found in Soma and Dendrites. ABSENT in the Axon Hillock (The "Clean Zone"). This is because the axon hillock needs to be a pure electrical integrator -- ribosomes would clutter the space where voltage-gated channels need to sit.
+  - **Axon Hillock:** The highest concentration of $Na_v 1.1/1.6$ channels. Think of it as the "decision point" -- this is where the Summation of all incoming EPSPs (excitatory) and IPSPs (inhibitory) is calculated. If the net depolarization reaches threshold (~-55 mV), an Action Potential fires. If not, the signal dies.
 - **Axonal Transport (The Cytoskeletal Train):**
-  - **Why does transport matter?** Some neurons have axons that are 1 meter long (e.g., a motor neuron from the spinal cord to the foot). The cell body cannot supply proteins and organelles to the terminal by simple diffusion — it would take years. So the neuron builds literal "railway tracks" using microtubules and sends cargo along them using motor proteins.
+  - **Why does transport matter?** Some neurons have axons that are 1 meter long (e.g., a motor neuron from the spinal cord to the foot). The cell body cannot supply proteins and organelles to the terminal by simple diffusion -- it would take years. So the neuron builds literal "railway tracks" using microtubules and sends cargo along them using motor proteins.
   - **Fast Anterograde (400 mm/day):** Moves organelles/vesicles to the terminal. Motor: **Kinesin** (walks toward the + end of microtubules).
   - **Slow Anterograde (1-5 mm/day):** Moves structural proteins like Tubulin to maintain the axon skeleton.
   - **Fast Retrograde (200 mm/day):** Moves growth factors and waste back to the soma for recycling. Motor: **Dynein** (walks toward the - end).
-  - **Clinical:** Tetanus toxin hijacks the retrograde system — it enters the motor nerve at the NMJ and rides Dynein back to the spinal cord, where it blocks inhibitory Renshaw cells.
+  - **Clinical:** Tetanus toxin hijacks the retrograde system -- it enters the motor nerve at the NMJ and rides Dynein back to the spinal cord, where it blocks inhibitory Renshaw cells.
 
 ### 2) Glial Cells: The Support & Control Network
 - **Astrocytes (The Most Abundant):**
@@ -44,13 +44,13 @@ export const NEUROPHYSIOLOGY_NOTES = {
 
 ## II) THE BLOOD-BRAIN BARRIER (BBB) & CSF KINETICS
 
-> The brain is the most metabolically active organ in the body, consuming 20% of cardiac output despite being only 2% of body weight. But it is also the most sensitive — even tiny changes in ion concentrations or exposure to toxins can cause seizures or death. So the brain has built a fortress wall around itself: the Blood-Brain Barrier. Think of it as a highly selective border checkpoint — it lets in essential nutrients (glucose, oxygen) but blocks almost everything else (bacteria, drugs, most proteins). This is why brain infections are rare but deadly, and why treating brain diseases with drugs is so challenging.
+> The brain is the most metabolically active organ in the body, consuming 20% of cardiac output despite being only 2% of body weight. But it is also the most sensitive -- even tiny changes in ion concentrations or exposure to toxins can cause seizures or death. So the brain has built a fortress wall around itself: the Blood-Brain Barrier. Think of it as a highly selective border checkpoint -- it lets in essential nutrients (glucose, oxygen) but blocks almost everything else (bacteria, drugs, most proteins). This is why brain infections are rare but deadly, and why treating brain diseases with drugs is so challenging.
 
 ### 1) The BBB Infrastructure
-- **The Tight Junction:** The key structural feature. Brain endothelial cells are welded together by Occludin and Claudin proteins, making them the tightest junctions anywhere in the body. Unlike capillaries in the rest of the body (which are fenestrated — full of pores), brain capillaries are non-fenestrated (completely sealed).
-- **Permeability Rule:** The BBB obeys a simple rule — lipid-soluble substances pass freely, water-soluble substances need a specific transporter or they are blocked.
-  - **Lipid soluble (High permeability):** $CO_2$, $O_2$, Ethanol, Heroin (more lipophilic than morphine — this is why heroin reaches the brain faster and is more addictive).
-  - **Water soluble (Need specific transporters):** Glucose uses GLUT-1 (insulin-independent!), L-DOPA uses the LAT transporter (this is why we give L-DOPA for Parkinson's rather than pure Dopamine — Dopamine can't cross the BBB, but L-DOPA can).
+- **The Tight Junction:** The key structural feature. Brain endothelial cells are welded together by Occludin and Claudin proteins, making them the tightest junctions anywhere in the body. Unlike capillaries in the rest of the body (which are fenestrated -- full of pores), brain capillaries are non-fenestrated (completely sealed).
+- **Permeability Rule:** The BBB obeys a simple rule -- lipid-soluble substances pass freely, water-soluble substances need a specific transporter or they are blocked.
+  - **Lipid soluble (High permeability):** $CO_2$, $O_2$, Ethanol, Heroin (more lipophilic than morphine -- this is why heroin reaches the brain faster and is more addictive).
+  - **Water soluble (Need specific transporters):** Glucose uses GLUT-1 (insulin-independent!), L-DOPA uses the LAT transporter (this is why we give L-DOPA for Parkinson's rather than pure Dopamine -- Dopamine can't cross the BBB, but L-DOPA can).
 - **The Leaky Spots (Circumventricular Organs):**
   - Not all brain areas have a BBB. There are a few spots where the barrier is intentionally "leaky" because these areas need to sense what's in the blood:
   - **Area Postrema:** The Chemosensitive Trigger Zone. It samples the blood for toxins and triggers vomiting if it detects something harmful. Without a BBB here, it couldn't do its job.
@@ -810,8 +810,8 @@ export const NEUROPHYSIOLOGY_NOTES = {
 - **"BBB is Endothelial, BCSFB is Epithelial":** Cell type difference.
 `,
   keyPoints: [
-    "86 billion neurons with ~100 trillion synapses. Axon hillock has highest Nav channel density — the AP 'decision point'. Kinesin (anterograde) and Dynein (retrograde) drive axonal transport.",
-    "Glial cells: Astrocytes (K+ siphoning, glutamate clearance), Oligodendrocytes (CNS myelin — MS target), Schwann cells (PNS myelin — GBS target), Microglia (mesodermal macrophages), Ependymal (CSF/ventricles).",
+    "86 billion neurons with ~100 trillion synapses. Axon hillock has highest Nav channel density -- the AP 'decision point'. Kinesin (anterograde) and Dynein (retrograde) drive axonal transport.",
+    "Glial cells: Astrocytes (K+ siphoning, glutamate clearance), Oligodendrocytes (CNS myelin -- MS target), Schwann cells (PNS myelin -- GBS target), Microglia (mesodermal macrophages), Ependymal (CSF/ventricles).",
     "BBB uses Occludin/Claudin tight junctions in non-fenestrated endothelium. Lipid-soluble substances cross freely; glucose needs GLUT-1. Circumventricular organs (Area Postrema, OVLT) lack a BBB.",
     "CSF: 500 mL/day by choroid plexus, 150 mL total volume. Flow: Lateral ventricles → Monroe → 3rd → Sylvius → 4th → Luschka/Magendie → subarachnoid → arachnoid granulations → venous sinuses.",
     "SNARE complex (Synaptobrevin + Syntaxin/SNAP-25) mediates vesicle fusion. Botox cleaves SNAREs at NMJ (flaccid); Tetanus cleaves SNAREs at inhibitory interneurons (spastic).",
@@ -824,7 +824,7 @@ export const NEUROPHYSIOLOGY_NOTES = {
     "Local anesthetics bind intracellular side of Nav channels in inactivated state. Must be unionized to cross membrane, then ionized to bind. Acidic infected tissue traps LA outside → anesthesia failure.",
     "Hypothalamus: Lateral = hunger (Ghrelin/NPY), Ventromedial = satiety (Leptin/POMC/α-MSH), Anterior = cooling, Posterior = heating, SCN = circadian clock, Supraoptic/Paraventricular = ADH/Oxytocin.",
     "Hematomas: Epidural = Middle Meningeal A. (biconvex, lucid interval). Subdural = Bridging veins (crescent, crosses sutures). SAH = Berry aneurysm ('worst headache'). GCS ≤ 8 = intubate.",
-    "Spinal cord syndromes: Brown-Séquard (hemisection — ipsilateral motor/vibration loss, contralateral pain/temp loss), Anterior cord (bilateral motor + pain/temp loss, spared dorsal columns), Central cord (cape-like loss, upper > lower weakness)."
+    "Spinal cord syndromes: Brown-Séquard (hemisection -- ipsilateral motor/vibration loss, contralateral pain/temp loss), Anterior cord (bilateral motor + pain/temp loss, spared dorsal columns), Central cord (cape-like loss, upper > lower weakness)."
   ],
   mcqs: []
 };

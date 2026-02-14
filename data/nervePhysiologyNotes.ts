@@ -67,8 +67,8 @@ Myelin (sphingomyelin) is an electrical insulator produced by **Schwann cells (P
 4. **Saltatory Conduction:** Repolarization is also efficient (little ion exchange needed).
 
 #### 5) Key Numbers
-- Node length: 2–3 µm.
-- Internode distance: 1–3 mm.
+- Node length: 2-3 µm.
+- Internode distance: 1-3 mm.
 - Velocity increase: 5-fold to 50-fold vs unmyelinated.
 - Metabolic saving: 100x less ion exchange = less Na⁺/K⁺ pump work.
 
@@ -84,12 +84,12 @@ Nerves are classified by diameter and conduction velocity. Larger/Myelinated = F
 #### 6) High-yield Table: Fiber Types
 | Type | Myelin | Diameter (µm) | Velocity (m/s) | Function |
 | :--- | :--- | :--- | :--- | :--- |
-| A-Alpha | Yes | 12–20 | 70–120 | Somatic Motor, Proprioception |
-| A-Beta | Yes | 5–12 | 30–70 | Touch, Pressure |
-| A-Gamma | Yes | 3–6 | 15–30 | Motor to Muscle Spindles |
-| A-Delta | Yes | 2–5 | 12–30 | Fast Pain, Cold, Sharp touch |
-| B | Yes | < 3 | 3–15 | Preganglionic Autonomic |
-| C | No | 0.4–1.2 | 0.5–2 | Slow Pain, Warmth, Postganglionic |
+| A-Alpha | Yes | 12-20 | 70-120 | Somatic Motor, Proprioception |
+| A-Beta | Yes | 5-12 | 30-70 | Touch, Pressure |
+| A-Gamma | Yes | 3-6 | 15-30 | Motor to Muscle Spindles |
+| A-Delta | Yes | 2-5 | 12-30 | Fast Pain, Cold, Sharp touch |
+| B | Yes | < 3 | 3-15 | Preganglionic Autonomic |
+| C | No | 0.4-1.2 | 0.5-2 | Slow Pain, Warmth, Postganglionic |
 
 #### 8) BRS Exam Angle
 - **Question:** "Which fiber is most sensitive to local anesthetics?" **Answer:** Type C (Small, unmyelinated) > Type B > Type A.

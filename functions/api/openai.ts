@@ -4,17 +4,82 @@ type ProfileRow = {
   subscription_end_date?: string | null;
 };
 
+type QuotaTier = "standard" | "premium";
+type QuotaStatus = { day: string; used: number };
+
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "POST, OPTIONS",
   "Access-Control-Allow-Headers": "Content-Type, Authorization"
 };
 
-const jsonResponse = (status: number, payload: Record<string, unknown>) =>
+const jsonResponse = (
+  status: number,
+  payload: Record<string, unknown>,
+  extraHeaders: Record<string, string> = {}
+) =>
   new Response(JSON.stringify(payload), {
     status,
-    headers: { "Content-Type": "application/json", ...corsHeaders, "Cache-Control": "no-store" }
+    headers: { "Content-Type": "application/json", ...corsHeaders, "Cache-Control": "no-store", ...extraHeaders }
   });
+
+const parsePositiveInt = (value: unknown, fallback: number) => {
+  const n = typeof value === "string" ? Number.parseInt(value, 10) : typeof value === "number" ? value : NaN;
+  return Number.isFinite(n) && n > 0 ? Math.floor(n) : fallback;
+};
+
+const getQuotaConfig = (env: Record<string, string | undefined>) => {
+  const standardLimit = parsePositiveInt(env.AI_DAILY_TOKEN_LIMIT_STANDARD, 1_000_000);
+  const premiumLimit = parsePositiveInt(env.AI_DAILY_TOKEN_LIMIT_PREMIUM, 250_000);
+  const premiumModels = String(env.OPENAI_PREMIUM_MODELS || "gpt-5-2")
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean);
+  return { standardLimit, premiumLimit, premiumModels };
+};
+
+const getQuotaStub = (env: any) => {
+  const ns = env?.AI_QUOTA;
+  if (!ns || typeof ns.idFromName !== "function" || typeof ns.get !== "function") return null;
+  // Single global counter shared across all users.
+  const id = ns.idFromName("global");
+  return ns.get(id);
+};
+
+const fetchQuotaStatus = async (stub: any, tier: QuotaTier): Promise<QuotaStatus | null> => {
+  try {
+    const res = await stub.fetch(`https://ai-quota/status?tier=${encodeURIComponent(tier)}`);
+    if (!res.ok) return null;
+    const json: any = await res.json().catch(() => null);
+    const day = typeof json?.day === "string" ? json.day : null;
+    const used = Number.isFinite(Number(json?.used)) ? Number(json.used) : null;
+    if (!day || used === null) return null;
+    return { day, used: Math.max(0, Math.floor(used)) };
+  } catch {
+    return null;
+  }
+};
+
+const addQuotaUsage = async (stub: any, tier: QuotaTier, tokens: number): Promise<QuotaStatus | null> => {
+  const delta = Number.isFinite(tokens) && tokens > 0 ? Math.floor(tokens) : 0;
+  if (delta <= 0) return null;
+
+  try {
+    const res = await stub.fetch("https://ai-quota/add", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ tier, tokens: delta })
+    });
+    if (!res.ok) return null;
+    const json: any = await res.json().catch(() => null);
+    const day = typeof json?.day === "string" ? json.day : null;
+    const used = Number.isFinite(Number(json?.used)) ? Number(json.used) : null;
+    if (!day || used === null) return null;
+    return { day, used: Math.max(0, Math.floor(used)) };
+  } catch {
+    return null;
+  }
+};
 
 const getSupabaseConfig = (env: Record<string, string | undefined>) => {
   const url = env.SUPABASE_URL || env.VITE_SUPABASE_URL;
@@ -150,6 +215,33 @@ export const onRequestPost: PagesFunction = async ({ request, env }) => {
     const temperature = typeof body?.temperature === "number" ? Math.max(0, Math.min(1, body.temperature)) : 0.4;
     const responseFormat = body?.response_format;
 
+    // ---------- Shared daily token quotas (across all users) ----------
+
+    const quotaStub = getQuotaStub(env as any);
+    if (!quotaStub) {
+      return jsonResponse(500, { error: "AI_QUOTA_NOT_CONFIGURED" });
+    }
+
+    const { standardLimit, premiumLimit, premiumModels } = getQuotaConfig(env as any);
+    const tier: QuotaTier = premiumModels.includes(model) ? "premium" : "standard";
+    const limit = tier === "premium" ? premiumLimit : standardLimit;
+
+    const quotaStatus = await fetchQuotaStatus(quotaStub, tier);
+    if (!quotaStatus) {
+      return jsonResponse(500, { error: "AI_QUOTA_UNAVAILABLE" });
+    }
+
+    if (quotaStatus.used >= limit) {
+      return jsonResponse(429, {
+        error: "DAILY_QUOTA_EXCEEDED",
+        message: "quota exceeded",
+        tier,
+        day: quotaStatus.day,
+        used: quotaStatus.used,
+        limit
+      });
+    }
+
     const openaiRes = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
       headers: {
@@ -184,7 +276,23 @@ export const onRequestPost: PagesFunction = async ({ request, env }) => {
     }
 
     const text = data?.choices?.[0]?.message?.content || "";
-    return jsonResponse(200, { text });
+
+    const tokensUsed = Number(data?.usage?.total_tokens);
+    const tokenDelta = Number.isFinite(tokensUsed) && tokensUsed > 0 ? Math.floor(tokensUsed) : 0;
+
+    const updatedQuota =
+      tokenDelta > 0 ? await addQuotaUsage(quotaStub, tier, tokenDelta) : null;
+
+    const quotaHeaders: Record<string, string> = {
+      "X-AI-Quota-Day": updatedQuota?.day || quotaStatus.day,
+      "X-AI-Quota-Tier": tier,
+      "X-AI-Quota-Used": String(updatedQuota?.used ?? quotaStatus.used),
+      "X-AI-Quota-Limit": String(limit),
+      "X-AI-Model": model
+    };
+    if (tokenDelta > 0) quotaHeaders["X-AI-Tokens-Used"] = String(tokenDelta);
+
+    return jsonResponse(200, { text }, quotaHeaders);
   } catch (err: any) {
     console.error("OpenAI proxy error:", err);
     return jsonResponse(500, { error: err?.message || "Server error" });

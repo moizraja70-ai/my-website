@@ -164,27 +164,47 @@ const buildRecords = () => {
     });
   }
 
-  // --- Physiology (separate file in parent data/ directory) ---
-  try {
-    const physPath = path.join(PARENT_DATA, 'physiologyNotes.ts');
-    if (fs.existsSync(physPath)) {
-      const PHYSIOLOGY_NOTES = loadExport(physPath, 'PHYSIOLOGY_NOTES') || {};
-      const PHYSIOLOGY_TOPIC_LABELS = loadExport(physPath, 'PHYSIOLOGY_TOPIC_LABELS') || {};
-      for (const [topicKey, note] of Object.entries(PHYSIOLOGY_NOTES)) {
-        if (!note || !note.content) continue;
-        records.push({
-          subject_key: 'physiology',
-          topic_key: topicKey,
-          subject: 'Physiology',
-          topic: PHYSIOLOGY_TOPIC_LABELS[topicKey] || topicKey,
-          is_public: false,
-          content: note.content,
-          key_points: note.keyPoints || note.key_points || []
-        });
+  // --- Physiology (12 separate files) ---
+  const physiologyFiles = [
+    { file: 'generalPhysiologyNotes.ts', exportName: 'GENERAL_PHYSIOLOGY_NOTES', key: 'general_physiology', topic: 'General Physiology' },
+    { file: 'cellMembraneTransportNotes.ts', exportName: 'CELL_MEMBRANE_TRANSPORT_NOTES', key: 'cell_membrane_transport', topic: 'Cell Membrane Transport' },
+    { file: 'nervePhysiologyNotes.ts', exportName: 'NERVE_PHYSIOLOGY_NOTES', key: 'nerve_physiology', topic: 'Nerve Physiology' },
+    { file: 'musclePhysiologyNotes.ts', exportName: 'MUSCLE_PHYSIOLOGY_NOTES', key: 'muscle_physiology', topic: 'Muscle Physiology' },
+    { file: 'muscleMechanicsNotes.ts', exportName: 'MUSCLE_MECHANICS_NOTES', key: 'muscle_mechanics', topic: 'Muscle Mechanics' },
+    { file: 'cardiacMuscleNotes.ts', exportName: 'CARDIAC_MUSCLE_NOTES', key: 'cardiac_muscle', topic: 'Cardiac Muscle' },
+    { file: 'cardiovascularPhysiologyNotes.ts', exportName: 'CARDIOVASCULAR_PHYSIOLOGY_NOTES', key: 'cardiovascular_physiology', topic: 'Cardiovascular Physiology' },
+    { file: 'respiratoryPhysiologyNotes.ts', exportName: 'RESPIRATORY_PHYSIOLOGY_NOTES', key: 'respiratory_physiology', topic: 'Respiratory Physiology' },
+    { file: 'renalPhysiologyNotes.ts', exportName: 'RENAL_PHYSIOLOGY_NOTES', key: 'renal_physiology', topic: 'Renal Physiology' },
+    { file: 'giPhysiologyNotes.ts', exportName: 'GI_PHYSIOLOGY_NOTES', key: 'gi_physiology', topic: 'GI Physiology' },
+    { file: 'neurophysiologyNotes.ts', exportName: 'NEUROPHYSIOLOGY_NOTES', key: 'neurophysiology', topic: 'Neurophysiology' },
+    { file: 'endocrinologyNotes.ts', exportName: 'ENDOCRINOLOGY_NOTES', key: 'endocrinology', topic: 'Endocrinology' },
+  ];
+
+  for (const { file, exportName, key, topic } of physiologyFiles) {
+    try {
+      const pPath = path.join(PARENT_DATA, file);
+      if (fs.existsSync(pPath)) {
+        const noteData = loadExport(pPath, exportName);
+        // The file exports a single object { title, content, keyPoints, mcqs }
+        // It does NOT export { [key]: { content... } }
+        // So we use noteData directly.
+        if (noteData && noteData.content) {
+          records.push({
+            subject_key: 'physiology',
+            topic_key: key,
+            subject: 'Physiology',
+            topic: topic,
+            is_public: false,
+            content: noteData.content,
+            key_points: noteData.keyPoints || noteData.key_points || []
+          });
+        }
+      } else {
+        console.warn(`Skipping ${file}: not found`);
       }
+    } catch (err) {
+      console.warn(`Error loading ${file}:`, err.message);
     }
-  } catch (err) {
-    console.warn('Skipping PHYSIOLOGY_NOTES:', err.message);
   }
 
   // --- Anatomy sub-topics (separate files in parent data/ directory) ---
