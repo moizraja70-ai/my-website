@@ -113,6 +113,34 @@ const isSubscriptionActive = (profile: ProfileRow | null) => {
   return endMs > Date.now();
 };
 
+const validateMessages = (messages: any[]): string | null => {
+  if (!Array.isArray(messages)) return "Expected messages array";
+  if (messages.length > 50) return "Message history limit exceeded (max 50)";
+
+  let totalCharCount = 0;
+  for (const msg of messages) {
+    if (!msg || typeof msg !== "object") return "Invalid message format";
+    const role = msg.role;
+    const content = msg.content;
+
+    if (!["system", "user", "assistant"].includes(role)) {
+      return "Invalid message role";
+    }
+
+    if (typeof content !== "string") {
+      return "Message content must be a string";
+    }
+
+    totalCharCount += content.length;
+  }
+
+  if (totalCharCount > 20000) {
+    return "Total message content exceeds 20,000 characters";
+  }
+
+  return null;
+};
+
 const validateUserAndGetId = async (
   supabaseUrl: string,
   supabaseAnonKey: string,
@@ -203,6 +231,11 @@ export const onRequestPost: PagesFunction = async ({ request, env }) => {
     const messages = Array.isArray(body?.messages) ? body.messages : null;
     if (!messages) {
       return jsonResponse(400, { error: "Expected messages array" });
+    }
+
+    const validationError = validateMessages(messages);
+    if (validationError) {
+      return jsonResponse(400, { error: validationError });
     }
 
     const allowedModels = String(env?.OPENAI_ALLOWED_MODELS || "gpt-4o-mini")
